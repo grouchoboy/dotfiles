@@ -8,6 +8,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'wlangstroth/vim-racket'
+Plug 'psf/black'
 
 call plug#end()
 
@@ -24,7 +25,7 @@ set autoindent
 set magic
 "set number
 
-"set ruler
+set ruler
 "set cc=80
 set nowrap
 
