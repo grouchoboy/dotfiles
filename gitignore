@@ -2,6 +2,9 @@ tags
 ctags
 .ctags
 *.pyc
+.venv
+.python-version
+.vscode
 
 # Compiled source #
 ###################

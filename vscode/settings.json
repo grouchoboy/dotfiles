@@ -24,11 +24,12 @@
     "workbench.activityBar.visible": false,
     "editor.renderIndentGuides": false,
     "breadcrumbs.enabled": false,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "vim.useSystemClipboard": true,
     "editor.fontFamily": "'IBM Plex Mono Medium', Menlo, Monaco, 'Courier New', monospace",
     "emmet.includeLanguages": {
         "django-html": "html",
+        "erb": "html",
     },
     "[django-html]": {},
     "[javascript]": {
@@ -45,6 +46,21 @@
         "editor.detectIndentation": false,
     },
     "explorer.confirmDragAndDrop": false,
+    "explorer.autoReveal": false,
     "window.zoomLevel": 0,
-    "workbench.settings.useSplitJSON": true
+    "workbench.settings.useSplitJSON": true,
+    "[yaml]": {
+        "editor.renderIndentGuides": true
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "[ruby]": {
+        
+    },
+    "[erb]": {},
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "[sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
+    },
+    "extensions.ignoreRecommendations": false
 }

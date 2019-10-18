@@ -1,9 +1,18 @@
 set -gx EDITOR vim
 set -gx LANG en_US.UTF-8
+set -gx LC_ALL en_US.UTF-8
+
 
 set PATH /Applications/Racket/bin $PATH
 set PATH ~/bin $PATH
 set PATH ~/.cargo/bin $PATH
+
+status --is-interactive; and source (rbenv init -|psub)
+
+# golang
+set -x -U GOPATH $HOME/code/go
+
+set PATH $GOPATH/bin $PATH
 
 # load pyenv
 if command -v pyenv 1>/dev/null 2>&1
