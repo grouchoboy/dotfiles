@@ -51,26 +51,31 @@ set lazyredraw
 
 let mapleader="\<space>"
 
+" python interpreter
+let g:python3_host_prog = '/Users/manu/.pyenv/versions/3.8.0/bin/python3.8'
 
-" netrw
+"netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snippets"]
+let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/snippets"]
 
 autocmd FileType c setlocal noet ts=8 sw=8
 autocmd FileType python setlocal et ts=4 sw=4
 autocmd FileType html setlocal et ts=2 sw=2
+autocmd FileType htmldjango setlocal et ts=2 sw=2
+autocmd FileType js setlocal et ts=2 sw=2
 
 " fzf
-nnoremap <leader>ff :GFiles<cr>
+nnoremap <leader>d :GFiles<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>l :Lines<cr>
+nnoremap <leader><C-l> :BLines<cr>
 nnoremap <leader>t :Tags<cr>
 nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>bt :BTags<cr>
+nnoremap <leader>r :BTags<cr>
 
 nnoremap <leader>k :Black<cr>
 
