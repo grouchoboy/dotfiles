@@ -2,13 +2,15 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Townk/vim-autoclose'
+Plug 'jiangmiao/auto-pairs'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'wlangstroth/vim-racket'
-Plug 'psf/black'
+Plug 'chriskempson/base16-vim'
+Plug 'junegunn/goyo.vim'
+"Plug 'psf/black'
 
 call plug#end()
 
@@ -17,6 +19,9 @@ syntax on
 
 set laststatus=2
 set t_Co=256
+
+set termguicolors
+"colorscheme base16-ocean
 
 set encoding=utf-8
 set tabstop=4
@@ -36,14 +41,12 @@ set splitbelow
 set hidden
 set hlsearch
 set mouse=a
-set backupdir=~/.cache
-set directory=~/.cache
+set nobackup
 
 set nofoldenable
 set lazyredraw
 
 let mapleader="\<space>"
-
 
 " netrw
 let g:netrw_liststyle = 3
@@ -58,13 +61,11 @@ autocmd FileType python setlocal et ts=4 sw=4
 autocmd FileType html setlocal et ts=2 sw=2
 
 " fzf
-nnoremap <leader>f :GFiles<cr>
-nnoremap <leader>ff :Files<cr>
-nnoremap <leader>l :Lines<cr>
+nnoremap <leader>d :GFiles<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>l :BLines<cr>
+nnoremap <leader><C-l> :Lines<cr>
 nnoremap <leader>t :Tags<cr>
 nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>bt :BTags<cr>
-
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+nnoremap <leader>r :BTags<cr>
 

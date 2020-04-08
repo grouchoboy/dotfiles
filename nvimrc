@@ -10,11 +10,14 @@ Plug 'SirVer/ultisnips'
 Plug 'wlangstroth/vim-racket'
 Plug 'psf/black'
 Plug 'chriskempson/base16-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/goyo.vim'
+"Plug 'neovim/nvim-lsp'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/goyo.vim'
+
+"languages
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -42,6 +45,7 @@ set ignorecase
 set smartcase
 
 set splitbelow
+set splitright
 set hidden
 set hlsearch
 set mouse=a
@@ -60,7 +64,7 @@ let g:netrw_banner = 0
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/snippets"]
+let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/UltiSnips"]
 
 autocmd FileType c setlocal noet ts=8 sw=8
 autocmd FileType python setlocal et ts=4 sw=4
@@ -71,19 +75,35 @@ autocmd FileType js setlocal et ts=2 sw=2
 " fzf
 nnoremap <leader>d :GFiles<cr>
 nnoremap <leader>f :Files<cr>
-nnoremap <leader>l :Lines<cr>
-nnoremap <leader><C-l> :BLines<cr>
+nnoremap <leader>l :BLines<cr>
+nnoremap <leader><C-l> :Lines<cr>
 nnoremap <leader>t :Tags<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>r :BTags<cr>
+nnoremap <leader>x :Commands<cr>
 
 nnoremap <leader>k :Black<cr>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" coc
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" if hidden is not set, TextEdit might fail.
+set hidden
 
-set statusline^=%{coc#status()}
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+let g:netrw_list_hide= '.*\.swp$,.DS_Store,__pycache__,'
