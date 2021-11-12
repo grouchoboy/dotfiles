@@ -21,7 +21,11 @@
   :config
   (load-theme 'nord t))
 
-(set-face-attribute 'default nil :font "Monaco-18")
+(defun font-exists? (font-to-test)
+  (if (null (member font-to-test (font-family-list))) nil t))
+
+(if (font-exists? "JetBrains Mono")
+  (set-face-attribute 'default nil :font "JetBrains Mono Medium-19"))
 
 (setq inhibit-startup-message t)
 (if window-system (scroll-bar-mode -1))
