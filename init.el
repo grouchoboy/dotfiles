@@ -30,6 +30,11 @@
 (setq column-number-mode 1)
 (setq-default fill-column 80)
 
+;; encryption
+(require 'epa-file)
+(custom-set-variables '(epg-gpg-program "/usr/local/bin/gpg"))
+(epa-file-enable)
+
 ;; keybindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
