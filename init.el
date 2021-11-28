@@ -34,6 +34,9 @@
 (setq column-number-mode 1)
 (setq-default fill-column 80)
 
+;; Highligh the pair of the current parens
+(show-paren-mode t)
+
 ;; encryption
 (require 'epa-file)
 (custom-set-variables '(epg-gpg-program "/usr/local/bin/gpg"))
@@ -46,7 +49,8 @@
   :ensure t
   :demand
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  (evil-set-leader 'normal (kbd "SPC")))
 
 (use-package org
   :ensure t
@@ -65,10 +69,6 @@
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
-;; (use-package evil-lispy
-;;    :ensure t
-;;    :hook (emacs-lisp-mode . evil-lispy-mode))
-
 (use-package which-key
   :ensure t
   :config
@@ -79,8 +79,7 @@
 
 (use-package lispy
   :ensure t
-  :hook (emacs-lisp-mode . lispy-mode)
-  )
+  :hook (emacs-lisp-mode . lispy-mode))
 
 (use-package lispyville
   :ensure t
@@ -90,10 +89,21 @@
    (lisp-mode . lispyville-mode))
   :config
   (lispyville-set-key-theme
-   '(operators c-w additional additional-insert commentary slurp/barf-cp wrap)))
+   '(operators
+     c-w
+     additional
+     additional-insert
+     additional-motions
+     commentary
+     slurp/barf-cp
+     wrap
+     prettify)))
 
 (use-package rainbow-delimiters
-  :ensure t)
+  :ensure t
+  :hook
+  ((emacs-lisp-mode . rainbow-delimiters-mode)
+   (lisp-mode . rainbow-delimiters-mode)))
 
 (use-package counsel
   :ensure t
