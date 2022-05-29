@@ -140,3 +140,11 @@
 ;; Configure SBCL as the Lisp program for SLIME.
 (add-to-list 'exec-path "/usr/local/bin")
 (setq inferior-lisp-program "sbcl")
+
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+	 ("\\.md\\'" . markdown-mode)
+	 ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
