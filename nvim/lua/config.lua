@@ -11,6 +11,8 @@ require('packer').startup(function()
 	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   	use 'L3MON4D3/LuaSnip' -- Snippets plugin
 	use "rafamadriz/friendly-snippets"
+	use "onsails/lspkind.nvim"
+	use "hrsh7th/cmp-nvim-lsp-document-symbol"
 end)
 
 -- set tabstop=4
@@ -34,6 +36,8 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -49,6 +53,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', 'g0', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
+  
 end
 
 local has_words_before = function()
@@ -63,6 +69,8 @@ local cmp = require'cmp'
 luasnip = require('luasnip')
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./my_snippets" } })
+
+local lspkind = require('lspkind')
 
 cmp.setup({
 	snippet = {
@@ -81,7 +89,7 @@ cmp.setup({
       }),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       --luasnip
-      ["<Tab>"] = cmp.mapping(function(fallback)
+     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
@@ -106,13 +114,22 @@ cmp.setup({
     },
     sources = {
       { name = 'nvim_lsp' },
-      -- { name = 'vsnip' }, -- For vsnip users.
 	  { name = "luasnip" },
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer' },
     },
+	formatting = {
+		format = lspkind.cmp_format({
+    	mode = "symbol_text",
+    	menu = ({
+			  buffer = "[Buffer]",
+			  nvim_lsp = "[LSP]",
+			  luasnip = "[LuaSnip]",
+			  nvim_lua = "[Lua]",
+			  -- latex_symbols = "[Latex]",
+    	})
+  	}),	
+	},
 })
 
 cmp.setup.filetype({ 'markdown' }, {
@@ -129,6 +146,14 @@ cmp.setup.cmdline(':', {
 		})
 })
 
+cmp.setup.cmdline('/', {
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp_document_symbol' }
+	}, {
+		name = 'buffer'
+	})
+})
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -139,7 +164,6 @@ cmp.setup.cmdline(':', {
 		  analyses = {
 			  unusedparams = true,
 			},
-		  staticcheck = true,
 		  experimentalPostfixCompletions = true,
 		  }
   }}
@@ -154,4 +178,17 @@ for ls, settings in pairs(servers) do
 	capabilities = capabilities
   }
 end
+
+-- Remove icons from the sign column (gutter)
+vim.cmd [[
+  highlight! DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
+  highlight! DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
+  highlight! DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
+  highlight! DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
+ ]]
+ -- Highligh line number (copy inside vim.cmd to activate)
+ -- sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+  -- sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+  -- sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+  -- sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
 

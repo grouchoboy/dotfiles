@@ -10,9 +10,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
+Plug 'vim-test/vim-test'
 " Markdown
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -37,6 +39,8 @@ set mouse=a
 set number
 set ignorecase
 set smartcase
+set inccommand=nosplit
+set signcolumn=yes
 
 set termguicolors
 colorscheme nord
@@ -47,6 +51,13 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_keepj="keepj"
 let g:netrw_list_hide= '.*\.swp$,.DS_Store,__pycache__,'
+
+" Backup
+set undofile
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set backup
+set noswapfile
 
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -64,6 +75,10 @@ nnoremap <C-l> <C-w>l
 " Move visual block selection with <C-[jk]> in visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '>-2<CR>gv=gv
+
+" Use Ctrl-[ as Esc in neovim terminal mode
+tnoremap <C-[> <C-\><C-n>
+"tnoremap <Esc> <C-\><C-n>
 
 " fzf
 nnoremap <C-p>f :Files<cr>
