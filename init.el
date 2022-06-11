@@ -1,8 +1,6 @@
-(setq user-full-name "Manuel Pascual Luna")
-
 (require 'package)
 (setq package-enable-at-startup nil)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa". "https://melpa.org/packages/"))
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -15,9 +13,11 @@
   (require 'use-package))
 
 (electric-pair-mode 1)
+(setq mac-command-modifier 'meta)
 
 (use-package nord-theme
   :ensure t
+  :demand
   :config
   (load-theme 'nord t))
 
@@ -25,22 +25,22 @@
   (if (null (member font-to-test (font-family-list))) nil t))
 
 (if (font-exists? "JetBrains Mono")
-  (set-face-attribute 'default nil :font "JetBrains Mono Medium-19"))
+    (set-face-attribute 'default nil :font "JetBrains Mono Medium-15"))
 
+(setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message t)
+(setq initial-scratch-message "")
 (if window-system (scroll-bar-mode -1))
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (setq column-number-mode 1)
 (setq-default fill-column 80)
+(setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
+;(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+;(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-;; Highligh the pair of the current parens
 (show-paren-mode t)
-
-;; encryption
-(require 'epa-file)
-(custom-set-variables '(epg-gpg-program "/usr/local/bin/gpg"))
-(epa-file-enable)
 
 ;; keybindings
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
@@ -52,15 +52,26 @@
   (evil-mode 1)
   (evil-set-leader 'normal (kbd "SPC")))
 
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
 (use-package org
   :ensure t
   :config
-  (setq org-ellipsis " ▾")
-  (setq org-agenda-files '("~/docs/org/"))
+  ;(setq org-ellipsis " ▾")
+  (add-hook 'org-mode-hook (lambda () (company-mode -1)))
+  (setq org-agenda-files '("~/Documents/org/"))
   (setq org-todo-keywords '((sequence "TODO" "IN-PROGRES" "|" "DONE"))))
 
 (use-package magit
-  :ensure t)
+  :ensure t
+  :config
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (setq magit-status-buffer-switch-function 'switch-to-buffer))
 
 (use-package projectile
   :ensure t
@@ -73,37 +84,6 @@
   :ensure t
   :config
   (which-key-mode))
-
-(use-package slime
-  :ensure t)
-
-(use-package lispy
-  :ensure t
-  :hook (emacs-lisp-mode . lispy-mode))
-
-(use-package lispyville
-  :ensure t
-  :hook
-  ((emacs-lisp-mode . lispyville-mode)
-   (lispy-mode . lispyville-mode)
-   (lisp-mode . lispyville-mode))
-  :config
-  (lispyville-set-key-theme
-   '(operators
-     c-w
-     additional
-     additional-insert
-     additional-motions
-     commentary
-     slurp/barf-cp
-     wrap
-     prettify)))
-
-(use-package rainbow-delimiters
-  :ensure t
-  :hook
-  ((emacs-lisp-mode . rainbow-delimiters-mode)
-   (lisp-mode . rainbow-delimiters-mode)))
 
 (use-package counsel
   :ensure t
@@ -123,28 +103,58 @@
   (global-set-key (kbd "C-c v") 'ivy-push-view)
   (global-set-key (kbd "C-c V") 'ivy-pop-view))
 
-; M-x all-the-icons-install-fonts
-(use-package all-the-icons
+(use-package yaml-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+
+;; languages
+(use-package go-mode
+  :ensure t
+  :mode "\\.go\\'")
+
+(use-package elixir-mode
   :ensure t)
 
-(use-package doom-modeline
+;; LSP
+(use-package lsp-mode
   :ensure t
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+  :init
+  ;; set prefix for:w
+  ;;lsp-command-keymap (few alternatives - "C-l", "C-c l"))
+  (setq lsp-keymap-prefix "C-c l")
+  (add-to-list 'exec-path "~/Dev/elixir-ls")
+  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+         (go-mode . lsp)
+	 (elixir-mode . lsp)
+         ;; if you want which-key integration
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+(use-package company
+  :ensure t 
+  ;; :bind ("<tab>" . company-indent-or-complete-common)
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
+  ;(global-set-key (kbd "TAB") #'company-indent-or-complete-common))
+
+(use-package lsp-ivy
+  :ensure t)
+
+(use-package lsp-ui
+  :ensure t)
+
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode)
+;; if you are helm user
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+;; if you are ivy user
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 (defun open-init ()
   "Open the init file"
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-;; Configure SBCL as the Lisp program for SLIME.
-(add-to-list 'exec-path "/usr/local/bin")
-(setq inferior-lisp-program "sbcl")
-
-(use-package markdown-mode
-  :ensure t
-  :commands (markdown-mode gfm-mode)
-  :mode (("README\\.md\\'" . gfm-mode)
-	 ("\\.md\\'" . markdown-mode)
-	 ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
