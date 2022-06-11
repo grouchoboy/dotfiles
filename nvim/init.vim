@@ -14,7 +14,15 @@ Plug 'vim-test/vim-test'
 " Markdown
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+
 Plug 'junegunn/goyo.vim'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
@@ -81,15 +89,15 @@ tnoremap <C-[> <C-\><C-n>
 "tnoremap <Esc> <C-\><C-n>
 
 " fzf
-nnoremap <C-p>f :Files<cr>
+" nnoremap <C-p>f :Files<cr>
 "nnoremap <leader>f :Files<cr>
-nnoremap <C-p>b :Buffers<cr>
+" nnoremap <C-p>b :Buffers<cr>
 "nnoremap <leader>b :Buffers<cr>
-nnoremap <C-p>l :BLines<cr>
+" nnoremap <C-p>l :BLines<cr>
 "nnoremap <leader>l :BLines<cr>
-nnoremap <C-p>t :Tags<cr>
+" nnoremap <C-p>t :Tags<cr>
 "nnoremap <leader>t :Tags<cr>
-nnoremap <C-p>r :BTags<cr>
+" nnoremap <C-p>r :BTags<cr>
 "nnoremap <leader>r :BTags<cr>
 
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -101,5 +109,8 @@ if executable('rg')
 	set grepprg=rg\ --vimgrep
 endif
 
+highlight TelescopeSelection gui=bold " selected item
+
 lua require('config')
+lua require('plugins.telescope')
 
