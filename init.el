@@ -136,6 +136,7 @@
   :ensure t 
   ;; :bind ("<tab>" . company-indent-or-complete-common)
   :config
+  (add-hook 'org-mode-hook (lambda () (company-mode -1)))
   (add-hook 'after-init-hook 'global-company-mode))
   ;(global-set-key (kbd "TAB") #'company-indent-or-complete-common))
 
