@@ -1,0 +1,18 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 16,
+    "editor.fontFamily": "JetBrains Mono Medium",
+    "editor.parameterHints.enabled": false, 
+    "workbench.colorTheme": "Nord",
+    "terminal.integrated.fontFamily": "JetBrains Mono Medium",
+    "terminal.integrated.fontSize": 20,
+    "workbench.startupEditor": "none",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "markdown.preview.fontSize": 24,
+    "editor.rulers": [
+        80
+    ],
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.activityBar.visible": false
+}
