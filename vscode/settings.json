@@ -14,5 +14,6 @@
         80
     ],
     "go.toolsManagement.autoUpdate": true,
+    "workbench.statusBar.visible": false,
     "workbench.activityBar.visible": false
 }

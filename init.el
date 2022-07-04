@@ -64,7 +64,7 @@
   :config
   ;(setq org-ellipsis " ▾")
   (add-hook 'org-mode-hook (lambda () (company-mode -1)))
-  (setq org-agenda-files '("~/Documents/org/"))
+  (setq setq-agenda-files '("~/Documents/org/"))
   (setq org-todo-keywords '((sequence "TODO" "IN-PROGRES" "|" "DONE"))))
 
 (use-package magit
