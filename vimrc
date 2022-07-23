@@ -1,71 +1,42 @@
-set nocompatible
+call plug#begin()
 
-call plug#begin('~/.vim/plugged')
-
+Plug 'arcticicestudio/nord-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug '/usr/local/opt/fzf'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mattn/emmet-vim'
-"Plug 'SirVer/ultisnips'
-Plug 'wlangstroth/vim-racket'
-Plug 'chriskempson/base16-vim'
-Plug 'junegunn/goyo.vim'
-"Plug 'psf/black'
 
 call plug#end()
 
-filetype plugin indent on
 syntax on
-
-set laststatus=2
-set t_Co=256
+filetype on
+filetype plugin on
+filetype indent on
 
 set termguicolors
-"colorscheme base16-ocean
+colorscheme nord
+let g:airline_theme='nord'
 
-set encoding=utf-8
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set magic
-"set number
+"shut up
+set noerrorbells
 
-set ruler
-"set cc=80
-set nowrap
+"set clipboard+=unnamedplus
 
-set ignorecase
-set smartcase
-
-set splitbelow
-set hidden
-set hlsearch
-set mouse=a
-set nobackup
-
-set nofoldenable
-set lazyredraw
-
-let mapleader="\<space>"
-
-" netrw
+"netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
+let g:netrw_keepj = "keepj"
+let g:netrw_list_hide = '*\.swp$,.DS_Store,__pychache__'
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snippets"]
 
-autocmd FileType c setlocal noet ts=8 sw=8
-autocmd FileType python setlocal et ts=4 sw=4
-autocmd FileType html setlocal et ts=2 sw=2
+" Mappings
+let mapleader="\<space>"
+
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " fzf
-nnoremap <leader>d :GFiles<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>l :BLines<cr>
-nnoremap <leader><C-l> :Lines<cr>
-nnoremap <leader>t :Tags<cr>
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>r :BTags<cr>
+nnoremap <C-p>f :Files<cr>
+nnoremap <C-p>b :Buffers<cr>
+nnoremap <C-p>l :BLines<cr>
 
