@@ -3,10 +3,10 @@
     "editor.minimap.enabled": false,
     "editor.fontSize": 16,
     "editor.fontFamily": "JetBrains Mono Medium",
-    "editor.parameterHints.enabled": false, 
+    "editor.parameterHints.enabled": false,
     "workbench.colorTheme": "Nord",
     "terminal.integrated.fontFamily": "JetBrains Mono Medium",
-    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.fontSize": 16,
     "workbench.startupEditor": "none",
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
     "markdown.preview.fontSize": 24,
@@ -14,6 +14,11 @@
         80
     ],
     "go.toolsManagement.autoUpdate": true,
-    "workbench.statusBar.visible": false,
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "emmet.includeLanguages": {
+        "html-eex": "html"
+    },
+    "[elixir]": {
+        "editor.defaultFormatter": "JakeBecker.elixir-ls"
+    }
 }
