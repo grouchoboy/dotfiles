@@ -14,11 +14,11 @@
         80
     ],
     "go.toolsManagement.autoUpdate": true,
-    "workbench.activityBar.visible": false,
     "emmet.includeLanguages": {
         "html-eex": "html"
     },
     "[elixir]": {
         "editor.defaultFormatter": "JakeBecker.elixir-ls"
-    }
+    },
+    "workbench.activityBar.visible": false
 }

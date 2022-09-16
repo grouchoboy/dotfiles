@@ -32,6 +32,14 @@
 (setq column-number-mode 1)
 (setq-default fill-column 80)
 (setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
+(show-paren-mode t)
+
+(use-package evil
+  :ensure t
+  :demand
+  :config
+  (evil-mode 1)
+  (evil-set-leader 'normal (kbd "SPC")))
 
 (use-package org
   :ensure t
@@ -96,6 +104,12 @@
 
 (use-package markdown-mode
   :ensure t)
+
+;; keybindings
+
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; custom functions
 
 (defun open-init()
   "Open the init file"
