@@ -20,5 +20,8 @@
     "[elixir]": {
         "editor.defaultFormatter": "JakeBecker.elixir-ls"
     },
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "files.exclude": {
+        "**/*.beam": true,
+    }
 }

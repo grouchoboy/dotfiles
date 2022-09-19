@@ -105,6 +105,17 @@
 (use-package markdown-mode
   :ensure t)
 
+(use-package lsp-mode
+  :ensure t
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  (add-to-list 'exec-path "~/Dev/elixir-ls")
+  :hook
+  ((elixir-mode . lsp)
+   (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+  
+
 ;; keybindings
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
