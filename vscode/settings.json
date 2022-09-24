@@ -9,7 +9,7 @@
     "terminal.integrated.fontSize": 16,
     "workbench.startupEditor": "none",
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-    "markdown.preview.fontSize": 24,
+    "markdown.preview.fontSize": 16,
     "editor.rulers": [
         80
     ],
