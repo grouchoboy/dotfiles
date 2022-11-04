@@ -17,10 +17,15 @@
 (electric-pair-mode 1)
 (setq mac-command-modifier 'meta)
 
-(use-package nord-theme
-  :ensure t
-  :config
-  (load-theme 'nord t))
+;(use-package nord-theme
+;  :ensure t
+;  :config
+;  (load-theme 'nord t))
+
+(use-package nano-theme
+     :ensure t
+     :config
+     (nano-light))
 
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
@@ -97,22 +102,22 @@
 
 ;; Languages
 
+(use-package erlang
+  :ensure t)
+
 (use-package elixir-mode
+  :ensure t)
+
+(use-package racket-mode
   :ensure t)
 
 (use-package markdown-mode
   :ensure t)
 
-(use-package lsp-mode
+(use-package exec-path-from-shell
   :ensure t
-  :init
-  (setq lsp-keymap-prefix "C-c l")
-  (add-to-list 'exec-path "~/Dev/elixir-ls")
-  :hook
-  ((elixir-mode . lsp)
-   (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
-  
+  :config
+  (exec-path-from-shell-initialize))
 
 ;; keybindings
 
