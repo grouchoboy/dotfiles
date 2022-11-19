@@ -25,12 +25,13 @@
 (use-package nano-theme
      :ensure t
      :config
-     (nano-light))
+     (nano-dark))
 
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message "")
+;(setq initial-buffer-choice t)
 (if window-system (scroll-bar-mode -1))
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -44,8 +45,27 @@
   :ensure t
   :demand
   :config
-  (evil-mode 1)
-  (evil-set-leader 'normal (kbd "SPC")))
+  (evil-mode 1))
+
+(use-package general
+  :ensure t
+  :config
+  (general-create-definer my-leader-def
+    :states 'normal
+    :prefix "SPC"))
+
+;; keybindings
+(my-leader-def
+  :states 'normal
+  :keymaps 'override
+  ;; window management
+  "x 1" 'delete-other-windows
+  "x 3" 'split-window-right
+  "x o" 'other-window
+  "x x" 'kill-buffer-and-window
+
+  ;; find file
+  "x f" 'find-file)
 
 (use-package org
   :ensure t
@@ -63,13 +83,24 @@
   :ensure t
   :config
   (projectile-mode +1)
-  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (my-leader-def
+    :states 'normal
+    :keymaps 'override
+    "p" 'projectile-command-map
+    "f" 'projectile-find-file
+    "b" 'projectile-switch-to-buffer)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
 
 (use-package counsel
   :ensure t
   :config
   (ivy-mode 1)
+  (my-leader-def
+    :states 'normal
+    :keymaps 'override
+    "s" 'swiper-isearch
+    "x b" 'ivy-switch-buffer)
   (global-set-key (kbd "C-s") 'swiper-isearch)
   (global-set-key (kbd "M-x") 'counsel-M-x)
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
@@ -83,12 +114,6 @@
   (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
   (global-set-key (kbd "C-c v") 'ivy-push-view)
   (global-set-key (kbd "C-c V") 'ivy-pop-view))
-
-(use-package company
-  :ensure t 
-  :config
-  (add-hook 'org-mode-hook (lambda () (company-mode -1)))
-  (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package which-key
   :ensure t
@@ -106,7 +131,18 @@
   :ensure t)
 
 (use-package elixir-mode
-  :ensure t)
+  :ensure t
+
+  :hook
+  ((elixir-mode . company-mode)
+   (elixir-mode . yas-minor-mode))
+
+  :config
+  (setq-local company-backends '(company-capf))
+  (setq-local company-transformers nil))
+
+  ;:config
+  ;(add-hook 'elixir-mode-hook (lambda () (company-mode 1))))
 
 (use-package racket-mode
   :ensure t)
@@ -118,6 +154,53 @@
   :ensure t
   :config
   (exec-path-from-shell-initialize))
+
+(use-package yasnippet
+  :ensure t
+
+  :custom
+  (yas-verbosity 2)
+  (yas-wrap-around-region t)
+  
+  :config
+  (yas-reload-all)
+  (yas-global-mode))
+
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet)
+
+(use-package company
+  :ensure t 
+  :after yasnippet
+
+  :hook
+  (after-init . global-company-mode)
+
+  :init
+  (setq company-minimum-prefix-length 2)
+  (setq company-idle-delay 0)
+  (setq company-show-numbers t)
+  (setq company-backend '((company-capf :with company-yasnippet)))
+
+  :bind
+  (("C-c y" . company-yasnippet))
+
+  :config
+  ;(add-hook 'org-mode-hook (lambda () (company-mode -1))))
+  )
+
+(use-package eglot
+  :ensure t
+
+  :after yasnippet
+
+  :config
+  (setq eglot-ignored-server-capabilites '(:documentHighlightProvider)))
+
+(add-hook 'elixir-mode-hook 'eglot-ensure)
+(add-to-list 'eglot-server-programs 'elixir-mode "~/.emacs.d/elixir-ls/release/language_server.sh")
+
 
 ;; keybindings
 

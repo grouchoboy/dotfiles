@@ -1,9 +1,12 @@
 {
     "security.workspace.trust.untrustedFiles": "open",
+	"workbench.settings.useSplitJSON": true,
     "editor.minimap.enabled": false,
     "editor.fontSize": 16,
     "editor.fontFamily": "JetBrains Mono Medium",
     "editor.parameterHints.enabled": false,
+    "editor.inlayHints.enabled": "off",
+    "editor.hover.enabled": true,
     "workbench.colorTheme": "Nord",
     "terminal.integrated.fontFamily": "JetBrains Mono Medium",
     "terminal.integrated.fontSize": 16,
@@ -23,5 +26,11 @@
     "files.exclude": {
         "**/*.beam": true,
     },
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "elixirLS.signatureAfterComplete": false,
 }
