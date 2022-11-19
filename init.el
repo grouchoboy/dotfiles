@@ -64,8 +64,14 @@
   "x o" 'other-window
   "x x" 'kill-buffer-and-window
 
+  ;; buffers
+  "x k" 'kill-buffer
+
   ;; find file
-  "x f" 'find-file)
+  "x f" 'find-file
+
+  ;; eval
+  "x e" 'eval-last-sexp)
 
 (use-package org
   :ensure t
