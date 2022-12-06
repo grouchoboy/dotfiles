@@ -7,7 +7,7 @@
     "editor.parameterHints.enabled": false,
     "editor.inlayHints.enabled": "off",
     "editor.hover.enabled": true,
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Dracula",
     "terminal.integrated.fontFamily": "JetBrains Mono Medium",
     "terminal.integrated.fontSize": 16,
     "workbench.startupEditor": "none",
