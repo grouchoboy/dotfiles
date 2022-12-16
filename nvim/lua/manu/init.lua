@@ -1,3 +1,4 @@
+require("manu.set")
 require("manu.remap")
 
 return require('packer').startup(function(use)
@@ -14,6 +15,8 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
      
     use("folke/zen-mode.nvim")
+    use("ThePrimeagen/harpoon")
+    use("windwp/nvim-autopairs")
     
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
