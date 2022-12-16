@@ -203,9 +203,7 @@
 
 (use-package eglot
   :ensure t
-
   :after yasnippet
-
   :config
   (setq eglot-ignored-server-capabilites '(:documentHighlightProvider)))
 
