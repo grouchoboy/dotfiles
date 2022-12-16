@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
     use("folke/zen-mode.nvim")
     use("ThePrimeagen/harpoon")
     use("windwp/nvim-autopairs")
+    use("tpope/vim-fugitive")
     
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
