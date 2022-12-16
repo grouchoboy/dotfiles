@@ -17,20 +17,20 @@
 (electric-pair-mode 1)
 (setq mac-command-modifier 'meta)
 
-(use-package dracula-theme
-  :ensure t
-  :config
-  (load-theme 'dracula t))
+;(use-package dracula-theme
+;  :ensure t
+;  :config
+;  (load-theme 'dracula t))
 
 ;(use-package nord-theme
 ;  :ensure t
 ;  :config
 ;  (load-theme 'nord t))
 
-;(use-package nano-theme
-;     :ensure t
-;     :config
-;     (nano-dark))
+(use-package nano-theme
+     :ensure t
+     :config
+     (nano-light))
 
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)

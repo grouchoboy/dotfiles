@@ -6,10 +6,12 @@ vim.opt.nu = true
 vim.opt.errorbells = true
 
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -28,8 +30,12 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-vim.g.nord_italic = false
-vim.opt.background = 'dark'
-vim.opt.termguicolors = true
-vim.o.showtabline = 2
-vim.cmd[[colorscheme nord]]
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ffg', builtin.git_files , {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fc', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
