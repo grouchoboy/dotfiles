@@ -17,6 +17,12 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
+cmp.setup.filetype('markdown', {
+    completion = {
+        autocomplete = false,
+    },
+})
+
 lsp.set_preferences({
   sign_icons = { }
 })
