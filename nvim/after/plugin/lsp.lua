@@ -17,6 +17,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
+require("luasnip.loaders.from_vscode").lazy_load({paths = "~/dotfiles/nvim/snippets/"})
+
 cmp.setup.filetype('markdown', {
     completion = {
         autocomplete = false,

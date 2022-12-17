@@ -1,0 +1,10 @@
+{
+    "echo": {
+        "prefix": "echo",
+        "body": "<%= $0 %>"
+    },
+    "tag": {
+        "prefix": "tag",
+        "body": "<% $0 %>"
+    }
+}

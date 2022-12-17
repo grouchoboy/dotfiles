@@ -1,0 +1,12 @@
+{
+    "name": "my-snippets",
+    "engine": { "vscode": "^1.11.0"},
+    "contributes": {
+        "snippets": [
+            {
+                "language": "eelixir",
+                "path": "./eelixir.json"
+            }
+        ]
+    }
+}

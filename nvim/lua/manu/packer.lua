@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
     use("windwp/nvim-autopairs")
     use("tpope/vim-fugitive")
 
+    use("elixir-editors/vim-elixir")
+
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
 
