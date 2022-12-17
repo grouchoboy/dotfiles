@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
     use("ThePrimeagen/harpoon")
     use("windwp/nvim-autopairs")
     use("tpope/vim-fugitive")
+    use("mattn/emmet-vim")
 
     use("elixir-editors/vim-elixir")
 

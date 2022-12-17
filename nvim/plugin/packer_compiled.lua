@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/manu/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/Users/manu/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/manu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
