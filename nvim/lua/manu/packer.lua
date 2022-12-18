@@ -4,6 +4,10 @@ return require('packer').startup(function(use)
     use 'shaunsingh/nord.nvim'
 
     use {'dracula/vim', as = 'dracula'}
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
