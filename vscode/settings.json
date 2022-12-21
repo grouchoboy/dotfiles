@@ -33,4 +33,11 @@
         "strings": "off"
     },
     "elixirLS.signatureAfterComplete": false,
+    "window.commandCenter": true,
+    "explorer.autoReveal": false,
+    "explorer.autoRevealExclude": {
+        "**/node_modules": true,
+        "**/bower_components": true
+    },
+    "explorer.compactFolders": false,
 }
