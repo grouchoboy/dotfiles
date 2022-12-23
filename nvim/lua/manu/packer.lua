@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
     use("windwp/nvim-autopairs")
     use("tpope/vim-fugitive")
     use("mattn/emmet-vim")
+    use('numToStr/Comment.nvim')
 
     use("elixir-editors/vim-elixir")
 
