@@ -18,3 +18,7 @@ vim.keymap.set('n', '<leader>li', builtin.lsp_implementations, {})
 vim.keymap.set('n', '<leader>ltd', builtin.lsp_type_definitions, {})
 vim.keymap.set('n', '<leader>lr', builtin.lsp_references, {})
 
+vim.api.nvim_create_user_command("References", builtin.lsp_references, {})
+vim.api.nvim_create_user_command("Implementations", builtin.lsp_implementations, {})
+
+
