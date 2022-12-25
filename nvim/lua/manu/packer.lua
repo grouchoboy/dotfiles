@@ -1,24 +1,26 @@
 return require('packer').startup(function(use)
+    -- packer
     use 'wbthomason/packer.nvim'
 
+    -- themes
     use 'shaunsingh/nord.nvim'
-
     use {'dracula/vim', as = 'dracula'}
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    use('nvim-lua/plenary.nvim')
+    -- telescope
     use {
-        'nvim-telescope/telescope.nvim', branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', branch = '0.1.x'
     }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+    use('TimUntersberger/neogit')
     use("folke/zen-mode.nvim")
     use("ThePrimeagen/harpoon")
     use("windwp/nvim-autopairs")
-    use("tpope/vim-fugitive")
     use("mattn/emmet-vim")
     use('numToStr/Comment.nvim')
 

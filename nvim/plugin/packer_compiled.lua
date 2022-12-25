@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/manu/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  neogit = {
+    loaded = true,
+    path = "/Users/manu/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/TimUntersberger/neogit"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/Users/manu/.local/share/nvim/site/pack/packer/start/nord.nvim",
