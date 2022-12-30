@@ -37,3 +37,27 @@ brew install reattach-to-user-space
 - `tmux a -t <session-name>` attach to session
 - `tmux kill-session -t <session-name>` kill session
 
+## Nvim
+
+## Find
+
+All of the following keybindings are preceded by the leader key
+
+| keybinding | action                    |
+|------------|---------------------------|
+| ff         | find fies                 |
+| fg         | live grep                 |
+| fb         | buffers                   |
+| fl         | fuzzy find current buffer |
+| fh         | help tags                 |
+| c          | commands                  |
+
+| keybinding | action            |
+|------------|-------------------|
+| ls         | document symbols  |
+| lw         | workspace symbols |
+| ld         | definitions       |
+| li         | implementations   |
+| ltd        | type definitions  |
+| lr         | references        |
+

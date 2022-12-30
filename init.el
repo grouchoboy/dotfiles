@@ -17,26 +17,20 @@
 (electric-pair-mode 1)
 (setq mac-command-modifier 'meta)
 
-;(use-package dracula-theme
-;  :ensure t
-;  :config
-;  (load-theme 'dracula t))
+(use-package dracula-theme
+  :ensure t
+  :config
+  (load-theme 'dracula t))
 
-;(use-package nord-theme
-;  :ensure t
-;  :config
-;  (load-theme 'nord t))
-
-(use-package nano-theme
-     :ensure t
-     :config
-     (nano-light))
+;(use-package nano-theme
+;     :ensure t
+;     :config
+;     (nano-light))
 
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message "")
-;(setq initial-buffer-choice t)
 (if window-system (scroll-bar-mode -1))
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -137,10 +131,6 @@
   (setq inferior-lisp-program "sbcl"))
 
 ;; Languages
-
-(use-package erlang
-  :ensure t)
-
 (use-package elixir-mode
   :ensure t
 
