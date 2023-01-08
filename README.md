@@ -39,7 +39,7 @@ brew install reattach-to-user-space
 
 ## Nvim
 
-## Find
+### Find
 
 All of the following keybindings are preceded by the leader key
 
@@ -61,3 +61,10 @@ All of the following keybindings are preceded by the leader key
 | ltd        | type definitions  |
 | lr         | references        |
 
+
+## Emacs
+
+```
+mkir ~/.emacs.d # if emacs conf dir does not exists
+ln -s ~/dotfiles/init.el ~/.emacs.d/init.el
+```

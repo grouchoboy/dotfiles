@@ -26,7 +26,6 @@
     "files.exclude": {
         "**/*.beam": true,
     },
-    "workbench.activityBar.visible": false,
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "off",
@@ -40,4 +39,7 @@
         "**/bower_components": true
     },
     "explorer.compactFolders": false,
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom",
+    "workbench.activityBar.visible": false
 }

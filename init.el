@@ -12,7 +12,11 @@
 (eval-when-compile
   (require 'use-package))
 
-(set-face-attribute 'default nil :font "JetBrains Mono Medium-15")
+(if (eq system-type 'gnu/linux)
+    (set-face-attribute 'default nil :font "JetBrains Mono NL-12"))
+
+(if (eq system-type 'darwin) 
+    (set-face-attribute 'default nil :font "JetBrains Mono Medium-15"))
 
 (electric-pair-mode 1)
 (setq mac-command-modifier 'meta)
@@ -22,10 +26,10 @@
   :config
   (load-theme 'dracula t))
 
-;(use-package nano-theme
-;     :ensure t
-;     :config
-;     (nano-light))
+;; (use-package nano-theme
+;;     :ensure t
+;;     :config
+;;     (nano-light))
 
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)

@@ -43,3 +43,5 @@ ctags
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+nvim/plugin/packer_compiled.lua

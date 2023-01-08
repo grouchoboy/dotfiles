@@ -18,7 +18,7 @@ vim.opt.backup = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
+--vim.opt.termguicolors = true
 
 -- Give more space for displaying messages
 vim.opt.cmdheight = 1

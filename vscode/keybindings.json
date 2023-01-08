@@ -1,5 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
+    // macos
     {
         "key": "cmd+k cmd+b",
         "command": "workbench.action.toggleActivityBarVisibility",
@@ -20,5 +21,28 @@
     {
         "key": "cmd+k cmd+g",
         "command": "workbench.action.focusActiveEditorGroup"
-    }
+    },
+    
+    // linux
+    {
+        "key": "ctrl+k ctrl+b",
+        "command": "workbench.action.toggleActivityBarVisibility",
+        // "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+k ctrl+e",
+        "command": "workbench.files.action.focusFilesExplorer"
+    },
+    {
+        "key": "ctrl+k ctrl+g",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
 ]
