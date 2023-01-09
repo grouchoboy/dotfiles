@@ -21,10 +21,10 @@
 (electric-pair-mode 1)
 (setq mac-command-modifier 'meta)
 
-(use-package dracula-theme
-  :ensure t
-  :config
-  (load-theme 'dracula t))
+;; (use-package dracula-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'dracula t))
 
 ;; (use-package nano-theme
 ;;     :ensure t
@@ -81,6 +81,21 @@
   :config
   (add-hook 'org-mode-hook (lambda() (company-mode -1)))
   (setq setq-agenda-files '("~/Documents/org/")))
+
+(use-package all-the-icons
+  :ensure t)
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold nil
+	doom-themes-enable-italic nil)
+  (load-theme 'doom-spacegrey t)
+  (doom-themes-org-config))
 
 (use-package magit
   :ensure t
