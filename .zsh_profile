@@ -1,0 +1,25 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+source <(kubectl completion zsh)
+
+alias vim='nvim'
+alias em="emacs -nw"
+alias cat="batcat"
+alias c="docker compose"
+alias k="kubectl"
+
+export EDITOR='nvim'
+export BAT_THEME='Dracula'
+
+addToPathFront() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+
+addToPathFront /usr/local/go/bin
+addToPathFront /opt/helix
+
