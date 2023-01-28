@@ -7,3 +7,9 @@ services:
       - "54321:5432"
     environment:
       POSTGRES_PASSWORD: password
+    volumes:
+      - toolbox-database:/var/lib/postgresql/data
+
+volumes:
+  toolbox-database:
+
