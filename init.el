@@ -94,7 +94,7 @@
   :config
   (setq doom-themes-enable-bold nil
 	doom-themes-enable-italic nil)
-  (load-theme 'doom-spacegrey t)
+  (load-theme 'doom-gruvbox t)
   (doom-themes-org-config))
 
 (use-package magit
