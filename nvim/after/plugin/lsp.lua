@@ -4,7 +4,6 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'elixirls',
-    'sumneko_lua',
     'gopls',
 })
 

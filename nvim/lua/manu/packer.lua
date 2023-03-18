@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
     -- themes
     use 'shaunsingh/nord.nvim'
     use {'dracula/vim', as = 'dracula'}
+    use {'ellisonleao/gruvbox.nvim'}
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
