@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  db:
+    build: .
+    ports:
+      - "33066:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    volumes:
+      - toolbox-mysql:/var/lib/mysql
+
+volumes:
+  toolbox-mysql:
