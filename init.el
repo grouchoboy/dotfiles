@@ -73,6 +73,9 @@
   ;; find file
   "x f" 'find-file
 
+  ;; dired
+  "x d" 'dired
+
   ;; eval
   "x e" 'eval-last-sexp)
 
