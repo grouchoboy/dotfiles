@@ -9,6 +9,14 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    use('nvim-lua/plenary.nvim')
+    -- telescope
+    use {
+        'nvim-telescope/telescope.nvim', branch = '0.1.x'
+    }
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+
     use('TimUntersberger/neogit')
     use("folke/zen-mode.nvim")
     use("windwp/nvim-autopairs")

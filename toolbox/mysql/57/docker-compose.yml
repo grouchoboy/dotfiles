@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  db:
+    build: .
+    # image: mysql:5.7-debian
+    ports:
+      - "33067:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      # MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    volumes:
+      - toolbox-mysql57:/var/lib/mysql
+
+volumes:
+  toolbox-mysql57:
