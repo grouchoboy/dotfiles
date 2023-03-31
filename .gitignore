@@ -45,3 +45,4 @@ ehthumbs.db
 Thumbs.db
 
 nvim/plugin/packer_compiled.lua
+nvim-minimal/plugin/packer_compiled.lua
