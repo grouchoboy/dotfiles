@@ -68,16 +68,16 @@
   "x x" 'kill-buffer-and-window
 
   ;; buffers
-  "x k" 'kill-buffer
+  "k" 'kill-buffer
 
   ;; find file
   "x f" 'find-file
 
   ;; dired
-  "x d" 'dired
+  "d" 'dired
 
   ;; eval
-  "x e" 'eval-last-sexp)
+  "e" 'eval-last-sexp)
 
 (use-package org
   :ensure t
