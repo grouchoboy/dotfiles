@@ -41,5 +41,8 @@
     "explorer.compactFolders": false,
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "custom",
-    "workbench.activityBar.visible": false
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.inlineSuggest.enabled": true
 }
