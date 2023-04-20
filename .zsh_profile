@@ -3,16 +3,16 @@ export XDG_CONFIG_HOME=$HOME/.config
 #source /etc/bash_completion.d/fzf
 source /usr/share/fzf/shell/key-bindings.zsh
 
-source <(kubectl completion zsh)
+#source <(kubectl completion zsh)
 
 alias vim='nvim'
 alias em="emacs -nw"
 alias cat="bat"
 alias c="docker compose"
-alias k="kubectl"
+#alias k="kubectl"
 
 export EDITOR='nvim'
-export BAT_THEME='Dracula'
+export BAT_THEME='gruvbox-dark'
 
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then
