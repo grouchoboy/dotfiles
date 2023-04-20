@@ -64,7 +64,7 @@
   ;; window management
   "x 1" 'delete-other-windows
   "x 3" 'split-window-right
-  "x o" 'other-window
+  "o" 'other-window
   "x x" 'kill-buffer-and-window
 
   ;; buffers
