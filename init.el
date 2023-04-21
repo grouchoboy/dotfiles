@@ -21,16 +21,6 @@
 (electric-pair-mode 1)
 (setq mac-command-modifier 'meta)
 
-;; (use-package dracula-theme
-;;   :ensure t
-;;   :config
-;;   (load-theme 'dracula t))
-
-;; (use-package nano-theme
-;;     :ensure t
-;;     :config
-;;     (nano-light))
-
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
@@ -117,7 +107,6 @@
     "f" 'projectile-find-file
     "b" 'projectile-switch-to-buffer)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
-
 
 (use-package counsel
   :ensure t
@@ -221,7 +210,6 @@
 
 (add-hook 'elixir-mode-hook 'eglot-ensure)
 (add-to-list 'eglot-server-programs 'elixir-mode "~/.emacs.d/elixir-ls/release/language_server.sh")
-
 
 ;; keybindings
 

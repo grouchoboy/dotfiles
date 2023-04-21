@@ -68,3 +68,36 @@ All of the following keybindings are preceded by the leader key
 mkir ~/.emacs.d # if emacs conf dir does not exists
 ln -s ~/dotfiles/init.el ~/.emacs.d/init.el
 ```
+
+
+### Keybindings
+
+#### Custom
+
+- Leader key `SPC`
+
+| keybinding | action                |
+|------------|-----------------------|
+| x 1        | delete other windows  |
+| x 3        | split window right    |
+| o          | move to other window  |
+| k          | kill buffer           |
+| x f        | find file             |
+| d          | dired                 |
+| e          | eval last s-expresion |
+
+#### Projectile
+
+| keybinding | action           |
+|------------|------------------|
+| p          | command map      |
+| f          | find file        |
+| b          | switch to buffer |
+
+
+#### Counsel
+
+| keybinding | action        |
+|------------|---------------|
+| s          | isearch       |
+| x b        | switch buffer |
