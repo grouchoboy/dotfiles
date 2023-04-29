@@ -13,7 +13,7 @@
   (require 'use-package))
 
 (if (eq system-type 'gnu/linux)
-    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-12"))
+    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-11.5:weight=semibold"))
 
 (if (eq system-type 'darwin) 
     (set-face-attribute 'default nil :font "JetBrains Mono Medium-15"))
