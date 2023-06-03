@@ -39,6 +39,19 @@ brew install reattach-to-user-space
 
 ## Nvim
 
+Install [packer](https://github.com/wbthomason/packer.nvim)
+
+```sh
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+```sh
+ln -s /home/manu/dotfile/nvim-minimal /home/manu/.config/nvim
+```
+
+Then, open nvim and execute `:PackerSync`
+
 ### Find
 
 All of the following keybindings are preceded by the leader key
