@@ -47,7 +47,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```
 
 ```sh
-ln -s /home/manu/dotfile/nvim-minimal /home/manu/.config/nvim
+ln -s /home/manu/dotfiles/nvim-minimal /home/manu/.config/nvim
 ```
 
 Then, open nvim and execute `:PackerSync`
