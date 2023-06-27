@@ -1,0 +1,3 @@
+[submodule "dotfiles-work"]
+	path = dotfiles-work
+	url = git@gitlab.otters.xyz:manuel.pascual/dotfiles-work.git
