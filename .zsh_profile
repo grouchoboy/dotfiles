@@ -23,3 +23,6 @@ addToPathFront() {
 addToPathFront /usr/local/go/bin
 #addToPathFront /opt/helix
 
+if [ "$HOSTNAME" = cabitron ]; then
+    source $HOME/dotfiles/dotfiles-work/zsh
+fi
