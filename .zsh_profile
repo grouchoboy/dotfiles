@@ -5,13 +5,13 @@ source /usr/share/fzf/shell/key-bindings.zsh
 
 #source <(kubectl completion zsh)
 
-alias vim='nvim'
+#alias vim='nvim'
 alias em="emacs -nw"
 alias cat="bat"
 alias c="docker compose"
 #alias k="kubectl"
 
-export EDITOR='nvim'
+export EDITOR='vim'
 export BAT_THEME='gruvbox-dark'
 
 addToPathFront() {
