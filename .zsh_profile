@@ -26,3 +26,7 @@ addToPathFront /usr/local/go/bin
 if [ "$HOSTNAME" = cabitron ]; then
     source $HOME/dotfiles/dotfiles-work/zsh
 fi
+
+if [ "$HOSTNAME" = 'dev.fedora' ]; then
+	omz theme use arrow
+fi
