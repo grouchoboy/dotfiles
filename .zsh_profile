@@ -21,6 +21,7 @@ addToPathFront() {
 }
 
 addToPathFront /usr/local/go/bin
+addToPathFront $HOME/bin
 #addToPathFront /opt/helix
 
 if [ "$HOSTNAME" = cabitron ]; then
