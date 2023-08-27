@@ -1,6 +1,6 @@
 call plug#begin()
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -15,8 +15,8 @@ filetype plugin on
 filetype indent on
 
 set termguicolors
-colorscheme nord
-let g:airline_theme='nord'
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
 
 "shut up
 set noerrorbells
@@ -36,7 +36,7 @@ let mapleader="\<space>"
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " fzf
-nnoremap <C-p>f :Files<cr>
-nnoremap <C-p>b :Buffers<cr>
-nnoremap <C-p>l :BLines<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>l :BLines<cr>
 
