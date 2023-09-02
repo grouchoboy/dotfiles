@@ -32,3 +32,11 @@ fi
 datadisk() {
 	cd /run/media/manu/DataDisk
 }
+
+nmouse() {
+	gsettings set org.gnome.desktop.peripherals.mouse speed -0.24
+}
+
+gmouse() {
+	gsettings set org.gnome.desktop.peripherals.mouse speed -0.66
+}
