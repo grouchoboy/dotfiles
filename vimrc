@@ -15,6 +15,7 @@ filetype plugin on
 filetype indent on
 
 set termguicolors
+set background=dark
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
 
