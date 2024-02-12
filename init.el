@@ -13,7 +13,7 @@
   (require 'use-package))
 
 (if (eq system-type 'gnu/linux)
-    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-11.5"))
+    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10.5"))
 
 (if (eq system-type 'darwin) 
     (set-face-attribute 'default nil :font "JetBrains Mono Medium-15"))
@@ -87,7 +87,7 @@
   :config
   (setq doom-themes-enable-bold nil
 	doom-themes-enable-italic nil)
-  (load-theme 'doom-gruvbox t)
+  (load-theme 'doom-spacegrey t)
   (doom-themes-org-config))
 
 (use-package magit

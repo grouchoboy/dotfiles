@@ -8,7 +8,8 @@ source /usr/share/fzf/shell/key-bindings.zsh
 #alias vim='nvim'
 alias em="emacs -nw"
 alias cat="bat"
-alias c="podman-compose"
+#alias docker="podman"
+#alias c="podman-compose"
 #alias k="kubectl"
 
 export EDITOR='vim'
@@ -27,7 +28,7 @@ addToPathFront $HOME/.asdf/shims
 
 if [ "$HOSTNAME" = cabitron ]; then
     source $HOME/dotfiles/dotfiles-work/zsh
-    alias c="docker compose"
+    #alias c="docker compose"
 fi
 
 datadisk() {
