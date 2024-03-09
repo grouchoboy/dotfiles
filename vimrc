@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -16,9 +17,9 @@ filetype plugin on
 filetype indent on
 
 set termguicolors
-set background=light
-colorscheme one
-let g:airline_theme='one'
+set background=dark
+colorscheme base16-ocean
+let g:airline_theme='base16_ocean'
 
 "shut up
 set noerrorbells
