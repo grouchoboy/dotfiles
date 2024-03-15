@@ -13,7 +13,7 @@ alias cat="bat"
 #alias k="kubectl"
 
 export EDITOR='vim'
-export BAT_THEME='OneHalfLight'
+export BAT_THEME='base16'
 
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then
