@@ -10,10 +10,10 @@ alias em="emacs -nw"
 alias cat="bat"
 #alias docker="podman"
 #alias c="podman-compose"
-#alias k="kubectl"
+# alias k="kubectl"
 
 export EDITOR='vim'
-export BAT_THEME='OneHalfLight'
+export BAT_THEME='base16'
 
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then
@@ -24,21 +24,12 @@ addToPathFront() {
 addToPathFront /usr/local/go/bin
 addToPathFront $HOME/bin
 addToPathFront $HOME/.asdf/shims
-#addToPathFront /opt/helix
 
 if [ "$HOSTNAME" = cabitron ]; then
     source $HOME/dotfiles/dotfiles-work/zsh
-    #alias c="docker compose"
 fi
 
 datadisk() {
 	cd /run/media/manu/DataDisk
 }
 
-nmouse() {
-	gsettings set org.gnome.desktop.peripherals.mouse speed -0.24
-}
-
-gmouse() {
-	gsettings set org.gnome.desktop.peripherals.mouse speed -0.66
-}
