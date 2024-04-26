@@ -7,7 +7,7 @@ source /usr/share/fzf/shell/key-bindings.zsh
 
 #alias vim='nvim'
 alias em="emacs -nw"
-alias cat="bat"
+# alias cat="bat"
 #alias docker="podman"
 #alias c="podman-compose"
 # alias k="kubectl"
