@@ -13,10 +13,10 @@
   (require 'use-package))
 
 (if (eq system-type 'gnu/linux)
-    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10.5"))
+    (set-face-attribute 'default nil :font "Fira Mono -10.5"))
 
 (if (eq system-type 'darwin) 
-    (set-face-attribute 'default nil :font "JetBrains Mono Medium-15"))
+    (set-face-attribute 'default nil :font "JetBrains Mono-15"))
 
 (electric-pair-mode 1)
 (setq mac-command-modifier 'meta)
@@ -209,7 +209,7 @@
   (setq eglot-ignored-server-capabilites '(:documentHighlightProvider)))
 
 (add-hook 'elixir-mode-hook 'eglot-ensure)
-(add-to-list 'eglot-server-programs 'elixir-mode "~/.emacs.d/elixir-ls/release/language_server.sh")
+;(add-to-list 'eglot-server-programs 'elixir-mode "~/.emacs.d/elixir-ls/release/language_server.sh")
 
 ;; keybindings
 
