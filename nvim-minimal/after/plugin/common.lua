@@ -1,7 +1,7 @@
 vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 vim.o.showtabline = 2
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme base16-ocean")
 
 local autopairs = require("nvim-autopairs")
 autopairs.setup{}
@@ -13,7 +13,7 @@ require("zen-mode").setup {
     window = { 
         width = 90,
         options = {
-            number = true,
+            number = false,
         },
     },
 }

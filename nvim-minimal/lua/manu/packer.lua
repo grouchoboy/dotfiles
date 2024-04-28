@@ -3,7 +3,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- themes
-    use {'ellisonleao/gruvbox.nvim'}
+    use {'chriskempson/base16-vim'}
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
