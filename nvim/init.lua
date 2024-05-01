@@ -83,6 +83,9 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -876,20 +879,23 @@ require('lazy').setup({
     config = true,
   },
   {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    -- build = ':Copilot auth',
-    opts = {
-      suggestion = { enabled = true, auto_trigger = true },
-      panel = { enabled = true },
-      filetypes = {
-        elixir = true,
-        markdown = false,
-        help = true,
-      },
-    },
+    'github/copilot.vim',
   },
-
+  -- {
+  --   'zbirenbaum/copilot.lua',
+  --   cmd = 'Copilot',
+  --   -- build = ':Copilot auth',
+  --   opts = {
+  --     suggestion = { enabled = true, auto_trigger = true },
+  --     panel = { enabled = true },
+  --     filetypes = {
+  --       elixir = true,
+  --       markdown = false,
+  --       help = true,
+  --     },
+  --   },
+  -- },
+  --
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
