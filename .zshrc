@@ -5,4 +5,8 @@ plugins=(git asdf zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/dotfiles/.zsh_profile
+if [ "$HOST" = terminus ]; then
+  source $HOME/dotfiles/mac-zshrc
+else
+  source ~/dotfiles/.zsh_profile
+fi

@@ -5,6 +5,7 @@ source /usr/share/fzf/shell/key-bindings.zsh
 
 #source <(kubectl completion zsh)
 
+export EDITOR='nvim'
 #alias vim='nvim'
 alias em="emacs -nw"
 # alias cat="bat"
