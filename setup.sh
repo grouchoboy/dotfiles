@@ -38,6 +38,18 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ln -s /home/manu/dotfiles/base16-ocean.colorscheme /home/manu/.local/share/konsole
 
 git config --global user.email "manu.pascual.luna@gmail.com"
-git config --global user.name "Manu Pascual Luna"
+gbt config --global user.name "Manu Pascual Luna"
 
 ln -s /home/manu/dotfiles/nvim /home/manu/.config/nvim
+
+# install fira sans
+wget https://github.com/mozilla/Fira/archive/refs/tags/4.202.zip
+unzip 4.202.zip
+
+mkdir -p ~/.local/share/fonts
+cp -r Fira-4.202/ttf ~/.local/share/fonts/FiraSans
+
+## install jetbrains nerd fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d JetBrainsMono
+cp -r JetBrainsMono ~/.local/share/fonts
