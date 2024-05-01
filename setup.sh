@@ -53,3 +53,22 @@ cp -r Fira-4.202/ttf ~/.local/share/fonts/FiraSans
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d JetBrainsMono
 cp -r JetBrainsMono ~/.local/share/fonts
+
+
+## install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+
+sudo dnf group install -y 'Development Tools' 'C Development Tools and Libraries'
+sudo dnf install -y autoconf ncurses-devel wxGTK-devel wxBase openssl-devel java-1.8.0-openjdk-devel  \
+    libiodbc unixODBC-devel erlang-odbc libxslt fop
+
+# install erlang
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf install erlang 26.2.4
+asdf global erlang 26.2.4
+
+# install elixir
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf install elixir 1.16.2
+asdf global elixir 1.16.2
+
