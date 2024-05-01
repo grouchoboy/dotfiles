@@ -875,6 +875,20 @@ require('lazy').setup({
     },
     config = true,
   },
+  {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    -- build = ':Copilot auth',
+    opts = {
+      suggestion = { enabled = true, auto_trigger = true },
+      panel = { enabled = true },
+      filetypes = {
+        elixir = true,
+        markdown = false,
+        help = true,
+      },
+    },
+  },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
