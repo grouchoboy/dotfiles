@@ -80,3 +80,11 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 dnf check-update
 sudo dnf -y install code
 
+
+# silverblue
+
+rpm-ostree install distrobox zsh fzf ripgrep
+
+# inside distrobox
+
+distrobox create --image fedora:40 --init --additional-packages "systemd" -n dev
