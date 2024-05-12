@@ -11,7 +11,21 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    {
+      '<leader>ee',
+      function()
+        require('neo-tree.command').execute { toggle = true }
+      end,
+      desc = 'Explorer NeoTree (Root Dir)',
+    },
+    {
+      '<leader>eb',
+      function()
+        require('neo-tree.command').execute { source = 'buffers', toggle = true }
+      end,
+      desc = 'Buffer Explorer',
+    },
+    -- { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
     filesystem = {
