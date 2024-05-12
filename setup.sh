@@ -24,6 +24,9 @@ chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa && chmod 644 ~/.ssh/id_rsa.pub
 # clone dotfiles
 git clone git@github.com:grouchoboy/dotfiles.git
 
+# ssh autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 ## enable ssh agent
 mkdir -p ~/.config/systemd/user
 ln -s /home/manu/dotfiles/docs/ssh-agent.service /home/manu/.config/systemd/user
@@ -87,4 +90,4 @@ rpm-ostree install distrobox zsh fzf ripgrep
 
 # inside distrobox
 
-distrobox create --image fedora:40 --init --additional-packages "systemd" -n dev
+distrobox create --image fedora:40 -n dev
