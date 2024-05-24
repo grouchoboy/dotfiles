@@ -44,6 +44,7 @@ git config --global user.email "manu.pascual.luna@gmail.com"
 gbt config --global user.name "Manu Pascual Luna"
 
 ln -s /home/manu/dotfiles/nvim /home/manu/.config/nvim
+ln -s /home/manu/dotfiles/lazy-nvim /home/manu/.config/nvim
 
 # install fira sans
 wget https://github.com/mozilla/Fira/archive/refs/tags/4.202.zip
