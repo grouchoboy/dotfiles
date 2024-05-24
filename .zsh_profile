@@ -34,3 +34,7 @@ datadisk() {
 	cd /run/media/manu/DataDisk
 }
 
+if [ -e /run/.containerenv ] ; then
+    alias podman="distrobox-host-exec podman"
+fi
+
