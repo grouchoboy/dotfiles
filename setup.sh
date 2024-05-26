@@ -97,3 +97,9 @@ distrobox create --image fedora:40 -n dev
 # mkdir ~/.config/zellij
 # zellij setup --dump-config > ~/.config/zellij/config.kdl
 ln -s /home/manu/dotfiles/zellij /home/manu/.config/zellij
+
+# alacritty
+ln -s /home/manu/dotfiles/alacritty /home/manu/.config/alacritty
+
+# lazygit
+ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit
