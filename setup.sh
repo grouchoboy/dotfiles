@@ -92,3 +92,8 @@ rpm-ostree install distrobox zsh fzf ripgrep
 # inside distrobox
 
 distrobox create --image fedora:40 -n dev
+
+# configure zellij
+# mkdir ~/.config/zellij
+# zellij setup --dump-config > ~/.config/zellij/config.kdl
+ln -s /home/manu/dotfiles/zellij /home/manu/.config/zellij

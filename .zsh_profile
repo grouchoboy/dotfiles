@@ -24,6 +24,7 @@ addToPathFront() {
 
 addToPathFront /usr/local/go/bin
 addToPathFront $HOME/bin
+addToPathFront $HOME/.local/bin
 addToPathFront $HOME/.asdf/shims
 
 if [ "$HOSTNAME" = cabitron ]; then
