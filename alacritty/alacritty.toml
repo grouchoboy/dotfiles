@@ -1,0 +1,9 @@
+import = [
+	"~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+[font]
+normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
+size = 10
+bold = {style = "Medium"}
+
