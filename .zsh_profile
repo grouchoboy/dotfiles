@@ -13,8 +13,7 @@ alias em="emacs -nw"
 #alias c="podman-compose"
 # alias k="kubectl"
 
-export EDITOR='vim'
-export BAT_THEME='base16'
+export BAT_THEME='Catppuccin Frappe'
 
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then

@@ -103,3 +103,8 @@ ln -s /home/manu/dotfiles/alacritty /home/manu/.config/alacritty
 
 # lazygit
 ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit
+
+# bat
+ln -s /home/manu/dotfiles/bat /home/manu/.config/bat
+wget -P /home/manu/dotfiles/bat/themes https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Frappe.tmTheme
+bat cache --build
