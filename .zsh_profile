@@ -1,5 +1,7 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
+eval "$(~/.local/bin/mise activate zsh)"
+
 #source /etc/bash_completion.d/fzf
 source /usr/share/fzf/shell/key-bindings.zsh
 

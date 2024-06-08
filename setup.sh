@@ -41,7 +41,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ln -s /home/manu/dotfiles/base16-ocean.colorscheme /home/manu/.local/share/konsole
 
 git config --global user.email "manu.pascual.luna@gmail.com"
-gbt config --global user.name "Manu Pascual Luna"
+git config --global user.name "Manu Pascual Luna"
 
 ln -s /home/manu/dotfiles/nvim /home/manu/.config/nvim
 ln -s /home/manu/dotfiles/lazy-nvim /home/manu/.config/nvim
@@ -106,5 +106,5 @@ ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit
 
 # bat
 ln -s /home/manu/dotfiles/bat /home/manu/.config/bat
-wget -P /home/manu/dotfiles/bat/themes https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Frappe.tmTheme
+# wget -P /home/manu/dotfiles/bat/themes https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Frappe.tmTheme
 bat cache --build
