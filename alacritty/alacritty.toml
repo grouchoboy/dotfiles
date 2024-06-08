@@ -7,3 +7,12 @@ normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
 size = 10
 bold = {style = "Medium"}
 
+[window]
+# decorations = "None"
+# padding.x = 16
+# padding.y = 14
+
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullscreen" }
+]
