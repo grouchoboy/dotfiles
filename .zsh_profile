@@ -31,12 +31,16 @@ if [ "$HOSTNAME" = cabitron ]; then
     source $HOME/dotfiles/dotfiles-work/zsh
 fi
 
-if [ "$HOSTNAME" = trantor ]; then
-    eval "$(~/.local/bin/mise activate zsh)"
-    export SHELL="/bin/zsh"
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
-fi
+# if [ "$HOSTNAME" = trantor ]; then
+#     eval "$(~/.local/bin/mise activate zsh)"
+#     export SHELL="/bin/zsh"
+#     source /usr/share/fzf/key-bindings.zsh
+#     source /usr/share/fzf/completion.zsh
+# fi
+#
+datadisk() {
+	cd /run/media/manu/DataDisk
+}
 
 HOST=$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')
 
@@ -46,10 +50,6 @@ if [ "$HOST" = "Arch Linux" ]; then
     source /usr/share/fzf/key-bindings.zsh
     source /usr/share/fzf/completion.zsh
 fi
-
-datadisk() {
-	cd /run/media/manu/DataDisk
-}
 
 if [ -e /run/.containerenv ] ; then
     alias podman="distrobox-host-exec podman"
