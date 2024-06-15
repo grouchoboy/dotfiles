@@ -2,6 +2,11 @@ import = [
 	"~/.config/alacritty/catppuccin-frappe.toml"
 ]
 
+[shell]
+program = "/bin/zsh"
+args = ["-c", "zellij"]
+
+
 [font]
 normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
 size = 10

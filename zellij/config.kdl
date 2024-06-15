@@ -224,6 +224,7 @@ plugins {
 // Default: $SHELL
 //
 // default_shell "fish"
+default_shell "/bin/zsh"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -304,7 +305,7 @@ default_layout "compact"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+mouse_mode false
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
