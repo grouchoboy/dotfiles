@@ -9,7 +9,7 @@ args = ["-c", "zellij"]
 
 [font]
 normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
-size = 10
+size = 12
 bold = {style = "Medium"}
 
 [window]

@@ -1,7 +1,6 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
 #source /etc/bash_completion.d/fzf
-# source /usr/share/fzf/shell/key-bindings.zsh
 
 #source <(kubectl completion zsh)
 
@@ -10,7 +9,6 @@ export EDITOR='nvim'
 alias em="emacs -nw"
 # alias cat="bat"
 #alias docker="podman"
-#alias c="podman-compose"
 # alias k="kubectl"
 
 export BAT_THEME='Catppuccin Frappe'
@@ -44,14 +42,20 @@ datadisk() {
 
 HOST=$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')
 
-if [ "$HOST" = "Arch Linux" ]; then
+if [ "$HOST" = "Fedora Linux" ]; then
+    source /usr/share/fzf/shell/key-bindings.zsh
     eval "$(~/.local/bin/mise activate zsh)"
-    export SHELL="/bin/zsh"
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
 fi
+# if [ "$HOST" = "Arch Linux" ]; then
+#     eval "$(~/.local/bin/mise activate zsh)"
+#     export SHELL="/bin/zsh"
+#     source /usr/share/fzf/key-bindings.zsh
+#     source /usr/share/fzf/completion.zsh
+# fi
 
 if [ -e /run/.containerenv ] ; then
     alias podman="distrobox-host-exec podman"
+    alias c="docker-compose"
+    export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 fi
 
