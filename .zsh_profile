@@ -56,6 +56,6 @@ fi
 if [ -e /run/.containerenv ] ; then
     alias podman="distrobox-host-exec podman"
     alias c="docker-compose"
-    export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+    # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 fi
 
