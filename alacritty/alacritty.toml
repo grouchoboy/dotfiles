@@ -2,8 +2,8 @@ import = [
 	"~/.config/alacritty/catppuccin-frappe.toml"
 ]
 
-[shell]
-program = "/bin/zsh"
+# [shell]
+# program = "/bin/zsh"
 # args = ["-c", "zellij"]
 
 

@@ -222,6 +222,10 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
+default_border pixel 3
+gaps inner 5
+gaps outer 5
+
 # Include configs from 3 locations:
 #  - $DATADIR/sway/config.d
 #  - $SYSCONFDIR/sway/config.d
