@@ -16,7 +16,8 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 # Recommends: foot
-set $term foot
+# set $term foot
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -32,7 +33,8 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg /usr/share/backgrounds/default.png fill
+# output * bg /usr/share/backgrounds/default.png fill
+output * bg /home/manu/Pictures/bkg4.png fill
 #
 # Example configuration:
 #
@@ -67,6 +69,10 @@ output * bg /usr/share/backgrounds/default.png fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input "*" {
+    natural_scroll enabled
+}
+
 ### Key bindings
 #
 # Basics:
@@ -76,6 +82,7 @@ output * bg /usr/share/backgrounds/default.png fill
 
     # Kill focused window
     bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -176,10 +183,12 @@ output * bg /usr/share/backgrounds/default.png fill
 
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+Shift+m move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+    bindsym $mod+m scratchpad show
 #
 # Resizing containers:
 #

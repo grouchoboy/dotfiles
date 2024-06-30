@@ -4,7 +4,7 @@ import = [
 
 [shell]
 program = "/bin/zsh"
-args = ["-c", "zellij"]
+# args = ["-c", "zellij"]
 
 
 [font]

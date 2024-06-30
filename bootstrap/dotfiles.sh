@@ -15,3 +15,6 @@ ln -s /home/manu/dotfiles/waybar /home/manu/.config/waybar
 ln -s $HOME/dotfiles/bat $HOME/.config/bat
 bat cache --build
 cd -
+
+git config --global user.email "manu.pascual.luna@gmail.com"
+git config --global user.name "Manu Pascual Luna"
