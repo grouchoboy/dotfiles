@@ -281,7 +281,8 @@ label:focus {
     /* background-color: #2980b9; */
 
     color: @text;
-    background-color: shade(@base, 0.9);
+    /* background-color: shade(@base, 0.9); */
+    background-color: @mauve;
 }
 
 #tray > .passive {
