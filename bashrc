@@ -84,7 +84,9 @@ if [ "$ID" = "fedora" ]; then
   source /usr/share/fzf/shell/key-bindings.bash
 fi
 
-eval "$(~/.local/bin/mise activate bash)"
+if command -v mise &> /dev/null; then
+  eval "$(mise activate bash)"
+fi
 
 if [ -e /run/.containerenv ] ; then
     alias podman="distrobox-host-exec podman"
