@@ -13,9 +13,9 @@ size = 12
 bold = {style = "Medium"}
 
 [window]
-# decorations = "None"
-# padding.x = 16
-# padding.y = 14
+decorations = "None"
+padding.x = 16
+padding.y = 14
 
 [keyboard]
 bindings = [
