@@ -8,7 +8,8 @@ import = [
 
 
 [font]
-normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
+# normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
+normal = {family = "BlexMono Nerd Font", style = "Medium"}
 size = 12
 bold = {style = "Medium"}
 
