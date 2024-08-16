@@ -23,3 +23,8 @@ sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=Package
 sudo dnf update @sound-and-video \
 sudo dnf install Multimedia
 ```
+
+## Set Firefox to use KDE file picker
+
+about:config 
+widget.use-xdg-desktop-portal.file-picker 1
