@@ -742,6 +742,7 @@ require('lazy').setup({
           ['@variable'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
           ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
           ['@type.builtin'] = { fg = colors.text },
+          ['@tag.attribute'] = { fg = colors.text },
         }
       end,
     },
