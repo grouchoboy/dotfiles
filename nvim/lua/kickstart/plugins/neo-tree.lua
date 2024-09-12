@@ -62,6 +62,7 @@ return {
     -- { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    enable_git_status = false,
     filesystem = {
       window = {
         mappings = {

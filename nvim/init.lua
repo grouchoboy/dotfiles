@@ -141,6 +141,67 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+local function apply_syntax()
+  local colors = {
+    rosewater = '#f2d5cf',
+    flamingo = '#eebebe',
+    pink = '#f4b8e4',
+    mauve = '#ca9ee6',
+    red = '#e78284',
+    maroon = '#ea999c',
+    peach = '#ef9f76',
+    yellow = '#e5c890',
+    green = '#a6d189',
+    teal = '#81c8be',
+    sky = '#99d1db',
+    sapphire = '#85c1dc',
+    blue = '#8caaee',
+    lavender = '#babbf1',
+    text = '#c6d0f5',
+    subtext1 = '#b5bfe2',
+    subtext0 = '#a5adce',
+    overlay2 = '#949cbb',
+    overlay1 = '#838ba7',
+    overlay0 = '#737994',
+    surface2 = '#626880',
+    surface1 = '#51576d',
+    surface0 = '#414559',
+    base = '#303446',
+    mantle = '#292c3c',
+    crust = '#232634',
+  }
+  -- Set general UI highlights
+  vim.api.nvim_set_hl(0, 'Normal', { fg = colors.text, bg = colors.base })
+  vim.api.nvim_set_hl(0, 'Comment', { fg = colors.overlay0 })
+  vim.api.nvim_set_hl(0, 'Constant', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'String', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'Identifier', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'Statement', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'Type', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'Special', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'Function', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'Delimiter', { fg = colors.text })
+  vim.api.nvim_set_hl(0, '@variable', { fg = colors.text })
+  -- vim.api.nvim_set_hl(0, 'ColorColumn', { bg = colors.surface0 })
+  vim.api.nvim_set_hl(0, 'CursorLine', { bg = colors.surface0 })
+  vim.api.nvim_set_hl(0, 'LineNr', { fg = colors.surface1 })
+  vim.api.nvim_set_hl(0, 'StatusLine', { fg = colors.text, bg = colors.mantle })
+  vim.api.nvim_set_hl(0, 'StatusLineNC', { fg = colors.surface1, bg = colors.mantle })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { fg = colors.text, bg = colors.mantle })
+
+  -- Apply highlights for diagnostics (errors, warnings, etc.)
+  vim.api.nvim_set_hl(0, 'DiagnosticError', { fg = colors.red })
+  vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg = colors.yellow })
+  vim.api.nvim_set_hl(0, 'DiagnosticInfo', { fg = colors.blue })
+  vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = colors.cyan })
+
+  -- Neotree
+  vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = colors.text })
+end
+
+apply_syntax()
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -743,6 +804,7 @@ require('lazy').setup({
           ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
           ['@type.builtin'] = { fg = colors.text },
           ['@tag.attribute'] = { fg = colors.text },
+          ['@keyword.function'] = { fg = colors.text },
         }
       end,
     },
@@ -750,7 +812,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'catppuccin-frappe'
+      -- vim.cmd.colorscheme 'catppuccin-frappe'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
