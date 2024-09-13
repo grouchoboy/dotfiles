@@ -141,6 +141,10 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+local function set_hl(group, opts)
+  vim.api.nvim_set_hl(0, group, opts)
+end
+
 local function apply_colors()
   local colors = {
     rosewater = '#f2d5cf',
@@ -171,38 +175,38 @@ local function apply_colors()
     crust = '#232634',
   }
   -- Set general UI highlights
-  vim.api.nvim_set_hl(0, 'Normal', { fg = colors.text, bg = colors.base })
-  vim.api.nvim_set_hl(0, 'Comment', { fg = colors.overlay0 })
-  vim.api.nvim_set_hl(0, 'Constant', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'String', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'Identifier', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'Statement', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'Type', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'Special', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'Function', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'Delimiter', { fg = colors.text })
-  vim.api.nvim_set_hl(0, '@variable', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'Title', { fg = colors.text })
-  -- vim.api.nvim_set_hl(0, 'ColorColumn', { bg = colors.surface0 })
-  vim.api.nvim_set_hl(0, 'CursorLine', { bg = colors.surface0 })
-  vim.api.nvim_set_hl(0, 'LineNr', { fg = colors.surface1 })
-  vim.api.nvim_set_hl(0, 'StatusLine', { fg = colors.text, bg = colors.mantle })
-  vim.api.nvim_set_hl(0, 'StatusLineNC', { fg = colors.surface1, bg = colors.mantle })
-  vim.api.nvim_set_hl(0, 'NormalFloat', { fg = colors.text, bg = colors.mantle })
+  set_hl('Normal', { fg = colors.text, bg = colors.base })
+  set_hl('Comment', { fg = colors.overlay0 })
+  set_hl('Constant', { fg = colors.text })
+  set_hl('String', { fg = colors.text })
+  set_hl('Identifier', { fg = colors.text })
+  set_hl('Statement', { fg = colors.text })
+  set_hl('Type', { fg = colors.text })
+  set_hl('Special', { fg = colors.text })
+  set_hl('Function', { fg = colors.text })
+  set_hl('Delimiter', { fg = colors.text })
+  set_hl('@variable', { fg = colors.text })
+  set_hl('Title', { fg = colors.text })
+  -- set_hl('ColorColumn', { bg = colors.surface0 })
+  set_hl('CursorLine', { bg = colors.surface0 })
+  set_hl('LineNr', { fg = colors.surface1 })
+  set_hl('StatusLine', { fg = colors.text, bg = colors.mantle })
+  set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.mantle })
+  set_hl('NormalFloat', { fg = colors.text, bg = colors.mantle })
 
   -- Apply highlights for diagnostics (errors, warnings, etc.)
-  vim.api.nvim_set_hl(0, 'DiagnosticError', { fg = colors.red })
-  vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg = colors.yellow })
-  vim.api.nvim_set_hl(0, 'DiagnosticInfo', { fg = colors.blue })
-  vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = colors.cyan })
+  set_hl('DiagnosticError', { fg = colors.red })
+  set_hl('DiagnosticWarn', { fg = colors.yellow })
+  set_hl('DiagnosticInfo', { fg = colors.blue })
+  set_hl('DiagnosticHint', { fg = colors.cyan })
 
   -- Neotree
-  vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = colors.text })
-  vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = colors.text })
+  set_hl('NeoTreeDirectoryIcon', { fg = colors.text })
+  set_hl('NeoTreeDirectoryName', { fg = colors.text })
 
   -- Mini Statusline
-  vim.api.nvim_set_hl(0, 'MiniStatuslineModeInsert', { bg = colors.blue })
-  vim.api.nvim_set_hl(0, 'MiniStatuslineModeCommand', { bg = colors.base })
+  set_hl('MiniStatuslineModeInsert', { bg = colors.blue })
+  set_hl('MiniStatuslineModeCommand', { bg = colors.base })
 end
 
 apply_colors()
