@@ -69,7 +69,7 @@ vim.opt.cursorline = true
 vim.opt.guicursor = 'n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20'
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 5
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -141,7 +141,7 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-local function apply_syntax()
+local function apply_colors()
   local colors = {
     rosewater = '#f2d5cf',
     flamingo = '#eebebe',
@@ -182,6 +182,7 @@ local function apply_syntax()
   vim.api.nvim_set_hl(0, 'Function', { fg = colors.text })
   vim.api.nvim_set_hl(0, 'Delimiter', { fg = colors.text })
   vim.api.nvim_set_hl(0, '@variable', { fg = colors.text })
+  vim.api.nvim_set_hl(0, 'Title', { fg = colors.text })
   -- vim.api.nvim_set_hl(0, 'ColorColumn', { bg = colors.surface0 })
   vim.api.nvim_set_hl(0, 'CursorLine', { bg = colors.surface0 })
   vim.api.nvim_set_hl(0, 'LineNr', { fg = colors.surface1 })
@@ -198,9 +199,13 @@ local function apply_syntax()
   -- Neotree
   vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon', { fg = colors.text })
   vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName', { fg = colors.text })
+
+  -- Mini Statusline
+  vim.api.nvim_set_hl(0, 'MiniStatuslineModeInsert', { bg = colors.blue })
+  vim.api.nvim_set_hl(0, 'MiniStatuslineModeCommand', { bg = colors.base })
 end
 
-apply_syntax()
+apply_colors()
 
 -- [[ Configure and install plugins ]]
 --

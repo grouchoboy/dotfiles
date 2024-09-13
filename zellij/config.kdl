@@ -268,25 +268,26 @@ plugins {
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
  themes {
-  catppuccin-frappe {
+  custom-theme {
     bg "#626880" // Surface2
-    fg "#c6d0f5"
+    fg "#c6d0f5" // Text
     red "#e78284"
-    green "#a6d189"
+    // green "#a6d189"
+    green "#8caaee"
     blue "#8caaee"
     yellow "#e5c890"
     magenta "#f4b8e4" // Pink
-    orange "#ef9f76" // Peach
+    orange "#8caaee" // Peach
     cyan "#99d1db" // Sky
     black "#292c3c" // Mantle
-    white "#c6d0f5"
+    white "#c6d0f5" // Text
   }
  }
-
+ //
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "catppuccin-frappe"
+theme "custom-theme"
 
 // The name of the default layout to load on startup
 // Default: "default"
