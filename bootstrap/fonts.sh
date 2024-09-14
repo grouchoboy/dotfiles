@@ -17,9 +17,9 @@ unzip IBMPlexMono.zip -d IMBPlexMono
 cp -r IMBPlexMono ~/.local/share/fonts
 rm -rf IBMPlexMono.zip IMBPlexMono
 
-wget https://go.googlesource.com/image/+archive/master/font/gofont/ttfs.tar.gz
-mkdir -p /tmp/go-fonts
-tar -xvzf ttfs.tar.gz -C /tmp/go-fonts/
-cp -r /tmp/go-fonts/ ~/.local/share/fonts
-cd -
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Go-Mono.zip
+unzip Go-Mono.zip -d Go-Mono
+cp -r Go-Mono ~/.local/share/fonts
+rm -rf Go-Mono.zip Go-Mono
 

@@ -8,8 +8,8 @@ import = [
 
 
 [font]
-normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
-# normal = {family = "BlexMono Nerd Font", style = "Medium"}
+# normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
+normal = {family = "GoMono Nerd Font", style = "Regular"}
 size = 12
 bold = {style = "Medium"}
 
@@ -20,5 +20,5 @@ padding.y = 14
 
 [keyboard]
 bindings = [
-{ key = "F11", action = "ToggleFullscreen" }
+	{ key = "F11", action = "ToggleFullscreen" }
 ]
