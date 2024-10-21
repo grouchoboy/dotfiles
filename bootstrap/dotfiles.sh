@@ -11,6 +11,7 @@ ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit
 
 ln -s /home/manu/dotfiles/sway /home/manu/.config/sway
 ln -s /home/manu/dotfiles/waybar /home/manu/.config/waybar
+ln -s /home/manu/dotfiles/rofi /home/manu/.config/rofi
 
 ln -s $HOME/dotfiles/bat $HOME/.config/bat
 bat cache --build
