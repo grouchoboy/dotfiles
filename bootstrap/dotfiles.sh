@@ -10,6 +10,7 @@ ln -s /home/manu/dotfiles/zellij /home/manu/.config/zellij
 ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit
 
 ln -s /home/manu/dotfiles/sway /home/manu/.config/sway
+ln -s /home/manu/dotfiles/swaylock /home/manu/.config/swaylock
 ln -s /home/manu/dotfiles/waybar /home/manu/.config/waybar
 ln -s /home/manu/dotfiles/rofi /home/manu/.config/rofi
 

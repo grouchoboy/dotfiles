@@ -1,6 +1,3 @@
-import = [
-	"~/.config/alacritty/catppuccin-frappe.toml"
-]
 
 # [shell]
 # program = "/bin/zsh"
@@ -21,4 +18,9 @@ padding.y = 14
 [keyboard]
 bindings = [
 	{ key = "F11", action = "ToggleFullscreen" }
+]
+
+[general]
+import = [
+	"~/.config/alacritty/catppuccin-frappe.toml"
 ]
