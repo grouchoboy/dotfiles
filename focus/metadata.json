@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Name": "Focus",
+        "Description": "Focus right or left window",
+        "Icon": "preferences-system-windows",
+        
+        "Authors": [
+            {
+                "Email": "manu.pascual.luna@gmail.com",
+                "Name": "Manuel Pascual Luna"
+            }
+        ],
+        "Id": "myscript",
+        "Version": "1.0",
+        "License": "GPLv3",
+        "Website": "https://github.com/username/myscript"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}
