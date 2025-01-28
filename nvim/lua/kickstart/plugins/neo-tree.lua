@@ -41,7 +41,7 @@ return {
     {
       '<leader>ef',
       function()
-        require('neo-tree.command').execute { toggle = false, position = 'float' }
+        require('neo-tree.command').execute { toggle = false, position = 'current' }
       end,
       desc = 'Explorer NeoTree (Root Dir)',
     },
