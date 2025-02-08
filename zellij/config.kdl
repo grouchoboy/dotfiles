@@ -299,13 +299,35 @@ plugins {
     black "#e6e9ef" // Mantle
     white "#4c4f69" // Text
   }
+
+custom-gruvbox {
+    fg "#3c3836"
+    bg "#fbf1c7"
+    black "#3c3836"
+    red "#cc241d"
+    green "#98971a"
+    yellow "#d79921"
+    blue "#458588"
+    magenta "#b16286"
+    cyan "#689d6a"
+    white "#fbf1c7"
+    orange "#d65d0e"
+    bright_black "#928374"
+    bright_red "#9d0006"
+    bright_green "#79740e"
+    bright_yellow "#b57614"
+    bright_blue "#076678"
+    bright_magenta "#8f3f71"
+    bright_cyan "#427b58"
+    bright_white "#fbf1c7"
+}
  }
  //
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
 // theme "catppuccin-latte"
-theme "custom-theme"
+theme "custom-gruvbox"
 
 // The name of the default layout to load on startup
 // Default: "default"
