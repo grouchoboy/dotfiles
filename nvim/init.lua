@@ -221,6 +221,7 @@ local function apply_colors()
   set_hl('LineNr', { fg = colors.surface1 })
   set_hl('StatusLine', { fg = colors.text, bg = colors.mantle })
   set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.mantle })
+  set_hl('MatchParen', { fg = colors.base, bg = colors.text })
   -- set_hl('NormalFloat', { fg = colors.text, bg = colors.mantle })
 
   -- Apply highlights for diagnostics (errors, warnings, etc.)
