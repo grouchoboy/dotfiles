@@ -6,7 +6,7 @@
 
 [font]
 # normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
-normal = {family = "GoMono Nerd Font", style = "Regular"}
+normal = {family = "GoMono Nerd Font Mono", style = "Medium"}
 size = 12
 bold = {style = "Medium"}
 
@@ -22,6 +22,5 @@ bindings = [
 
 [general]
 import = [
-	# "~/.config/alacritty/catppuccin-frappe.toml"
 	"~/.config/alacritty/gruvbox.toml"
 ]

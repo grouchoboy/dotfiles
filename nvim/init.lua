@@ -57,8 +57,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.list = false
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -204,62 +204,6 @@ local function apply_colors()
   }
 
   local colors = {
-    -- frappe colors
-    -- rosewater = '#f2d5cf',
-    -- flamingo = '#eebebe',
-    -- pink = '#f4b8e4',
-    -- mauve = '#ca9ee6',
-    -- red = '#e78284',
-    -- maroon = '#ea999c',
-    -- peach = '#ef9f76',
-    -- yellow = '#e5c890',
-    -- green = '#a6d189',
-    -- teal = '#81c8be',
-    -- sky = '#99d1db',
-    -- sapphire = '#85c1dc',
-    -- blue = '#8caaee',
-    -- lavender = '#babbf1',
-    -- text = '#c6d0f5',
-    -- subtext1 = '#b5bfe2',
-    -- subtext0 = '#a5adce',
-    -- overlay2 = '#949cbb',
-    -- overlay1 = '#838ba7',
-    -- overlay0 = '#737994',
-    -- surface2 = '#626880',
-    -- surface1 = '#51576d',
-    -- surface0 = '#414559',
-    -- base = '#303446',
-    -- mantle = '#292c3c',
-    -- crust = '#232634',
-
-    -- latte colors
-    -- rosewater = '#dc8a78',
-    -- flamingo = '#dd7878',
-    -- pink = '#ea76cb',
-    -- mauve = '#8839ef',
-    -- red = '#d20f39',
-    -- maroon = '#e64553',
-    -- peach = '#fe640b',
-    -- yellow = '#df8e1d',
-    -- green = '#40a02b',
-    -- teal = '#179299',
-    -- sky = '#04a5e5',
-    -- sapphire = '#209fb5',
-    -- blue = '#1e66f5',
-    -- lavender = '#7287fd',
-    -- text = '#4c4f69',
-    -- subtext1 = '#5c5f77',
-    -- subtext0 = '#6c6f85',
-    -- overlay2 = '#7c7f93',
-    -- overlay1 = '#8c8fa1',
-    -- overlay0 = '#9ca0b0',
-    -- surface2 = '#acb0be',
-    -- surface1 = '#bcc0cc',
-    -- surface0 = '#ccd0da',
-    -- base = '#eff1f5',
-    -- mantle = '#e6e9ef',
-    -- crust = '#dce0e8',
-
     bg0 = p.light0,
     bg1 = p.light1,
     bg2 = p.light2,
@@ -267,7 +211,8 @@ local function apply_colors()
     bg4 = p.light4,
     fg0 = p.dark0,
     fg1 = p.dark1,
-    text = p.dark1,
+    -- text = p.dark1,
+    text = '#000000',
     base = p.light0_hard,
     fg2 = p.dark2,
     fg3 = p.dark3,
@@ -295,10 +240,11 @@ local function apply_colors()
   -- Set general UI highlights
   set_hl('Normal', { fg = colors.text, bg = colors.base })
   set_hl('Comment', { fg = colors.overlay0 })
-  set_hl('Constant', { fg = colors.fg1 })
-  set_hl('String', { fg = colors.fg1 })
+  set_hl('Constant', { fg = colors.text })
+  set_hl('String', { fg = colors.text })
   set_hl('Identifier', { fg = colors.text })
   set_hl('Statement', { fg = colors.text })
+  set_hl('PreProc', { fg = colors.text })
   set_hl('Type', { fg = colors.text })
   set_hl('Special', { fg = colors.text })
   set_hl('Function', { fg = colors.text })
@@ -306,12 +252,11 @@ local function apply_colors()
   set_hl('@variable', { fg = colors.text })
   set_hl('Title', { fg = colors.text })
   set_hl('Operator', { fg = colors.text })
-  set_hl('CursorLine', { bg = colors.surface0 })
+  set_hl('CursorLine', { bg = colors.surface0, fg = colors.text })
   set_hl('LineNr', { fg = colors.surface1 })
-  set_hl('StatusLine', { fg = colors.text, bg = colors.mantle })
-  set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.mantle })
-  set_hl('MatchParen', { fg = colors.base, bg = colors.text })
-  -- set_hl('NormalFloat', { fg = colors.text, bg = colors.mantle })
+  set_hl('StatusLine', { fg = colors.text, bg = colors.base })
+  set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.base })
+  set_hl('MatchParen', { bg = colors.text, fg = colors.base, bold = false })
 
   -- Apply highlights for diagnostics (errors, warnings, etc.)
   set_hl('DiagnosticError', { fg = colors.red })
@@ -324,15 +269,14 @@ local function apply_colors()
   set_hl('NeoTreeDirectoryName', { fg = colors.text })
 
   -- Mini Statusline
-  set_hl('MiniStatuslineModeInsert', { bg = colors.blue })
+  set_hl('MiniStatuslineModeInsert', { bg = colors.gray })
   set_hl('MiniStatuslineModeCommand', { bg = colors.base })
+  set_hl('MiniStatuslineDevinfo', { bg = colors.overlay0 })
+  set_hl('MiniStatuslineFilename', { bg = colors.overlay0 })
+  set_hl('MiniStatuslineFileinfo', { bg = colors.overlay0 })
 
   set_hl('Visual', { bg = colors.surface0 })
-  -- vim.api.nvim_set_hl(0, 'WhichKey', { link = 'NormalFloat' })
-  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = colors.surface0 })
-  -- vim.api.nvim_set_hl(0, 'WhichKey', { bg = colors.base })
-  -- vim.api.nvim_set_hl(0, 'WhichKeyBorder', { link = 'FloatBorder' })
-  --
+  set_hl('NormalFloat', { bg = colors.surface0 })
   vim.api.nvim_set_hl(0, 'Pmenu', { bg = colors.surface0, fg = colors.text })
 end
 
@@ -908,61 +852,61 @@ require('lazy').setup({
     end,
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    opts = {
-      flavour = 'frappe', -- latte, frappe, macchiato, mocha
-      no_italic = true,
-      no_bold = true,
-      -- custom_highlights = function(colors)
-      --   return {
-      --     Comment = { fg = colors.overlay0 }, -- just comments
-      --     SpecialComment = { link = 'Special' }, -- special things inside a comment
-      --     Constant = { fg = colors.text }, -- (preferred) any constant
-      --     String = { fg = colors.text }, -- a string constant: "this is a string"
-      --     Character = { fg = colors.text }, --  a character constant: 'c', '\n'
-      --     Number = { fg = colors.text }, --   a number constant: 234, 0xff
-      --     Float = { link = 'Number' }, --    a floating point constant: 2.3e10
-      --     Boolean = { fg = colors.text }, --  a boolean constant: TRUE, false
-      --     Identifier = { fg = colors.text }, -- (preferred) any variable name
-      --     Function = { fg = colors.text }, -- function name (also: methods for classes)
-      --     Statement = { fg = colors.mauve }, -- (preferred) any statement
-      --     Conditional = { fg = colors.mauve }, --  if, then, else, endif, switch, etc.
-      --     Repeat = { fg = colors.mauve }, --   for, do, while, etc.
-      --     Label = { fg = colors.sapphire }, --    case, default, etc.
-      --     Operator = { fg = colors.sky }, -- "sizeof", "+", "*", etc.
-      --     Keyword = { fg = colors.mauve }, --  any other keyword
-      --     Exception = { fg = colors.mauve }, --  try, catch, throw
-      --     Type = { fg = colors.text }, -- (preferred) int, long, char, etc.
-      --     Structure = { fg = colors.text }, --  struct, union, enum, etc.
-      --     StorageClass = { fg = colors.text }, -- static, register, volatile, etc.
-      --     Special = { fg = colors.text }, -- (preferred) any special symbol
-      --     ['@constant.builtin'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-      --     ['@variable'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-      --     ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-      --     ['@type.builtin'] = { fg = colors.text },
-      --     ['@tag.attribute'] = { fg = colors.text },
-      --     ['@keyword.function'] = { fg = colors.text },
-      --   }
-      -- end,
-    },
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'catppuccin-latte'
-
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
-    end,
-  },
-
+  -- { -- You can easily change to a different colorscheme.
+  --   -- Change the name of the colorscheme plugin below, and then
+  --   -- change the command in the config to whatever the name of that colorscheme is.
+  --   --
+  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  --   'catppuccin/nvim',
+  --   name = 'catppuccin',
+  --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   opts = {
+  --     flavour = 'frappe', -- latte, frappe, macchiato, mocha
+  --     no_italic = true,
+  --     no_bold = true,
+  --     -- custom_highlights = function(colors)
+  --     --   return {
+  --     --     Comment = { fg = colors.overlay0 }, -- just comments
+  --     --     SpecialComment = { link = 'Special' }, -- special things inside a comment
+  --     --     Constant = { fg = colors.text }, -- (preferred) any constant
+  --     --     String = { fg = colors.text }, -- a string constant: "this is a string"
+  --     --     Character = { fg = colors.text }, --  a character constant: 'c', '\n'
+  --     --     Number = { fg = colors.text }, --   a number constant: 234, 0xff
+  --     --     Float = { link = 'Number' }, --    a floating point constant: 2.3e10
+  --     --     Boolean = { fg = colors.text }, --  a boolean constant: TRUE, false
+  --     --     Identifier = { fg = colors.text }, -- (preferred) any variable name
+  --     --     Function = { fg = colors.text }, -- function name (also: methods for classes)
+  --     --     Statement = { fg = colors.mauve }, -- (preferred) any statement
+  --     --     Conditional = { fg = colors.mauve }, --  if, then, else, endif, switch, etc.
+  --     --     Repeat = { fg = colors.mauve }, --   for, do, while, etc.
+  --     --     Label = { fg = colors.sapphire }, --    case, default, etc.
+  --     --     Operator = { fg = colors.sky }, -- "sizeof", "+", "*", etc.
+  --     --     Keyword = { fg = colors.mauve }, --  any other keyword
+  --     --     Exception = { fg = colors.mauve }, --  try, catch, throw
+  --     --     Type = { fg = colors.text }, -- (preferred) int, long, char, etc.
+  --     --     Structure = { fg = colors.text }, --  struct, union, enum, etc.
+  --     --     StorageClass = { fg = colors.text }, -- static, register, volatile, etc.
+  --     --     Special = { fg = colors.text }, -- (preferred) any special symbol
+  --     --     ['@constant.builtin'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
+  --     --     ['@variable'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
+  --     --     ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
+  --     --     ['@type.builtin'] = { fg = colors.text },
+  --     --     ['@tag.attribute'] = { fg = colors.text },
+  --     --     ['@keyword.function'] = { fg = colors.text },
+  --     --   }
+  --     -- end,
+  --   },
+  --   init = function()
+  --     -- Load the colorscheme here.
+  --     -- Like many other themes, this one has different styles, and you could load
+  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+  --     -- vim.cmd.colorscheme 'catppuccin-latte'
+  --
+  --     -- You can configure highlights by doing something like:
+  --     vim.cmd.hi 'Comment gui=none'
+  --   end,
+  -- },
+  --
   -- Highlight todo, notes, etc in comments
   -- { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -989,7 +933,8 @@ require('lazy').setup({
       --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      -- statusline.setup { use_icons = vim.g.have_nerd_font }
+      statusline.setup { use_icons = false }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
@@ -1037,30 +982,19 @@ require('lazy').setup({
     end,
   },
 
-  {
-    'NeogitOrg/neogit',
-    dependencies = {
-      'nvim-lua/plenary.nvim', -- required
-      'sindrets/diffview.nvim', -- optional - Diff integration
-
-      -- Only one of these is needed, not both.
-      'nvim-telescope/telescope.nvim', -- optional
-    },
-    config = true,
-  },
-  {
-    'github/copilot.vim',
-  },
+  -- {
+  --   'github/copilot.vim',
+  -- },
   -- Lua
-  {
-    'folke/zen-mode.nvim',
-    opts = {
-      backdrop = 1,
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  },
+  -- {
+  --   'folke/zen-mode.nvim',
+  --   opts = {
+  --     backdrop = 1,
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   },
+  -- },
   -- {
   --   'zbirenbaum/copilot.lua',
   --   cmd = 'Copilot',

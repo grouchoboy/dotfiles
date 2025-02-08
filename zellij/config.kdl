@@ -283,24 +283,24 @@ plugins {
   //   white "#c6d0f5" // Text
   // }
 
-  custom-theme {
+  custom-gruvbox {
     bg "#acb0be" // Surface2
     fg "#4c4f69" // Text
     red "#d20f39"
-    // green "#40a02b"
-    green "#8caaee"
+    green "#40a02b"
+    // green "#8caaee"
     // blue "#1e66f5"
     blue "#8caaee"
     yellow "#df8e1d"
     magenta "#ea76cb" // Pink
-    // orange "#fe640b" // Peach
-    orange "#8caaee" // Peach
+    orange "#fe640b" // Peach
+    // orange "#8caaee" // Peach
     cyan "#04a5e5" // Sky
     black "#e6e9ef" // Mantle
     white "#4c4f69" // Text
   }
 
-custom-gruvbox {
+gruvbox-light {
     fg "#3c3836"
     bg "#fbf1c7"
     black "#3c3836"
@@ -327,7 +327,7 @@ custom-gruvbox {
 // Default: default
 //
 // theme "catppuccin-latte"
-theme "custom-gruvbox"
+theme "gruvbox-light"
 
 // The name of the default layout to load on startup
 // Default: "default"
