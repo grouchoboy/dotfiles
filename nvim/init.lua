@@ -147,32 +147,61 @@ end
 
 local function apply_colors()
   local colors = {
-    rosewater = '#f2d5cf',
-    flamingo = '#eebebe',
-    pink = '#f4b8e4',
-    mauve = '#ca9ee6',
-    red = '#e78284',
-    maroon = '#ea999c',
-    peach = '#ef9f76',
-    yellow = '#e5c890',
-    green = '#a6d189',
-    teal = '#81c8be',
-    sky = '#99d1db',
-    sapphire = '#85c1dc',
-    blue = '#8caaee',
-    lavender = '#babbf1',
-    text = '#c6d0f5',
-    subtext1 = '#b5bfe2',
-    subtext0 = '#a5adce',
-    overlay2 = '#949cbb',
-    overlay1 = '#838ba7',
-    overlay0 = '#737994',
-    surface2 = '#626880',
-    surface1 = '#51576d',
-    surface0 = '#414559',
-    base = '#303446',
-    mantle = '#292c3c',
-    crust = '#232634',
+    -- frappe colors
+    -- rosewater = '#f2d5cf',
+    -- flamingo = '#eebebe',
+    -- pink = '#f4b8e4',
+    -- mauve = '#ca9ee6',
+    -- red = '#e78284',
+    -- maroon = '#ea999c',
+    -- peach = '#ef9f76',
+    -- yellow = '#e5c890',
+    -- green = '#a6d189',
+    -- teal = '#81c8be',
+    -- sky = '#99d1db',
+    -- sapphire = '#85c1dc',
+    -- blue = '#8caaee',
+    -- lavender = '#babbf1',
+    -- text = '#c6d0f5',
+    -- subtext1 = '#b5bfe2',
+    -- subtext0 = '#a5adce',
+    -- overlay2 = '#949cbb',
+    -- overlay1 = '#838ba7',
+    -- overlay0 = '#737994',
+    -- surface2 = '#626880',
+    -- surface1 = '#51576d',
+    -- surface0 = '#414559',
+    -- base = '#303446',
+    -- mantle = '#292c3c',
+    -- crust = '#232634',
+
+    -- latte colors
+    rosewater = '#dc8a78',
+    flamingo = '#dd7878',
+    pink = '#ea76cb',
+    mauve = '#8839ef',
+    red = '#d20f39',
+    maroon = '#e64553',
+    peach = '#fe640b',
+    yellow = '#df8e1d',
+    green = '#40a02b',
+    teal = '#179299',
+    sky = '#04a5e5',
+    sapphire = '#209fb5',
+    blue = '#1e66f5',
+    lavender = '#7287fd',
+    text = '#4c4f69',
+    subtext1 = '#5c5f77',
+    subtext0 = '#6c6f85',
+    overlay2 = '#7c7f93',
+    overlay1 = '#8c8fa1',
+    overlay0 = '#9ca0b0',
+    surface2 = '#acb0be',
+    surface1 = '#bcc0cc',
+    surface0 = '#ccd0da',
+    base = '#eff1f5',
+    mantle = '#e6e9ef',
+    crust = '#dce0e8',
   }
   -- Set general UI highlights
   set_hl('Normal', { fg = colors.text, bg = colors.base })
@@ -192,7 +221,7 @@ local function apply_colors()
   set_hl('LineNr', { fg = colors.surface1 })
   set_hl('StatusLine', { fg = colors.text, bg = colors.mantle })
   set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.mantle })
-  set_hl('NormalFloat', { fg = colors.text, bg = colors.mantle })
+  -- set_hl('NormalFloat', { fg = colors.text, bg = colors.mantle })
 
   -- Apply highlights for diagnostics (errors, warnings, etc.)
   set_hl('DiagnosticError', { fg = colors.red })
@@ -207,6 +236,14 @@ local function apply_colors()
   -- Mini Statusline
   set_hl('MiniStatuslineModeInsert', { bg = colors.blue })
   set_hl('MiniStatuslineModeCommand', { bg = colors.base })
+
+  set_hl('Visual', { bg = colors.surface0 })
+  -- vim.api.nvim_set_hl(0, 'WhichKey', { link = 'NormalFloat' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = colors.surface0 })
+  -- vim.api.nvim_set_hl(0, 'WhichKey', { bg = colors.base })
+  -- vim.api.nvim_set_hl(0, 'WhichKeyBorder', { link = 'FloatBorder' })
+  --
+  vim.api.nvim_set_hl(0, 'Pmenu', { bg = colors.surface0, fg = colors.text })
 end
 
 apply_colors()
@@ -274,6 +311,11 @@ require('lazy').setup({
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    opts = {
+      win = {
+        border = 'double',
+      },
+    },
     config = function() -- This is the function that runs, AFTER loading
       require('which-key').setup()
 
@@ -710,7 +752,10 @@ require('lazy').setup({
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        -- completion = { completeopt = 'menu,menuone,noinsert' },
+        completion = {
+          autocomplete = false,
+        },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
@@ -785,43 +830,43 @@ require('lazy').setup({
       flavour = 'frappe', -- latte, frappe, macchiato, mocha
       no_italic = true,
       no_bold = true,
-      custom_highlights = function(colors)
-        return {
-          Comment = { fg = colors.overlay0 }, -- just comments
-          SpecialComment = { link = 'Special' }, -- special things inside a comment
-          Constant = { fg = colors.text }, -- (preferred) any constant
-          String = { fg = colors.text }, -- a string constant: "this is a string"
-          Character = { fg = colors.text }, --  a character constant: 'c', '\n'
-          Number = { fg = colors.text }, --   a number constant: 234, 0xff
-          Float = { link = 'Number' }, --    a floating point constant: 2.3e10
-          Boolean = { fg = colors.text }, --  a boolean constant: TRUE, false
-          Identifier = { fg = colors.text }, -- (preferred) any variable name
-          Function = { fg = colors.text }, -- function name (also: methods for classes)
-          Statement = { fg = colors.mauve }, -- (preferred) any statement
-          Conditional = { fg = colors.mauve }, --  if, then, else, endif, switch, etc.
-          Repeat = { fg = colors.mauve }, --   for, do, while, etc.
-          Label = { fg = colors.sapphire }, --    case, default, etc.
-          Operator = { fg = colors.sky }, -- "sizeof", "+", "*", etc.
-          Keyword = { fg = colors.mauve }, --  any other keyword
-          Exception = { fg = colors.mauve }, --  try, catch, throw
-          Type = { fg = colors.text }, -- (preferred) int, long, char, etc.
-          Structure = { fg = colors.text }, --  struct, union, enum, etc.
-          StorageClass = { fg = colors.text }, -- static, register, volatile, etc.
-          Special = { fg = colors.text }, -- (preferred) any special symbol
-          ['@constant.builtin'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-          ['@variable'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-          ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-          ['@type.builtin'] = { fg = colors.text },
-          ['@tag.attribute'] = { fg = colors.text },
-          ['@keyword.function'] = { fg = colors.text },
-        }
-      end,
+      -- custom_highlights = function(colors)
+      --   return {
+      --     Comment = { fg = colors.overlay0 }, -- just comments
+      --     SpecialComment = { link = 'Special' }, -- special things inside a comment
+      --     Constant = { fg = colors.text }, -- (preferred) any constant
+      --     String = { fg = colors.text }, -- a string constant: "this is a string"
+      --     Character = { fg = colors.text }, --  a character constant: 'c', '\n'
+      --     Number = { fg = colors.text }, --   a number constant: 234, 0xff
+      --     Float = { link = 'Number' }, --    a floating point constant: 2.3e10
+      --     Boolean = { fg = colors.text }, --  a boolean constant: TRUE, false
+      --     Identifier = { fg = colors.text }, -- (preferred) any variable name
+      --     Function = { fg = colors.text }, -- function name (also: methods for classes)
+      --     Statement = { fg = colors.mauve }, -- (preferred) any statement
+      --     Conditional = { fg = colors.mauve }, --  if, then, else, endif, switch, etc.
+      --     Repeat = { fg = colors.mauve }, --   for, do, while, etc.
+      --     Label = { fg = colors.sapphire }, --    case, default, etc.
+      --     Operator = { fg = colors.sky }, -- "sizeof", "+", "*", etc.
+      --     Keyword = { fg = colors.mauve }, --  any other keyword
+      --     Exception = { fg = colors.mauve }, --  try, catch, throw
+      --     Type = { fg = colors.text }, -- (preferred) int, long, char, etc.
+      --     Structure = { fg = colors.text }, --  struct, union, enum, etc.
+      --     StorageClass = { fg = colors.text }, -- static, register, volatile, etc.
+      --     Special = { fg = colors.text }, -- (preferred) any special symbol
+      --     ['@constant.builtin'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
+      --     ['@variable'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
+      --     ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
+      --     ['@type.builtin'] = { fg = colors.text },
+      --     ['@tag.attribute'] = { fg = colors.text },
+      --     ['@keyword.function'] = { fg = colors.text },
+      --   }
+      -- end,
     },
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'catppuccin-frappe'
+      -- vim.cmd.colorscheme 'catppuccin-latte'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'

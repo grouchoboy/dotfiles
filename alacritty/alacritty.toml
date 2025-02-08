@@ -22,5 +22,6 @@ bindings = [
 
 [general]
 import = [
-	"~/.config/alacritty/catppuccin-frappe.toml"
+	# "~/.config/alacritty/catppuccin-frappe.toml"
+	"~/.config/alacritty/catppuccin-latte.toml"
 ]

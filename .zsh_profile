@@ -5,7 +5,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 #source <(kubectl completion zsh)
 
 export EDITOR='nvim'
-#alias vim='nvim'
+alias vim='nvim'
 alias em="emacs -nw"
 alias c="docker compose"
 # alias cat="bat"
