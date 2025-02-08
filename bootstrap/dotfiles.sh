@@ -1,7 +1,9 @@
 cd ~
 git clone git@github.com:grouchoboy/dotfiles.git
 
-ln -s /home/manu/dotfiles/nvim /home/manu/.config/nvim
+# ln -s /home/manu/dotfiles/nvim /home/manu/.config/nvim
+# mkdir /home/manu/.config/nvim
+ln -s /home/manu/dotfiles/init.lua /home/manu/.config/nvim/init.lua
 
 ln -s /home/manu/dotfiles/alacritty /home/manu/.config/alacritty
 

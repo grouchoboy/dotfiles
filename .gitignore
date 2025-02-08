@@ -46,3 +46,10 @@ Thumbs.db
 
 nvim/plugin/packer_compiled.lua
 nvim-minimal/plugin/packer_compiled.lua
+
+tags
+test.sh
+.luarc.json
+
+nvim/spell/
+lazy-lock.json
