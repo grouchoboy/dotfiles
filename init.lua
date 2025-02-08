@@ -857,64 +857,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- { -- You can easily change to a different colorscheme.
-	--   -- Change the name of the colorscheme plugin below, and then
-	--   -- change the command in the config to whatever the name of that colorscheme is.
-	--   --
-	--   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-	--   'catppuccin/nvim',
-	--   name = 'catppuccin',
-	--   priority = 1000, -- Make sure to load this before all the other start plugins.
-	--   opts = {
-	--     flavour = 'frappe', -- latte, frappe, macchiato, mocha
-	--     no_italic = true,
-	--     no_bold = true,
-	--     -- custom_highlights = function(colors)
-	--     --   return {
-	--     --     Comment = { fg = colors.overlay0 }, -- just comments
-	--     --     SpecialComment = { link = 'Special' }, -- special things inside a comment
-	--     --     Constant = { fg = colors.text }, -- (preferred) any constant
-	--     --     String = { fg = colors.text }, -- a string constant: "this is a string"
-	--     --     Character = { fg = colors.text }, --  a character constant: 'c', '\n'
-	--     --     Number = { fg = colors.text }, --   a number constant: 234, 0xff
-	--     --     Float = { link = 'Number' }, --    a floating point constant: 2.3e10
-	--     --     Boolean = { fg = colors.text }, --  a boolean constant: TRUE, false
-	--     --     Identifier = { fg = colors.text }, -- (preferred) any variable name
-	--     --     Function = { fg = colors.text }, -- function name (also: methods for classes)
-	--     --     Statement = { fg = colors.mauve }, -- (preferred) any statement
-	--     --     Conditional = { fg = colors.mauve }, --  if, then, else, endif, switch, etc.
-	--     --     Repeat = { fg = colors.mauve }, --   for, do, while, etc.
-	--     --     Label = { fg = colors.sapphire }, --    case, default, etc.
-	--     --     Operator = { fg = colors.sky }, -- "sizeof", "+", "*", etc.
-	--     --     Keyword = { fg = colors.mauve }, --  any other keyword
-	--     --     Exception = { fg = colors.mauve }, --  try, catch, throw
-	--     --     Type = { fg = colors.text }, -- (preferred) int, long, char, etc.
-	--     --     Structure = { fg = colors.text }, --  struct, union, enum, etc.
-	--     --     StorageClass = { fg = colors.text }, -- static, register, volatile, etc.
-	--     --     Special = { fg = colors.text }, -- (preferred) any special symbol
-	--     --     ['@constant.builtin'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-	--     --     ['@variable'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-	--     --     ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-	--     --     ['@type.builtin'] = { fg = colors.text },
-	--     --     ['@tag.attribute'] = { fg = colors.text },
-	--     --     ['@keyword.function'] = { fg = colors.text },
-	--     --   }
-	--     -- end,
-	--   },
-	--   init = function()
-	--     -- Load the colorscheme here.
-	--     -- Like many other themes, this one has different styles, and you could load
-	--     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-	--     -- vim.cmd.colorscheme 'catppuccin-latte'
-	--
-	--     -- You can configure highlights by doing something like:
-	--     vim.cmd.hi 'Comment gui=none'
-	--   end,
-	-- },
-	--
-	-- Highlight todo, notes, etc in comments
-	-- { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
 	{ -- Collection of various small independent plugins/modules
 		"echasnovski/mini.nvim",
 		config = function()
@@ -962,7 +904,7 @@ require("lazy").setup({
 			-- Autoinstall languages that are not installed
 			auto_install = true,
 			highlight = {
-				enable = true,
+				enable = false,
 				-- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
 				--  If you are experiencing weird indenting issues, add the language to
 				--  the list of additional_vim_regex_highlighting and disabled languages for indent.
@@ -1096,16 +1038,6 @@ require("lazy").setup({
 	-- {
 	--   'github/copilot.vim',
 	-- },
-	-- Lua
-	-- {
-	--   'folke/zen-mode.nvim',
-	--   opts = {
-	--     backdrop = 1,
-	--     -- your configuration comes here
-	--     -- or leave it empty to use the default settings
-	--     -- refer to the configuration section below
-	--   },
-	-- },
 	-- {
 	--   'zbirenbaum/copilot.lua',
 	--   cmd = 'Copilot',
@@ -1121,21 +1053,6 @@ require("lazy").setup({
 	--   },
 	-- },
 	--
-	-- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-	-- init.lua. If you want these files, they are in the repository, so you can just download them and
-	-- place them in the correct locations.
-
-	-- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-	--
-	--  Here are some example plugins that I've included in the Kickstart repository.
-	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
-
-	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-	--    This is the easiest way to modularize your config.
-	--
-	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	-- { import = 'custom.plugins' },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
