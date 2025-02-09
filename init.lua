@@ -213,7 +213,8 @@ local function apply_colors()
 		fg1 = p.dark1,
 		-- text = p.dark1,
 		text = "#000000",
-		base = p.light0_hard,
+		-- base = p.light0_hard,
+		base = "#ffffea", -- acme yellow
 		fg2 = p.dark2,
 		fg3 = p.dark3,
 		fg4 = p.dark4,
@@ -235,7 +236,8 @@ local function apply_colors()
 		dark_aqua = p.light_aqua,
 		gray = p.gray,
 		overlay0 = p.gray,
-		surface0 = p.light1,
+		-- surface0 = p.light1,
+		surface0 = p.light0_hard,
 	}
 	-- Set general UI highlights
 	set_hl("Normal", { fg = colors.text, bg = colors.base })
