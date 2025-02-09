@@ -256,13 +256,16 @@ local function apply_colors()
 	set_hl("LineNr", { fg = colors.surface1 })
 	set_hl("StatusLine", { fg = colors.text, bg = colors.base })
 	set_hl("StatusLineNC", { fg = colors.surface1, bg = colors.base })
+
+	-- Disable match paren
+	vim.g.loaded_matchparen = 0
 	set_hl("MatchParen", { bg = colors.text, fg = colors.base, bold = false })
 
 	-- Apply highlights for diagnostics (errors, warnings, etc.)
 	set_hl("DiagnosticError", { fg = colors.red })
 	set_hl("DiagnosticWarn", { fg = colors.yellow })
 	set_hl("DiagnosticInfo", { fg = colors.blue })
-	set_hl("DiagnosticHint", { fg = colors.cyan })
+	set_hl("DiagnosticHint", { fg = colors.orange })
 
 	-- Neotree
 	set_hl("NeoTreeDirectoryIcon", { fg = colors.text })
