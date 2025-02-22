@@ -66,7 +66,7 @@ vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
+-- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 5
@@ -254,14 +254,14 @@ local function apply_colors()
 	set_hl("@variable", { fg = colors.text })
 	set_hl("Title", { fg = colors.text })
 	set_hl("Operator", { fg = colors.text })
-	set_hl("CursorLine", { bg = colors.surface0, fg = colors.text })
+	set_hl("CursorLine", { bg = colors.surface0 })
 	set_hl("LineNr", { fg = colors.surface1 })
 	set_hl("StatusLine", { fg = colors.text, bg = colors.base })
 	set_hl("StatusLineNC", { fg = colors.surface1, bg = colors.base })
 
 	-- Disable match paren
-	vim.g.loaded_matchparen = 0
-	set_hl("MatchParen", { bg = colors.text, fg = colors.base, bold = false })
+	-- vim.g.loaded_matchparen = 0
+	-- set_hl("MatchParen", { bg = colors.text, fg = colors.base, bold = false })
 
 	-- Apply highlights for diagnostics (errors, warnings, etc.)
 	set_hl("DiagnosticError", { fg = colors.red })
@@ -353,6 +353,10 @@ require("lazy").setup({
 		opts = {
 			win = {
 				border = "double",
+			},
+			icons = {
+				rules = false,
+				mappings = false,
 			},
 		},
 		config = function() -- This is the function that runs, AFTER loading
@@ -726,6 +730,7 @@ require("lazy").setup({
 		},
 		opts = {
 			notify_on_error = false,
+			-- uncomment to enable format on save
 			format_on_save = function(bufnr)
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
@@ -775,6 +780,32 @@ require("lazy").setup({
 					--   end,
 					-- },
 				},
+				config = function()
+					local ls = require("luasnip")
+					local s = ls.snippet
+					local t = ls.text_node
+					local i = ls.insert_node
+					local fmt = require("luasnip.extras.fmt").fmt
+
+					ls.add_snippets("html", {
+						s("echo", {
+							t("{{"),
+							i(1),
+							t("}}"),
+						}),
+						s(
+							"de",
+							fmt(
+								[[
+            {{{{{}}}}}
+                {}
+            {{{{{}}}}}
+            ]],
+								{ i(1), i(2), i(3, "end") }
+							)
+						),
+					})
+				end,
 			},
 			"saadparwaiz1/cmp_luasnip",
 
@@ -796,7 +827,7 @@ require("lazy").setup({
 						luasnip.lsp_expand(args.body)
 					end,
 				},
-				-- completion = { completeopt = 'menu,menuone,noinsert' },
+				-- completion = { completeopt = "menu,menuone,noinsert" },
 				completion = {
 					autocomplete = false,
 				},
@@ -859,6 +890,25 @@ require("lazy").setup({
 					{ name = "path" },
 				},
 			})
+
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "html",
+				callback = function()
+					cmp.setup.buffer({
+						completion = {
+							autocomplete = { "InsertEnter", "TextChanged" },
+							completeopt = "menu,menuone,noinsert",
+							-- autocomplete = true, -- Enable auto-trigger for HTML files
+						},
+					})
+				end,
+			})
+		end,
+	},
+	{
+		"olrtg/nvim-emmet",
+		config = function()
+			vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
 		end,
 	},
 
@@ -933,19 +983,19 @@ require("lazy").setup({
 			--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		end,
 	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		-- Optional dependency
-		dependencies = { "hrsh7th/nvim-cmp" },
-		config = function()
-			require("nvim-autopairs").setup({})
-			-- If you want to automatically add `(` after selecting a function or method
-			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-			local cmp = require("cmp")
-			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-		end,
-	},
+	-- {
+	-- 	"windwp/nvim-autopairs",
+	-- 	event = "InsertEnter",
+	-- 	-- Optional dependency
+	-- 	dependencies = { "hrsh7th/nvim-cmp" },
+	-- 	config = function()
+	-- 		require("nvim-autopairs").setup({})
+	-- 		-- If you want to automatically add `(` after selecting a function or method
+	-- 		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+	-- 		local cmp = require("cmp")
+	-- 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+	-- 	end,
+	-- },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		version = "*",
