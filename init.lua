@@ -1070,25 +1070,6 @@ require("lazy").setup({
 			},
 		},
 	},
-
-	-- {
-	--   'github/copilot.vim',
-	-- },
-	-- {
-	--   'zbirenbaum/copilot.lua',
-	--   cmd = 'Copilot',
-	--   -- build = ':Copilot auth',
-	--   opts = {
-	--     suggestion = { enabled = true, auto_trigger = true },
-	--     panel = { enabled = true },
-	--     filetypes = {
-	--       elixir = true,
-	--       markdown = false,
-	--       help = true,
-	--     },
-	--   },
-	-- },
-	--
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
