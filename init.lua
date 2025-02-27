@@ -827,10 +827,10 @@ require("lazy").setup({
 						luasnip.lsp_expand(args.body)
 					end,
 				},
-				-- completion = { completeopt = "menu,menuone,noinsert" },
-				completion = {
-					autocomplete = false,
-				},
+				completion = { completeopt = "menu,menuone,noinsert" },
+				-- completion = {
+				-- 	autocomplete = false,
+				-- },
 
 				-- For an understanding of why these mappings were
 				-- chosen, you will need to read `:help ins-completion`
@@ -898,7 +898,6 @@ require("lazy").setup({
 						completion = {
 							autocomplete = { "InsertEnter", "TextChanged" },
 							completeopt = "menu,menuone,noinsert",
-							-- autocomplete = true, -- Enable auto-trigger for HTML files
 						},
 					})
 				end,
