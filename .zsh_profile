@@ -1,15 +1,11 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
-#source /etc/bash_completion.d/fzf
-
 #source <(kubectl completion zsh)
 
 export EDITOR='nvim'
 alias vim='nvim'
 alias em="emacs -nw"
 alias c="docker compose"
-# alias cat="bat"
-#alias docker="podman"
 # alias k="kubectl"
 
 export BAT_THEME='Catppuccin Frappe'
@@ -20,23 +16,8 @@ addToPathFront() {
     fi
 }
 
-addToPathFront /usr/local/go/bin
-addToPathFront $HOME/bin
 addToPathFront $HOME/.local/bin
-addToPathFront $HOME/.asdf/shims
 
-if [ "$HOSTNAME" = cabitron ]; then
-    source /usr/share/fzf/shell/key-bindings.zsh
-    source $HOME/dotfiles/dotfiles-work/zsh
-fi
-
-# if [ "$HOSTNAME" = trantor ]; then
-#     eval "$(~/.local/bin/mise activate zsh)"
-#     export SHELL="/bin/zsh"
-#     source /usr/share/fzf/key-bindings.zsh
-#     source /usr/share/fzf/completion.zsh
-# fi
-#
 datadisk() {
 	cd /run/media/manu/DataDisk
 }
@@ -51,12 +32,6 @@ if [ "$HOST" = "Fedora Linux" ]; then
     source /usr/share/fzf/shell/key-bindings.zsh
     eval "$(~/.local/bin/mise activate zsh)"
 fi
-# if [ "$HOST" = "Arch Linux" ]; then
-#     eval "$(~/.local/bin/mise activate zsh)"
-#     export SHELL="/bin/zsh"
-#     source /usr/share/fzf/key-bindings.zsh
-#     source /usr/share/fzf/completion.zsh
-# fi
 
 if [ -e /run/.containerenv ] ; then
     alias podman="distrobox-host-exec podman"
