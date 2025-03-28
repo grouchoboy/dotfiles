@@ -238,14 +238,18 @@ local function apply_colors()
 		overlay0 = p.gray,
 		-- surface0 = p.light1,
 		surface0 = p.light0_hard,
+		gruvbox_red = "#7b2c2f",
+		gruvbox_string = "#686d43",
 	}
 	-- Set general UI highlights
 	set_hl("Normal", { fg = colors.text, bg = colors.base })
 	set_hl("Comment", { fg = colors.overlay0 })
 	set_hl("Constant", { fg = colors.text })
-	set_hl("String", { fg = colors.text })
+	-- set_hl("String", { fg = colors.text })
+	set_hl("String", { fg = colors.gruvbox_string })
 	set_hl("Identifier", { fg = colors.text })
-	set_hl("Statement", { fg = colors.text })
+	-- set_hl("Statement", { fg = colors.text })
+	set_hl("Statement", { fg = colors.gruvbox_red })
 	set_hl("PreProc", { fg = colors.text })
 	set_hl("Type", { fg = colors.text })
 	set_hl("Special", { fg = colors.text })
