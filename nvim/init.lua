@@ -771,6 +771,7 @@ require('lazy').setup({
           --   end,
           -- },
         },
+        config = require 'custom.plugins.snippets',
       },
       'saadparwaiz1/cmp_luasnip',
 
