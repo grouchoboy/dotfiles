@@ -107,7 +107,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-local colors = require 'custom.plugins.colors'
+vim.o.background = 'light'
+colors = require 'custom.plugins.colors'
 colors()
 
 -- [[ Basic Autocommands ]]
@@ -715,102 +716,6 @@ require('lazy').setup({
     end,
   },
 
-  -- { -- You can easily change to a different colorscheme.
-  --   -- Change the name of the colorscheme plugin below, and then
-  --   -- change the command in the config to whatever the name of that colorscheme is.
-  --   --
-  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-  --   'catppuccin/nvim',
-  --   name = 'catppuccin',
-  --   priority = 1000, -- Make sure to load this before all the other start plugins.
-  --   opts = {
-  --     flavour = 'frappe', -- latte, frappe, macchiato, mocha
-  --     no_italic = true,
-  --     no_bold = true,
-  --     -- custom_highlights = function(colors)
-  --     --   return {
-  --     --     Comment = { fg = colors.overlay0 }, -- just comments
-  --     --     SpecialComment = { link = 'Special' }, -- special things inside a comment
-  --     --     Constant = { fg = colors.text }, -- (preferred) any constant
-  --     --     String = { fg = colors.text }, -- a string constant: "this is a string"
-  --     --     Character = { fg = colors.text }, --  a character constant: 'c', '\n'
-  --     --     Number = { fg = colors.text }, --   a number constant: 234, 0xff
-  --     --     Float = { link = 'Number' }, --    a floating point constant: 2.3e10
-  --     --     Boolean = { fg = colors.text }, --  a boolean constant: TRUE, false
-  --     --     Identifier = { fg = colors.text }, -- (preferred) any variable name
-  --     --     Function = { fg = colors.text }, -- function name (also: methods for classes)
-  --     --     Statement = { fg = colors.mauve }, -- (preferred) any statement
-  --     --     Conditional = { fg = colors.mauve }, --  if, then, else, endif, switch, etc.
-  --     --     Repeat = { fg = colors.mauve }, --   for, do, while, etc.
-  --     --     Label = { fg = colors.sapphire }, --    case, default, etc.
-  --     --     Operator = { fg = colors.sky }, -- "sizeof", "+", "*", etc.
-  --     --     Keyword = { fg = colors.mauve }, --  any other keyword
-  --     --     Exception = { fg = colors.mauve }, --  try, catch, throw
-  --     --     Type = { fg = colors.text }, -- (preferred) int, long, char, etc.
-  --     --     Structure = { fg = colors.text }, --  struct, union, enum, etc.
-  --     --     StorageClass = { fg = colors.text }, -- static, register, volatile, etc.
-  --     --     Special = { fg = colors.text }, -- (preferred) any special symbol
-  --     --     ['@constant.builtin'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-  --     --     ['@variable'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-  --     --     ['@variable.parameter'] = { fg = colors.text }, -- For constant that are built in the language: nil in Lua.
-  --     --     ['@type.builtin'] = { fg = colors.text },
-  --     --     ['@tag.attribute'] = { fg = colors.text },
-  --     --     ['@keyword.function'] = { fg = colors.text },
-  --     --   }
-  --     -- end,
-  --   },
-  --   init = function()
-  --     -- Load the colorscheme here.
-  --     -- Like many other themes, this one has different styles, and you could load
-  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  --     -- vim.cmd.colorscheme 'catppuccin-latte'
-  --
-  --     -- You can configure highlights by doing something like:
-  --     vim.cmd.hi 'Comment gui=none'
-  --   end,
-  -- },
-  --
-  -- Highlight todo, notes, etc in comments
-  -- { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
-  { -- Collection of various small independent plugins/modules
-    'echasnovski/mini.nvim',
-    config = function()
-      -- Better Around/Inside textobjects
-      --
-      -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [']quote
-      --  - ci'  - [C]hange [I]nside [']quote
-      require('mini.ai').setup { n_lines = 500 }
-
-      -- Add/delete/replace surroundings (brackets, quotes, etc.)
-      --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
-
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
-      local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
-      -- statusline.setup { use_icons = vim.g.have_nerd_font }
-      statusline.setup { use_icons = false }
-
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
-
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
-    end,
-  },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -845,49 +750,13 @@ require('lazy').setup({
     end,
   },
 
-  -- {
-  --   'github/copilot.vim',
-  -- },
-  -- Lua
-  -- {
-  --   'folke/zen-mode.nvim',
-  --   opts = {
-  --     backdrop = 1,
-  --     -- your configuration comes here
-  --     -- or leave it empty to use the default settings
-  --     -- refer to the configuration section below
-  --   },
-  -- },
-  -- {
-  --   'zbirenbaum/copilot.lua',
-  --   cmd = 'Copilot',
-  --   -- build = ':Copilot auth',
-  --   opts = {
-  --     suggestion = { enabled = true, auto_trigger = true },
-  --     panel = { enabled = true },
-  --     filetypes = {
-  --       elixir = true,
-  --       markdown = false,
-  --       help = true,
-  --     },
-  --   },
-  -- },
-  --
-  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
-
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.mini',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.lazygit',
+  -- require 'kickstart.plugins.lazygit',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
