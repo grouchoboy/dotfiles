@@ -17,7 +17,7 @@ vim.g.have_nerd_font = false
 
 -- Make line numbers default
 vim.opt.number = false
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -66,7 +66,7 @@ vim.opt.inccommand = 'split'
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
-vim.opt.guicursor = 'n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20'
+-- vim.opt.guicursor = 'n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20'
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 5
@@ -650,11 +650,11 @@ require('lazy').setup({
             luasnip.lsp_expand(args.body)
           end,
         },
-        -- completion = { completeopt = 'menu,menuone,noinsert' },
-        completion = {
-          autocomplete = false,
-        },
-
+        completion = { completeopt = 'menu,menuone,noinsert' },
+        -- completion = {
+        --   autocomplete = false,
+        -- },
+        --
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
         --
