@@ -122,7 +122,7 @@ return function()
   set_hl('LineNr', { fg = colors.overlay0 })
   set_hl('StatusLine', { fg = colors.text, bg = colors.base })
   set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.base })
-  set_hl('MatchParen', { bg = colors.text, fg = colors.base, bold = false })
+  -- set_hl('MatchParen', { bg = colors.text, fg = colors.base, bold = false })
 
   -- Apply highlights for diagnostics (errors, warnings, etc.)
   set_hl('DiagnosticError', { fg = colors.red })
