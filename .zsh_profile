@@ -39,3 +39,10 @@ if [ -e /run/.containerenv ] ; then
     # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 fi
 
+HOSTNAME=$(hostname)
+
+if [ "$HOSTNAME" = "DESKTOP-U9LRV0I" ] ; then
+    source $HOME/dotfiles/work/zshwork
+fi
+
+
