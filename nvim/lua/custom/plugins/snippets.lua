@@ -5,8 +5,12 @@ return function()
   local i = ls.insert_node
   local fmt = require('luasnip.extras.fmt').fmt
 
+  require('luasnip.loaders.from_vscode').lazy_load {
+    paths = { './snippets' },
+  }
+
   ls.add_snippets('html', {
-    s('echa', {
+    s('echo', {
       t '{{',
       i(1),
       t '}}',

@@ -294,13 +294,6 @@ require('lazy').setup({
         pickers = {
           lsp_document_symbols = {
             symbol_width = 50,
-            -- layout_config = {
-            --   vertical = {
-            --     width = 0.85, -- Adjust for symbols picker
-            --     height = 0.8,
-            --     preview_width = 0.55,
-            --   },
-            -- },
           },
         },
         extensions = {
@@ -616,13 +609,9 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
       {
         'L3MON4D3/LuaSnip',
         build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
           if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
             return
           end
@@ -760,54 +749,6 @@ require('lazy').setup({
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
-  {
-    'ellisonleao/gruvbox.nvim',
-    priority = 1000,
-    config = function()
-      local bg = '#ffffea'
-      require('gruvbox').setup {
-        terminal_colors = true, -- add neovim terminal colors
-        undercurl = true,
-        underline = true,
-        bold = false,
-        italic = {
-          strings = false,
-          emphasis = false,
-          comments = false,
-          operators = false,
-          folds = false,
-        },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
-        invert_intend_guides = false,
-        inverse = true, -- invert background for search, diffs, statuslines and errors
-        contrast = 'hard', -- can be "hard", "soft" or empty string
-        palette_overrides = {
-          light0_hard = bg,
-        },
-        overrides = {
-          SignColumn = { bg = bg },
-          LineNr = { bg = bg },
-          CursorLine = { bg = '#f9f5d7' },
-          CursorLineNr = { bg = bg },
-          DiagnosticSignError = { bg = bg },
-          DiagnosticSignWarn = { bg = bg },
-          DiagnosticSignInfo = { bg = bg },
-          DiagnosticSignHint = { bg = bg },
-        },
-        dim_inactive = false,
-        transparent_mode = false,
-      }
-      vim.o.background = 'light'
-      vim.cmd 'colorscheme gruvbox'
-
-      -- local colors = require 'custom.plugins.colors'
-      -- colors()
-    end,
-  },
-
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
@@ -815,6 +756,7 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.harpoon',
+  require 'kickstart.plugins.gruvbox',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
