@@ -23,3 +23,4 @@ if [ "$DARWIN" = "Darwin" ]; then
 else
   source ~/dotfiles/.zsh_profile
 fi
+
