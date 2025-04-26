@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-docker compose exec -it db /bin/zsh
+docker compose exec -it db /bin/bash
 
