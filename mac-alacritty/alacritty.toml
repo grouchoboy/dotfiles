@@ -5,14 +5,14 @@
 
 
 [font]
-normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
+normal = {family = "GoMono Nerd Font", style = "Regular"}
 size = 16
-bold = {style = "Medium"}
+bold = {style = "Regular"}
 
 [window]
-# decorations = "None"
-# padding.x = 16
-# padding.y = 14
+decorations = "None"
+padding.x = 16
+padding.y = 14
 
 [keyboard]
 bindings = [
