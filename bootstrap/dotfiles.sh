@@ -7,6 +7,8 @@ ln -s /home/manu/dotfiles/nvim /home/manu/.config/nvim
 
 ln -s /home/manu/dotfiles/alacritty /home/manu/.config/alacritty
 
+ln -s /home/manu/dotfiles/ghostty /home/manu/.config/ghostty
+
 ln -s /home/manu/dotfiles/zellij /home/manu/.config/zellij
 
 ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit

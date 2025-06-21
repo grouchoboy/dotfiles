@@ -1,0 +1,24 @@
+theme = GruvboxLightHard
+background = #ffffea
+font-family = GoMono Nerd Font
+font-size = 16
+font-family-bold = GoMono Nerd Font
+font-style-bold = false
+cursor-style-blink = false
+cursor-style = block
+shell-integration-features = no-cursor
+gtk-adwaita = true
+
+window-padding-x = 5
+window-padding-y = 5
+
+# keybindings
+
+keybind = ctrl+shift+l=next_tab
+keybind = ctrl+shift+h=previous_tab
+
+keybind = alt+ctrl+l=goto_split:right
+keybind = alt+ctrl+h=goto_split:left
+keybind = alt+ctrl+j=goto_split:down
+keybind = alt+ctrl+k=goto_split:up
+
