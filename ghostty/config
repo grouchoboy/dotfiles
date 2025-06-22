@@ -17,6 +17,7 @@ window-padding-y = 5
 keybind = ctrl+shift+l=next_tab
 keybind = ctrl+shift+h=previous_tab
 
+# keybind = ctrl+shift+o=new_split:right
 keybind = alt+ctrl+l=goto_split:right
 keybind = alt+ctrl+h=goto_split:left
 keybind = alt+ctrl+j=goto_split:down
