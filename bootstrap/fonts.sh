@@ -12,6 +12,11 @@ unzip JetBrainsMono.zip -d JetBrainsMono
 cp -r JetBrainsMono ~/.local/share/fonts
 rm JetBrainsMono.zip
 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
+unzip CascadiaCode.zip -d CascadiaCode
+cp -r CascadiaCode ~/.local/share/fonts
+rm CascadiaCode.zip
+
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/IBMPlexMono.zip
 unzip IBMPlexMono.zip -d IMBPlexMono
 cp -r IMBPlexMono ~/.local/share/fonts
