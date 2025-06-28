@@ -1,6 +1,5 @@
 theme = GruvboxLightHard
-background = #ffffea
-font-family = GoMono Nerd Font
+font-family = CaskaydiaCove Nerd Font
 font-size = 16
 font-family-bold = GoMono Nerd Font
 font-style-bold = false
