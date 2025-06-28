@@ -28,3 +28,7 @@ unzip Go-Mono.zip -d Go-Mono
 cp -r Go-Mono ~/.local/share/fonts
 rm -rf Go-Mono.zip Go-Mono
 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip
+unzip Meslo.zip -d Meslo
+cp -r Meslo ~/.local/share/fonts
+rm -rf Meslo.zip Meslo
