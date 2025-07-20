@@ -1,0 +1,13 @@
+# Start from the official Arch Linux base image
+FROM archlinux:latest
+
+# Set DEBIAN_FRONTEND to noninteractive to avoid prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update package lists and install essential development tools
+# Running this in a single RUN command optimizes the image layer
+RUN pacman -Syu --noconfirm && pacman -S --noconfirm git neovim zsh && pacman -Scc --noconfirm
+
+# Reset the command to default
+CMD ["/bin/zsh"]
+
