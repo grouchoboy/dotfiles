@@ -44,6 +44,9 @@ if [ "$HOST" = "Arch Linux" ]; then
 fi
 
 if [ -e /run/.containerenv ] ; then
+    ZSH_THEME="bira"
+    source $ZSH/oh-my-zsh.sh
+    
     alias podman="distrobox-host-exec podman"
     alias c="docker-compose"
     # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
