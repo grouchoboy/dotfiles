@@ -39,6 +39,10 @@ if [ "$HOST" = "Fedora Linux" ]; then
     if [ -f "{$HOME}/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/.local/google-cloud-sdk/completion.zsh.inc"; fi
 fi
 
+if [ "$HOST" = "Arch Linux" ]; then
+    eval "$(mise activate zsh)"
+fi
+
 if [ -e /run/.containerenv ] ; then
     alias podman="distrobox-host-exec podman"
     alias c="docker-compose"
