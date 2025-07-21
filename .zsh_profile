@@ -30,13 +30,13 @@ HOST=$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')
 
 if [ "$HOST" = "Fedora Linux" ]; then
     source /usr/share/fzf/shell/key-bindings.zsh
-    eval "$(~/.local/bin/mise activate zsh)"
+    # eval "$(~/.local/bin/mise activate zsh)"
 
     # The next line updates PATH for the Google Cloud SDK.
-    if [ -f "${HOME}/.local/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/.local/google-cloud-sdk/path.zsh.inc"; fi
+    # if [ -f "${HOME}/.local/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/.local/google-cloud-sdk/path.zsh.inc"; fi
 
     # The next line enables shell command completion for gcloud.
-    if [ -f "{$HOME}/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/.local/google-cloud-sdk/completion.zsh.inc"; fi
+    # if [ -f "{$HOME}/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/.local/google-cloud-sdk/completion.zsh.inc"; fi
 fi
 
 if [ "$HOST" = "Arch Linux" ]; then
@@ -58,4 +58,4 @@ if [ "$HOSTNAME" = "DESKTOP-U9LRV0I" ] ; then
     source $HOME/dotfiles/work/zshwork
 fi
 
-
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

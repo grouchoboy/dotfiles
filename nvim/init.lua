@@ -519,7 +519,26 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
-        --
+        emmet_language_server = {
+          filetypes = { 'html', 'css', 'javascript', 'javascriptreact', 'typescriptreact', 'eelixir', 'heex', 'elixir' },
+          init_options = {
+            heex = {
+              options = {
+                ['output.selfClosingStyle'] = 'html',
+              },
+              snippets = {
+                -- Custom LiveView component snippets
+                ['header'] = '<.header></.header>',
+                ['button'] = '<.button></.button>',
+                ['input'] = '<.input />',
+                ['form'] = '<.form></.form>',
+                ['modal'] = '<.modal></.modal>',
+                ['table'] = '<.table></.table>',
+                -- Add more as needed
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -550,6 +569,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'emmet_language_server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -720,7 +740,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'elixir', 'heex' },
       ignore_install = { 'gitcommit' },
       -- Autoinstall languages that are not installed
       auto_install = true,
