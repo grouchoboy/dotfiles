@@ -8,6 +8,10 @@
             {
                 "language": "go",
                 "path": "./go.json"
+            },
+            {
+                "language": ["eelixir", "heex", "elixir"],
+                "path": "./eelixir.json"
             }
         ]
     }
