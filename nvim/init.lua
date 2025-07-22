@@ -521,23 +521,6 @@ require('lazy').setup({
         -- tsserver = {},
         emmet_language_server = {
           filetypes = { 'html', 'css', 'javascript', 'javascriptreact', 'typescriptreact', 'eelixir', 'heex', 'elixir' },
-          init_options = {
-            heex = {
-              options = {
-                ['output.selfClosingStyle'] = 'html',
-              },
-              snippets = {
-                -- Custom LiveView component snippets
-                ['header'] = '<.header></.header>',
-                ['button'] = '<.button></.button>',
-                ['input'] = '<.input />',
-                ['form'] = '<.form></.form>',
-                ['modal'] = '<.modal></.modal>',
-                ['table'] = '<.table></.table>',
-                -- Add more as needed
-              },
-            },
-          },
         },
 
         lua_ls = {
@@ -807,6 +790,15 @@ require('lazy').setup({
     },
   },
 })
+
+local function html_to_liveview()
+  local line = vim.api.nvim_get_current_line()
+  local new_line = line:gsub('<(%w+)', '<.%1'):gsub('</(%w+)>', '</.%1>')
+  vim.api.nvim_set_current_line(new_line)
+end
+
+-- Map it to a key
+vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
