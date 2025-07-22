@@ -10,7 +10,7 @@
                 "path": "./go.json"
             },
             {
-                "language": ["eelixir", "heex", "elixir"],
+                "language": ["eelixir", "heex"],
                 "path": "./eelixir.json"
             }
         ]

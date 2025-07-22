@@ -26,5 +26,9 @@
     "lin": {
         "prefix": "lin",
         "body": "<%= link \"${1:Submit}\", to: ${2:\"/users\"}, method: ${3::delete} %>"
+    },
+    "cm": {
+        "prefix": "cm",
+        "body": "<.${1}>$0</.${1}>"
     }
 }
