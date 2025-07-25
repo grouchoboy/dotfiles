@@ -63,6 +63,7 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit && compinit
 
 
+## SHOW CURRENT DIR AS ZELLIJ TAB ##
 function current_dir() {
     local current_dir=$PWD
     if [[ $current_dir == $HOME ]]; then
@@ -101,3 +102,4 @@ function set_tab_to_working_dir() {
 if [[ -n $ZELLIJ ]]; then
     add-zsh-hook precmd set_tab_to_working_dir
 fi
+## END SHOW CURRENT DIR AS ZELLIJ TAB ##
