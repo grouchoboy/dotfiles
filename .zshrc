@@ -21,6 +21,6 @@ DARWIN=$(uname)
 if [ "$DARWIN" = "Darwin" ]; then
   source $HOME/dotfiles/mac-zshrc
 else
-  source ~/dotfiles/.zsh_profile
+  source ~/dotfiles/zsh_profile
 fi
 
