@@ -1,0 +1,12 @@
+p() {
+  local project_dir="$HOME/projects"
+  if [ -d "$project_dir" ]; then
+    local selected_dir
+    selected_dir=$(find "$project_dir" -maxdepth 1 -type d -not -path "$project_dir" | xargs -I {} basename {} | fzf)
+    if [ -n "$selected_dir" ]; then
+      cd "$project_dir/$selected_dir" || return
+    fi
+  else
+    echo "Directory ~/projects does not exist."
+  fi
+}
