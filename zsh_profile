@@ -53,6 +53,7 @@ fi
 if [ -e /run/.containerenv ] ; then
     ZSH_THEME="bira"
     source $ZSH/oh-my-zsh.sh
+    source <(fzf --zsh)
 
     alias podman="distrobox-host-exec podman"
     alias c="podman compose"
