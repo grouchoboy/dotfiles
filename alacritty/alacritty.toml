@@ -1,6 +1,6 @@
 
-# [shell]
-# program = "/bin/zsh"
+[terminal.shell]
+program = "/bin/zsh"
 # args = ["-c", "zellij"]
 
 
