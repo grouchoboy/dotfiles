@@ -11,6 +11,8 @@ ln -s /home/manu/dotfiles/ghostty /home/manu/.config/ghostty
 
 ln -s /home/manu/dotfiles/zellij /home/manu/.config/zellij
 
+ln -s /home/manu/dotfiles/tmux /home/manu/.config/tmux
+
 ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit
 
 ln -s /home/manu/dotfiles/sway /home/manu/.config/sway

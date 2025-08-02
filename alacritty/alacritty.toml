@@ -3,6 +3,9 @@
 program = "/bin/zsh"
 # args = ["-c", "zellij"]
 
+[env]
+TERM = "xterm-256color"
+
 
 [font]
 # normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
