@@ -8,8 +8,8 @@ TERM = "xterm-256color"
 
 
 [font]
-# normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
-normal = {family = "GoMono Nerd Font Mono", style = "Medium"}
+normal = {family = "JetBrainsMono Nerd Font", style = "Medium"}
+# normal = {family = "GoMono Nerd Font Mono", style = "Medium"}
 size = 15
 bold = {style = "Medium"}
 
