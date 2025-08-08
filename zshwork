@@ -10,3 +10,5 @@ p() {
     echo "Directory ~/projects does not exist."
   fi
 }
+
+alias dc="docker compose -f ~/projects/dfcommon/docker-compose.yml"
