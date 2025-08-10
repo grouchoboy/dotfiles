@@ -3,6 +3,7 @@ git clone git@github.com:grouchoboy/dotfiles.git
 
 ln -s /home/manu/dotfiles/hypr /home/manu/.config/hypr
 ln -s /home/manu/dotfiles/waybar /home/manu/.config/waybar
+ln -s /home/manu/dotfiles/wofi /home/manu/.config/wofi
 
 ln -s /home/manu/dotfiles/nvim /home/manu/.config/nvim
 # mkdir /home/manu/.config/nvim
