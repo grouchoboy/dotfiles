@@ -15,6 +15,7 @@ ln -s /home/manu/dotfiles/ghostty /home/manu/.config/ghostty
 
 ln -s /home/manu/dotfiles/zellij /home/manu/.config/zellij
 
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -s /home/manu/dotfiles/tmux /home/manu/.config/tmux
 
 ln -s /home/manu/dotfiles/lazygit /home/manu/.config/lazygit

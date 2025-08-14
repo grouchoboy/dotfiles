@@ -1,47 +1,100 @@
-* {
-	font-family: 'JetBrainsMono Nerd Font', monospace;
-	font-size: 18px;
-}
+/* Wofi CSS Configuration - Catppuccin Frappe with Lavender */
 
+/* Wofi CSS Configuration - Catppuccin Frappe with Lavender */
 
+/* Main window */
 window {
-	margin: 0px;
-	border: 4px solid #458588;
-	background-color: #282828;
-	width: 100px;
-	border-radius: 10px;
+    margin: 0px;
+    border: 2px solid #babbf1;
+    background-color: #303446;
+    border-radius: 0px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    font-weight: bold;
 }
 
+/* Input field */
 #input {
-	margin: 5px;
-	border: none;
-	color: #ebdbb2;
-	background-color: #1d2021;
+    margin: 5px;
+    border: 2px solid #51576d;
+    color: #c6d0f5;
+    background-color: #292c3c;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
+#input:focus {
+    border-color: #babbf1;
+}
+
+/* Inner box */
 #inner-box {
-	margin: 5px;
-	border: none;
-	background-color: #282828;
+    margin: 5px;
+    border: none;
+    background-color: #303446;
+    border-radius: 8px;
 }
 
+/* Outer box */
 #outer-box {
-	margin: 5px;
-	border: none;
-	background-color: #282828;
+    margin: 5px;
+    border: none;
+    background-color: #303446;
+    border-radius: 8px;
 }
 
+/* Scroll area */
 #scroll {
-	margin: 0px;
-	border: none;
+    margin: 0px;
+    border: none;
+    border-radius: 8px;
 }
 
+/* Text entries */
 #text {
-	margin: 5px;
-	border: none;
-	color: #ebdbb2;
+    margin: 5px;
+    border: none;
+    /* color: #c6d0f5; */
+    padding: 8px 10px;
+    font-weight: medium;
+}
+
+/* Entry boxes */
+#entry {
+    background-color: #303446;
+    border-radius: 6px;
+    margin: 2px;
+    padding: 4px;
+    border: 1px solid transparent;
 }
 
 #entry:selected {
-	background-color: #1d2021;
+    background-color: #babbf1;
+    color: #232634;
+    border: 1px solid #babbf1;
+    font-weight: bold;
+}
+
+#entry:hover {
+    background-color: #414559;
+    border: 1px solid #51576d;
+}
+
+/* Image icons */
+#img {
+    margin-right: 8px;
+    padding: 2px;
+}
+
+/* Unselected text styling */
+#unselected {
+    color: #b5bfe2;
+}
+
+/* Selected text styling */
+#selected {
+    color: #232634;
+    font-weight: bold;
 }

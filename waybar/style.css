@@ -1,0 +1,119 @@
+@import "theme.css";
+
+/* ~/.config/waybar/style.css */
+/* Catppuccin Frappé Theme (Lavender accent) */
+
+* {
+    /* Make sure to use a font that you have installed */
+    font-family: "FiraCode Nerd Font", FontAwesome, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    /* Catppuccin Frappé Base */
+    background-color: rgba(48, 52, 70, 0.9);
+    /* Catppuccin Frappé Text */
+    color: #c6d0f5;
+    /* Catppuccin Frappé Crust */
+    border-bottom: 2px solid #232634;
+}
+
+/* Base style for all modules */
+#workspaces,
+#clock,
+#cpu,
+#memory,
+#pipewire,
+#network,
+#bluetooth,
+#tray,
+#window {
+    background-color: transparent;
+    padding: 5px 12px;
+    margin: 3px 2px;
+}
+
+/* --- Hover Effect --- */
+/* A subtle highlight on hover for better feedback */
+#workspaces button:hover,
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#pipewire:hover,
+#network:hover,
+#bluetooth:hover {
+    /* Catppuccin Frappé Surface0 */
+    background-color: #414559;
+    border-radius: 8px;
+}
+
+/* --- WORKSPACES --- */
+#workspaces button {
+    /* Catppuccin Frappé Overlay0 for inactive workspaces */
+    color: #737994;
+    padding: 2px 8px;
+    border-radius: 8px;
+}
+
+#workspaces button.active {
+    /* Catppuccin Frappé Lavender (Flavor Accent) */
+    background-color: #babbf1;
+    /* Catppuccin Frappé Base for high contrast text */
+    color: #303446;
+}
+
+#workspaces button.urgent {
+    /* Catppuccin Frappé Red */
+    background-color: #e78284;
+    color: #303446;
+}
+
+/* --- INDIVIDUAL MODULE COLORS --- */
+/* Using the Catppuccin Frappé palette for distinction */
+#window {
+    /* Catppuccin Frappé Subtext0 */
+    color: #a5adce;
+}
+
+#clock {
+    /* Catppuccin Frappé Yellow */
+    color: #e5c890;
+}
+
+#cpu {
+    /* Catppuccin Frappé Green */
+    color: #a6d189;
+}
+
+#memory {
+    /* Catppuccin Frappé Teal */
+    color: #81c8be;
+}
+
+#pipewire {
+    /* Catppuccin Frappé Mauve */
+    color: #ca9ee6;
+}
+
+#network {
+    /* Catppuccin Frappé Blue */
+    color: #8caaee;
+}
+
+#bluetooth {
+    /* Catppuccin Frappé Sapphire */
+    color: #85c1dc;
+}
+
+/* --- STATEFUL MODULES --- */
+/* Styles for modules in a specific state, like "muted" or "disconnected" */
+#pipewire.muted,
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
+    /* Catppuccin Frappé Red */
+    background-color: #e78284;
+    color: #303446;
+    border-radius: 8px;
+}
