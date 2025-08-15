@@ -6,11 +6,12 @@
     "modules-left": [
         "hyprland/workspaces"
     ],
-    "modules-center": [
-        "hyprland/window"
-    ],
+    // "modules-center": [
+    //     "hyprland/window"
+    // ],
     "modules-right": [
-        "tray",
+        // "tray",
+	"group/tray-expander",
         "bluetooth",
         "network",
         "pipewire", // Changed from pulseaudio
@@ -35,21 +36,24 @@
         "format": "{}",
         "max-length": 35
     },
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10
-    },
+    // "tray": {
+    //     "icon-size": 18,
+    //     "spacing": 10
+    // },
     "clock": {
-        "format": "{:%a, %b %d  %H:%M}",
+        // "format": "{:%a, %b %d  %H:%M}",
+        "format": "{:%d-%m-%Y  %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
-        "format": "CPU {usage}% ",
+        "format": "",
+        // "format": "CPU {usage}% ",
         "tooltip": true,
         "on-click": "alacritty -e btop"
     },
     "memory": {
-        "format": "MEM {used:0.1f}G ",
+        // "format": "MEM {used:0.1f}G ",
+        "format": "",
          "on-click": "alacritty -e btop"
     },
     "pipewire": {
@@ -62,17 +66,40 @@
         "format-icons": ["", ""]
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        // "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "Disconnected ⚠",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "on-click": "nm-connection-editor"
     },
     "bluetooth": {
-        "format": " {status}",
+        // "format": " {status}",
+        "format": "",
         "format-disabled": "", // Hide when disabled
-        "format-connected": " {device_alias}",
+        // "format-connected": " {device_alias}",
+        "format-connected": "",
         "tooltip-format": "{device_alias}",
-        "on-click": "blueman-manager"
-    }
+        "on-click": "blueman-manager",
+    },
+	"group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon",
+    "tray"
+    ]
+  },
+  "custom/expand-icon": {
+    "format": " ",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 12
+  }
+
 }

@@ -78,22 +78,22 @@ window#waybar {
 
 #clock {
     /* Catppuccin Frappé Yellow */
-    color: #e5c890;
+    color: #8caaee;
 }
 
 #cpu {
     /* Catppuccin Frappé Green */
-    color: #a6d189;
+    color: #8caaee;
 }
 
 #memory {
     /* Catppuccin Frappé Teal */
-    color: #81c8be;
+    color: #8caaee;
 }
 
 #pipewire {
     /* Catppuccin Frappé Mauve */
-    color: #ca9ee6;
+    color: #8caaee;
 }
 
 #network {
@@ -103,7 +103,7 @@ window#waybar {
 
 #bluetooth {
     /* Catppuccin Frappé Sapphire */
-    color: #85c1dc;
+    color: #8caaee;
 }
 
 /* --- STATEFUL MODULES --- */
