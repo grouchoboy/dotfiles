@@ -26,7 +26,7 @@ window#waybar {
 #clock,
 #cpu,
 #memory,
-#pipewire,
+#wireplumber,
 #network,
 #bluetooth,
 #tray,
@@ -44,7 +44,7 @@ window#waybar {
 #clock:hover,
 #cpu:hover,
 #memory:hover,
-#pipewire:hover,
+#wireplumber:hover,
 #network:hover,
 #bluetooth:hover {
     /* Catppuccin Frappé Surface0 */
@@ -83,6 +83,7 @@ window#waybar {
     color: #a5adce;
 }
 
+#tray-expander,
 #power-profiles-daemon,
 #language {
     color: #8caaee;
@@ -103,7 +104,7 @@ window#waybar {
     color: #8caaee;
 }
 
-#pipewire {
+#wireplumber {
     /* Catppuccin Frappé Mauve */
     color: #8caaee;
 }

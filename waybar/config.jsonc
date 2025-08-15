@@ -6,20 +6,20 @@
     "modules-left": [
         "hyprland/workspaces"
     ],
-    // "modules-center": [
-    //     "hyprland/window"
-    // ],
+    "modules-center": [
+        // "hyprland/window"
+        "clock"
+    ],
     "modules-right": [
         // "tray",
 	"group/tray-expander",
         "bluetooth",
         "network",
-        "pipewire", // Changed from pulseaudio
         "cpu",
         "memory",
         "power-profiles-daemon",
+        "wireplumber",
         "hyprland/language",
-        "clock"
     ],
 
     // Module configurations
@@ -43,9 +43,9 @@
     //     "spacing": 10
     // },
     "clock": {
-        // "format": "{:%a, %b %d  %H:%M}",
-        "format": "{:%d-%m-%Y  %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "locale": "es_ES.UTF-8",
+        "format": "{:%H:%M  %d-%m-%Y}",
+        "tooltip-format": "<span size='18pt'>{calendar}</span>"
     },
     "cpu": {
         "format": "",
@@ -72,14 +72,16 @@
         "format": "{short}",
         "tooltip": false
         },
-    "pipewire": {
+    "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": " Muted",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
         "scroll-step": 5,
-        "format-icons": ["", " "]
+        "format-icons": ["", " "],
+        "max-volume": 100,
+        "tooltip": true
     },
     "network": {
         // "format-wifi": "{essid} ({signalStrength}%) ",
@@ -98,7 +100,7 @@
         "tooltip-format": "{device_alias}",
         "on-click": "blueman-manager",
     },
-	"group/tray-expander": {
+"group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 600,
@@ -106,7 +108,7 @@
     },
     "modules": [
       "custom/expand-icon",
-    "tray"
+      "tray"
     ]
   },
   "custom/expand-icon": {
