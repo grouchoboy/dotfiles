@@ -53,7 +53,7 @@ window#waybar {
     /* Catppuccin Frappé Overlay0 for inactive workspaces */
     color: #737994;
     padding: 2px 8px;
-    border-radius: 8px;
+    border-radius: 0px;
 }
 
 #workspaces button.active {

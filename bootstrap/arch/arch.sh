@@ -11,3 +11,9 @@ sudo pacman -S lxappearance qt6ct hyprpaper hyprpolkitagent hyprsunset hyprlock 
 # systemctl --user enable --now hyprpolkitagent.service
 # systemctl --user enable --now hyprsunset.service
 
+sudo pacman -S snap-pac
+yay -S grub-btrfs btrfs-assistant
+# sudo grub-mkconfig -o /boot/grub/grub.cfg
+# grub-btrfs
+# sudo systemctl enable --now grub-btrfsd
+
