@@ -1,5 +1,5 @@
 sudo pacman -S zellij alacritty zsh nvim fzf inotify-tools podman docker unzip inetutils distrobox \ 
-    vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop power-profiles-daemon
+    vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop power-profiles-daemon flatpak
 
 sudo systemctl enable --now power-profiles-daemon.service
 
@@ -10,7 +10,7 @@ sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-ugly gst-libav ffmp
 
 sudo pacman -S bluez bluez-utils blueman
 
-sudo pacman -S lxappearance qt6ct hyprpaper hyprpolkitagent hyprsunset hyprlock papirus-icon-theme cliphist lf hyprpicker
+sudo pacman -S lxappearance qt6ct hyprpaper hyprpolkitagent hyprsunset hyprlock papirus-icon-theme cliphist lf hyprpicker nwg-look
 # systemctl --user enable --now hyprpolkitagent.service
 # systemctl --user enable --now hyprsunset.service
 
