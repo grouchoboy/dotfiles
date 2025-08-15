@@ -17,6 +17,7 @@
         "pipewire", // Changed from pulseaudio
         "cpu",
         "memory",
+        "hyprland/language",
         "clock"
     ],
 
@@ -56,6 +57,10 @@
         "format": "",
          "on-click": "alacritty -e btop"
     },
+    "hyprland/language": {
+        "format": "{short}",
+        "tooltip": false
+        },
     "pipewire": {
         "format": "{icon} {volume}%",
         "format-muted": " Muted",
@@ -63,11 +68,11 @@
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
         "scroll-step": 5,
-        "format-icons": ["", ""]
+        "format-icons": ["", " "]
     },
     "network": {
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": "",
+        "format-wifi": " ",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "Disconnected ⚠",
         "tooltip-format": "{ifname} via {gwaddr} ",

@@ -20,6 +20,7 @@ window#waybar {
 }
 
 /* Base style for all modules */
+#language,
 #workspaces,
 #clock,
 #cpu,
@@ -36,6 +37,7 @@ window#waybar {
 
 /* --- Hover Effect --- */
 /* A subtle highlight on hover for better feedback */
+#language:hover,
 #workspaces button:hover,
 #clock:hover,
 #cpu:hover,
@@ -45,7 +47,7 @@ window#waybar {
 #bluetooth:hover {
     /* Catppuccin Frappé Surface0 */
     background-color: #414559;
-    border-radius: 8px;
+    border-radius: 0px;
 }
 
 /* --- WORKSPACES --- */
@@ -71,9 +73,16 @@ window#waybar {
 
 /* --- INDIVIDUAL MODULE COLORS --- */
 /* Using the Catppuccin Frappé palette for distinction */
+
+
+
 #window {
     /* Catppuccin Frappé Subtext0 */
     color: #a5adce;
+}
+
+#language {
+    color: #8caaee;
 }
 
 #clock {
@@ -115,5 +124,5 @@ window#waybar {
     /* Catppuccin Frappé Red */
     background-color: #e78284;
     color: #303446;
-    border-radius: 8px;
+    border-radius: 0px;
 }
