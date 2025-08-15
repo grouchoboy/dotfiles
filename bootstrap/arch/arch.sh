@@ -1,5 +1,8 @@
 sudo pacman -S zellij alacritty zsh nvim fzf inotify-tools podman docker unzip inetutils distrobox \ 
-    vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop
+    vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop power-profiles-daemon
+
+sudo systemctl enable --now power-profiles-daemon.service
+
 yay -S 1password
  
 # codecs

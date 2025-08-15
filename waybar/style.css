@@ -20,6 +20,7 @@ window#waybar {
 }
 
 /* Base style for all modules */
+#power-profiles-daemon,
 #language,
 #workspaces,
 #clock,
@@ -37,6 +38,7 @@ window#waybar {
 
 /* --- Hover Effect --- */
 /* A subtle highlight on hover for better feedback */
+#power-profiles-daemon:hover,
 #language:hover,
 #workspaces button:hover,
 #clock:hover,
@@ -81,6 +83,7 @@ window#waybar {
     color: #a5adce;
 }
 
+#power-profiles-daemon,
 #language {
     color: #8caaee;
 }

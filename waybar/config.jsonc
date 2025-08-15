@@ -17,6 +17,7 @@
         "pipewire", // Changed from pulseaudio
         "cpu",
         "memory",
+        "power-profiles-daemon",
         "hyprland/language",
         "clock"
     ],
@@ -57,6 +58,16 @@
         "format": "",
          "on-click": "alacritty -e btop"
     },
+    "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "format-icons": {
+        "default": "",
+        "performance": "⚡",
+        "balanced": "",
+        "power-saver": " "
+    }
+},
     "hyprland/language": {
         "format": "{short}",
         "tooltip": false
