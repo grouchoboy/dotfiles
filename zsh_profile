@@ -48,6 +48,7 @@ fi
 
 if [ "$HOST" = "Arch Linux" ]; then
     eval "$(mise activate zsh)"
+    export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/manu/.local/share/flatpak/exports/share:${XDG_DATA_DIRS}"
 fi
 
 ## Inside a distrobox container

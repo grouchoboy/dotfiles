@@ -8,7 +8,7 @@ yay -S 1password
 # codecs
 sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-ugly gst-libav ffmpeg vlc vlc-plugins-all
 
-sudo pacman -S bluez bluez-utils blueman blueberry
+sudo pacman -S bluez bluez-utils blueberry
 
 sudo pacman -S lxappearance qt6ct hyprpaper hyprpolkitagent hyprsunset hyprlock papirus-icon-theme cliphist lf hyprpicker nwg-look fwupd archlinux-xdg-menu
 # systemctl --user enable --now hyprpolkitagent.service
