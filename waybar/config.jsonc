@@ -96,9 +96,10 @@
         "format": "",
         "format-disabled": "", // Hide when disabled
         // "format-connected": " {device_alias}",
+        "exec": "bluetoothctl info",
         "format-connected": "",
         "tooltip-format": "{device_alias}",
-        "on-click": "blueman-manager",
+        "on-click": "blueberry",
     },
 "group/tray-expander": {
     "orientation": "inherit",
