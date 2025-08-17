@@ -10,7 +10,7 @@ sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-ugly gst-libav ffmp
 
 sudo pacman -S bluez bluez-utils blueberry
 
-sudo pacman -S lxappearance qt6ct hyprpaper hyprpolkitagent hyprsunset hyprlock papirus-icon-theme cliphist lf hyprpicker nwg-look fwupd archlinux-xdg-menu
+sudo pacman -S lxappearance qt6ct hyprpaper hyprpolkitagent hyprsunset hyprlock papirus-icon-theme cliphist lf hyprpicker nwg-look fwupd archlinux-xdg-menu kservice5
 # systemctl --user enable --now hyprpolkitagent.service
 # systemctl --user enable --now hyprsunset.service
 
