@@ -1,5 +1,5 @@
 sudo pacman -S zellij alacritty zsh nvim fzf inotify-tools podman docker unzip inetutils distrobox \ 
-    vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop power-profiles-daemon flatpak
+    vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop power-profiles-daemon flatpak gwenview
 
 sudo systemctl enable --now power-profiles-daemon.service
 
