@@ -778,6 +778,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.harpoon',
   require 'kickstart.plugins.gruvbox',
+  -- require 'kickstart.plugins.catppuccin',
   require 'kickstart.plugins.snaks',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
