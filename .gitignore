@@ -55,4 +55,4 @@ nvim/spell/
 lazy-lock.json
 
 work/
-tmux/plugins/
+config/tmux/plugins/
