@@ -16,6 +16,10 @@ addToPathFront() {
     fi
 }
 
+gits() {
+    git switch $(git branch | grep -v '*' | fzf)
+}
+
 addToPathFront $HOME/.local/bin
 
 # asdf setup

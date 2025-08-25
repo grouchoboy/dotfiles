@@ -14,3 +14,6 @@ else
   source ~/dotfiles/zsh_profile
 fi
 
+
+# opencode
+export PATH=/home/manu/.opencode/bin:$PATH
