@@ -343,9 +343,6 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
-        emmet_language_server = {
-          filetypes = { 'html', 'css', 'javascript', 'javascriptreact', 'typescriptreact', 'eelixir', 'heex', 'elixir' },
-        },
 
         lua_ls = {
           -- cmd = {...},
@@ -357,7 +354,7 @@ require('lazy').setup({
                 callSnippet = 'Replace',
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
@@ -376,7 +373,6 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'emmet_language_server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -642,6 +638,26 @@ end
 
 -- Map it to a key
 vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
+
+local lspconfig = require 'lspconfig'
+lspconfig.emmet_language_server.setup {
+  filetypes = {
+    'css',
+    'heex',
+    'eelixir',
+    'phoenix-heex',
+    'html-heex',
+    'html',
+    'elixir',
+    'javascript',
+    'javascriptreact',
+    'less',
+    'sass',
+    'scss',
+    'pug',
+    'typescriptreact',
+  },
+}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
