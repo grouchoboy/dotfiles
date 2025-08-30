@@ -1,4 +1,4 @@
-sudo pacman -S zellij alacritty zsh nvim fzf inotify-tools podman docker unzip inetutils distrobox \ 
+sudo pacman -S zellij alacritty zsh nvim fzf inotify-tools podman docker docker-compose unzip inetutils distrobox \ 
     vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop power-profiles-daemon flatpak gwenview \
     fd stow transmission-qt
 
