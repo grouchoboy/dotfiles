@@ -32,3 +32,8 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip
 unzip Meslo.zip -d Meslo
 cp -r Meslo ~/.local/share/fonts
 rm -rf Meslo.zip Meslo
+
+wget  -O inter.zip https://www.fontsquirrel.com/fonts/download/inter
+unzip inter.zip -d inter
+cp -r inter ~/.local/share/fonts
+rm -rf inter.zip inter
