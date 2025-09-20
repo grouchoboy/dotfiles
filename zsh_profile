@@ -61,9 +61,11 @@ if [ -e /run/.containerenv ] ; then
     source $ZSH/oh-my-zsh.sh
     source <(fzf --zsh)
 
-    alias podman="distrobox-host-exec podman"
-    alias c="podman compose"
+    # alias podman="distrobox-host-exec podman"
+    # alias c="podman compose"
+    # sudo ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
     export PODMAN_COMPOSE_WARNING_LOGS="false"
+    export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
     # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 fi
 
