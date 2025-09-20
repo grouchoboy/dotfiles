@@ -4,6 +4,7 @@ sudo pacman -S zellij alacritty zsh nvim fzf inotify-tools podman docker docker-
 
 sudo systemctl enable --now power-profiles-daemon.service
 
+# sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 yay -S 1password
  
 # codecs
