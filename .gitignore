@@ -56,3 +56,10 @@ lazy-lock.json
 
 work/
 config/tmux/plugins/
+
+config/emacs/custom.el
+config/emacs/auto-save-list/
+config/emacs/backups/
+config/emacs/eln-cache/
+config/emacs/elpa/
+config/emacs/*.*~
