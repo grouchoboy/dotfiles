@@ -23,6 +23,9 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (setq column-number-mode 1)
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode)
+(global-hl-line-mode 1)
 (setq-default fill-column 80)
 (setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
 (show-paren-mode t)
@@ -53,6 +56,9 @@
   :ensure t
   :config
   (load-theme 'gruvbox-light-hard t))
+
+(set-face-attribute 'line-number nil
+                    :background nil) 
 
 ;; custom functions
 
