@@ -5,12 +5,22 @@ return {
   --- @type snacks.Config
   opts = {
     explorer = {
-      auto_open = true,
-      replace_netrw = true,
+      auto_open = false,
+      auto_close = false,
+      replace_netrw = false,
     },
     picker = {
       sources = {
-        explorer = {},
+        explorer = {
+          auto_open = false,
+          follow_file = false,
+          use_icons = false,
+          icons = {
+            files = {
+              enabled = false,
+            },
+          },
+        },
       },
     },
   },
