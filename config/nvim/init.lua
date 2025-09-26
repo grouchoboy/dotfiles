@@ -188,9 +188,6 @@ require('lazy').setup({
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
-      -- { 'mason-org/mason.nvim', version = '^1.0.0', opts = {} }, -- NOTE: Must be loaded before dependants
-      -- { 'mason-org/mason-lspconfig.nvim', version = '^1.0.0' },
       { 'mason-org/mason.nvim', opts = {} }, -- NOTE: Must be loaded before dependants
       { 'mason-org/mason-lspconfig.nvim' },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -342,7 +339,7 @@ require('lazy').setup({
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config(server_name, server)
           end,
         },
       }
@@ -567,8 +564,7 @@ end
 -- Map it to a key
 vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
 
-local lspconfig = require 'lspconfig'
-lspconfig.emmet_language_server.setup {
+vim.lsp.config('emmet_language_server', {
   filetypes = {
     'css',
     'heex',
@@ -585,7 +581,7 @@ lspconfig.emmet_language_server.setup {
     'pug',
     'typescriptreact',
   },
-}
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
