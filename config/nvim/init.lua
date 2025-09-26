@@ -16,8 +16,10 @@ vim.g.have_nerd_font = false
 -- For more options, you can see `:help option-list`
 
 -- Make line numbers default
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false
+vim.opt.relativenumber = false
+
+vim.opt.showmatch = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -317,10 +319,10 @@ require('lazy').setup({
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
-      --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-      --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+      --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
+      --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -429,112 +431,82 @@ require('lazy').setup({
   },
 
   { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
+    'Saghen/blink.cmp',
+    lazy = false,
+    version = 'v0.*',
     dependencies = {
-      {
-        'L3MON4D3/LuaSnip',
-        build = (function()
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-            return
-          end
-          return 'make install_jsregexp'
-        end)(),
-        dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
-        },
-        config = require 'custom.plugins.snippets',
-      },
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
-      --  into multiple repos for maintenance purposes.
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
+      'L3MON4D3/LuaSnip',
+      -- 'rafamadriz/friendly-snippets',
     },
     config = function()
-      -- See `:help cmp`
-      local cmp = require 'cmp'
-      local luasnip = require 'luasnip'
-      luasnip.config.setup {}
+      -- require('luasnip.loaders.from_vscode').lazy_load()
+      -- require 'custom.plugins.snippets'
 
-      cmp.setup {
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
+      require('blink.cmp').setup {
+        keymap = {
+          preset = 'default',
+          ['<C-y>'] = { 'select_and_accept' },
+          ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+          ['<C-l>'] = { 'snippet_forward', 'fallback' },
+          ['<C-h>'] = { 'snippet_backward', 'fallback' },
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
-        -- completion = {
-        --   autocomplete = false,
-        -- },
-        --
-        -- For an understanding of why these mappings were
-        -- chosen, you will need to read `:help ins-completion`
-        --
-        -- No, but seriously. Please read `:help ins-completion`, it is really good!
-        mapping = cmp.mapping.preset.insert {
-          -- Select the [n]ext item
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          -- Select the [p]revious item
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-
-          -- Scroll the documentation window [b]ack / [f]orward
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-
-          -- Accept ([y]es) the completion.
-          --  This will auto-import if your LSP supports it.
-          --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
-
-          -- If you prefer more traditional completion keymaps,
-          -- you can uncomment the following lines
-          --['<CR>'] = cmp.mapping.confirm { select = true },
-          --['<Tab>'] = cmp.mapping.select_next_item(),
-          --['<S-Tab>'] = cmp.mapping.select_prev_item(),
-
-          -- Manually trigger a completion from nvim-cmp.
-          --  Generally you don't need this, because nvim-cmp will display
-          --  completions whenever it has completion options available.
-          ['<C-Space>'] = cmp.mapping.complete {},
-
-          -- Think of <c-l> as moving to the right of your snippet expansion.
-          --  So if you have a snippet that's like:
-          --  function $name($args)
-          --    $body
-          --  end
-          --
-          -- <c-l> will move you to the right of each of the expansion locations.
-          -- <c-h> is similar, except moving you backwards.
-          ['<C-l>'] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { 'i', 's' }),
-
-          -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-          --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        appearance = {
+          nerd_font_variant = 'mono',
+        },
+        completion = {
+          documentation = {
+            auto_show = true,
+            auto_show_delay_ms = 100,
+          },
+          ghost_text = { enabled = true },
+          menu = {
+            draw = {
+              treesitter = { 'lsp' },
+            },
+          },
         },
         sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
+        -- sources = {
+        --   default = { 'lsp', 'path', 'snippets', 'buffer' },
+        --   providers = {
+        --     lsp = {
+        --       name = 'LSP',
+        --       module = 'blink.cmp.sources.lsp',
+        --     },
+        --     path = {
+        --       name = 'Path',
+        --       module = 'blink.cmp.sources.path',
+        --       score_offset = 3,
+        --     },
+        --     snippets = {
+        --       name = 'Snippets',
+        --       module = 'blink.cmp.sources.snippets',
+        --       score_offset = 5,
+        --     },
+        --     buffer = {
+        --       name = 'Buffer',
+        --       module = 'blink.cmp.sources.buffer',
+        --       score_offset = 2,
+        --     },
+        --   },
+        -- },
+        -- snippets = {
+        --   expand = function(snippet)
+        --     require('luasnip').lsp_expand(snippet)
+        --   end,
+        --   active = function(filter)
+        --     if filter then
+        --       return require('luasnip').jumpable(1)
+        --     else
+        --       return require('luasnip').in_snippet()
+        --     end
+        --   end,
+        --   jump = function(direction)
+        --     require('luasnip').jump(direction)
+        --   end,
+        -- },
       }
     end,
   },
@@ -648,7 +620,7 @@ lspconfig.emmet_language_server.setup {
     'phoenix-heex',
     'html-heex',
     'html',
-    'elixir',
+    -- 'elixir',
     'javascript',
     'javascriptreact',
     'less',
