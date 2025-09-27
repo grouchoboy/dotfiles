@@ -411,7 +411,7 @@ require('lazy').setup({
             auto_show = true,
             auto_show_delay_ms = 100,
           },
-          ghost_text = { enabled = true },
+          ghost_text = { enabled = false },
           menu = {
             draw = {
               treesitter = { 'lsp' },
@@ -515,24 +515,12 @@ require('lazy').setup({
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
+
   require 'kickstart.plugins.mini',
   require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.harpoon',
   require 'kickstart.plugins.gruvbox',
-  -- require 'kickstart.plugins.catppuccin',
   require 'kickstart.plugins.snaks',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

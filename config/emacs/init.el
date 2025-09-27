@@ -22,20 +22,20 @@
 (if window-system (scroll-bar-mode -1))
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(setq column-number-mode 1)
-(setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode)
-(global-hl-line-mode 1)
+;(setq column-number-mode 1)
+;(setq display-line-numbers-type 'relative)
+;(global-display-line-numbers-mode)
+;(global-hl-line-mode 1)
 (setq-default fill-column 80)
 (setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
 (show-paren-mode t)
 (blink-cursor-mode 0)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(use-package evil
-:ensure t
-:config
-(evil-mode 1))
+;(use-package evil
+;:ensure t
+;:config
+;(evil-mode 1))
 
 (use-package all-the-icons
   :ensure t)

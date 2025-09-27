@@ -35,7 +35,7 @@
     "agent_cycle_reverse": "shift+tab",
     "input_clear": "ctrl+c",
     "input_paste": "ctrl+v",
-    "input_submit": "shift+enter",
-    "input_newline": "enter"
+    "input_submit": "enter",
+    "input_newline": "shift+enter"
   }
 }

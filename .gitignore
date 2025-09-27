@@ -62,4 +62,8 @@ config/emacs/auto-save-list/
 config/emacs/backups/
 config/emacs/eln-cache/
 config/emacs/elpa/
+config/emacs/tutorial/
 config/emacs/*.*~
+**/#*
+**/.#*
+**/#*#
