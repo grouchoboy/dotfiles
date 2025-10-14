@@ -560,7 +560,7 @@ vim.lsp.config('emmet_language_server', {
     'phoenix-heex',
     'html-heex',
     'html',
-    -- 'elixir',
+    'elixir',
     'javascript',
     'javascriptreact',
     'less',

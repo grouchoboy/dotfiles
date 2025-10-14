@@ -30,7 +30,7 @@
 (setq backup-directory-alist `(("." . ,(expand-file-name "backups" user-emacs-directory))))
 (show-paren-mode t)
 (blink-cursor-mode 0)
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+;(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;(use-package evil
 ;:ensure t
@@ -66,4 +66,3 @@
   "Open the init file"
   (interactive)
   (find-file "~/.config/emacs/init.el"))
-
