@@ -46,7 +46,8 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 250
+-- vim.opt.updatetime = 250
+vim.opt.updatetime = 400
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -406,21 +407,30 @@ require('lazy').setup({
         appearance = {
           nerd_font_variant = 'mono',
         },
+
         completion = {
           documentation = {
-            auto_show = true,
-            auto_show_delay_ms = 100,
+            auto_show = false,
+            -- auto_show_delay_ms = 100,
           },
           ghost_text = { enabled = false },
-          menu = {
-            draw = {
-              treesitter = { 'lsp' },
+          -- menu = {
+          --   draw = {
+          --     treesitter = { 'lsp' },
+          --   },
+          -- },
+        },
+        sources = {
+          -- default = { 'snippets', 'lsp', 'path', 'buffer' },
+          default = { 'lsp', 'snippets', 'path', 'buffer' },
+          providers = {
+            lsp = {
+              async = true,
             },
           },
         },
-        sources = {
-          default = { 'lsp', 'path', 'snippets', 'buffer' },
-        },
+        -- snippets = { preset = 'luasnip' },
+
         -- sources = {
         --   default = { 'lsp', 'path', 'snippets', 'buffer' },
         --   providers = {
@@ -552,24 +562,24 @@ end
 -- Map it to a key
 vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
 
-vim.lsp.config('emmet_language_server', {
-  filetypes = {
-    'css',
-    'heex',
-    'eelixir',
-    'phoenix-heex',
-    'html-heex',
-    'html',
-    'elixir',
-    'javascript',
-    'javascriptreact',
-    'less',
-    'sass',
-    'scss',
-    'pug',
-    'typescriptreact',
-  },
-})
+-- vim.lsp.config('emmet_language_server', {
+--   filetypes = {
+--     'css',
+--     'heex',
+--     'eelixir',
+--     'phoenix-heex',
+--     'html-heex',
+--     'html',
+--     'elixir',
+--     'javascript',
+--     'javascriptreact',
+--     'less',
+--     'sass',
+--     'scss',
+--     'pug',
+--     'typescriptreact',
+--   },
+-- })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
