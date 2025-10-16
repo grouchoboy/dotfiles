@@ -421,7 +421,6 @@ require('lazy').setup({
           -- },
         },
         sources = {
-          -- default = { 'snippets', 'lsp', 'path', 'buffer' },
           default = { 'lsp', 'snippets', 'path', 'buffer' },
           providers = {
             lsp = {
@@ -429,47 +428,6 @@ require('lazy').setup({
             },
           },
         },
-        -- snippets = { preset = 'luasnip' },
-
-        -- sources = {
-        --   default = { 'lsp', 'path', 'snippets', 'buffer' },
-        --   providers = {
-        --     lsp = {
-        --       name = 'LSP',
-        --       module = 'blink.cmp.sources.lsp',
-        --     },
-        --     path = {
-        --       name = 'Path',
-        --       module = 'blink.cmp.sources.path',
-        --       score_offset = 3,
-        --     },
-        --     snippets = {
-        --       name = 'Snippets',
-        --       module = 'blink.cmp.sources.snippets',
-        --       score_offset = 5,
-        --     },
-        --     buffer = {
-        --       name = 'Buffer',
-        --       module = 'blink.cmp.sources.buffer',
-        --       score_offset = 2,
-        --     },
-        --   },
-        -- },
-        -- snippets = {
-        --   expand = function(snippet)
-        --     require('luasnip').lsp_expand(snippet)
-        --   end,
-        --   active = function(filter)
-        --     if filter then
-        --       return require('luasnip').jumpable(1)
-        --     else
-        --       return require('luasnip').in_snippet()
-        --     end
-        --   end,
-        --   jump = function(direction)
-        --     require('luasnip').jump(direction)
-        --   end,
-        -- },
       }
     end,
   },
@@ -562,24 +520,24 @@ end
 -- Map it to a key
 vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
 
--- vim.lsp.config('emmet_language_server', {
---   filetypes = {
---     'css',
---     'heex',
---     'eelixir',
---     'phoenix-heex',
---     'html-heex',
---     'html',
---     'elixir',
---     'javascript',
---     'javascriptreact',
---     'less',
---     'sass',
---     'scss',
---     'pug',
---     'typescriptreact',
---   },
--- })
+vim.lsp.config('emmet_language_server', {
+  filetypes = {
+    'css',
+    'heex',
+    'eelixir',
+    'phoenix-heex',
+    'html-heex',
+    'html',
+    'elixir',
+    'javascript',
+    'javascriptreact',
+    'less',
+    'sass',
+    'scss',
+    'pug',
+    'typescriptreact',
+  },
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
