@@ -28,6 +28,7 @@ C-spc select text
 M-w copy text
 C-w kill text
 C-y yank text
+C-/ undo
 
 ## Windows
 

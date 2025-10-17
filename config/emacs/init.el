@@ -60,6 +60,12 @@
 (set-face-attribute 'line-number nil
                     :background nil) 
 
+(use-package magit
+    :ensure t
+    :bind (("C-x g" . magit-status))
+    :config
+    (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
+
 ;; custom functions
 
 (defun open-init()
