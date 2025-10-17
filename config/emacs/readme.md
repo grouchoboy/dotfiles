@@ -22,6 +22,13 @@ M-e Move forward to end of sentence
 M-< beginning of the text
 M-> end of the text
 
+## Copy/paste
+
+C-spc select text
+M-w copy text
+C-w kill text
+C-y yank text
+
 ## Windows
 
 C-x 3 vertical split windows
@@ -34,3 +41,4 @@ C-x 0 close current window
 
 C-x C-s save buffer
 C-x C-f find buffer
+C-x C-f find buffe
