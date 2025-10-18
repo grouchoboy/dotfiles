@@ -1,8 +1,8 @@
 command = /usr/bin/zsh 
-theme = GruvboxLightHard
-font-family = CaskaydiaCove Nerd Font
-font-size = 16
-font-family-bold = GoMono Nerd Font
+theme = Gruvbox Light Hard
+font-family = JetBrainsMono Nerd Font
+font-size = 15
+font-style = Medium
 font-style-bold = false
 font-feature = -calt
 font-feature = -liga
@@ -10,7 +10,6 @@ font-feature = -dlig
 cursor-style-blink = false
 cursor-style = block
 shell-integration-features = no-cursor
-gtk-adwaita = true
 
 window-padding-x = 5
 window-padding-y = 5
