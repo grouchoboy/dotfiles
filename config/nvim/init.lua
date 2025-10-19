@@ -483,6 +483,12 @@ require('lazy').setup({
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
+  {
+    'sourcegraph/amp.nvim',
+    branch = 'main',
+    lazy = false,
+    opts = { auto_start = true, log_level = 'info' },
+  },
 
   require 'kickstart.plugins.mini',
   require 'kickstart.plugins.autopairs',
