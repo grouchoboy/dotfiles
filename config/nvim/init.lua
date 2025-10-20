@@ -545,5 +545,12 @@ vim.lsp.config('emmet_language_server', {
   },
 })
 
+-- Copy relative path of the current buffer to the system clipboard
+vim.keymap.set('n', '<leader>cp', function()
+  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':.')
+  vim.fn.setreg('+', path)
+  vim.notify('Copied: ' .. path)
+end, { desc = 'Copy relative buffer path' })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
