@@ -5,7 +5,7 @@ source $HOME/dotfiles/zshzellij
 export EDITOR='nvim'
 alias vim='nvim'
 alias em="emacs -nw"
-alias c="docker compose"
+alias c="docker-compose"
 
 # alias k="kubectl"
 #source <(kubectl completion zsh)
