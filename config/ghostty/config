@@ -1,6 +1,6 @@
-command = /usr/bin/zsh 
-theme = Gruvbox Light Hard
-font-family = JetBrainsMono Nerd Font
+# command = /usr/bin/zsh 
+theme = GruvboxLightHard
+font-family = Fira Code
 font-size = 15
 font-style = Medium
 font-style-bold = false
