@@ -1,6 +1,6 @@
 ## Movement
 
-C-v Move forward one screenfu
+C-v Move forward one screenful
 M-v Move backward one screenful
 C-l Clear screen and redisplay the text
 
@@ -35,6 +35,7 @@ C-/ undo
 C-x 3 vertical split windows
 C-x 1 kill all other windows
 C-x 0 close current window
+C-x o move to other window
 
 ## Inserting and deleting
 
@@ -42,4 +43,3 @@ C-x 0 close current window
 
 C-x C-s save buffer
 C-x C-f find buffer
-C-x C-f find buffe
