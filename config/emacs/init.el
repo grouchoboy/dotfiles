@@ -44,18 +44,14 @@
   :ensure t
   :init (doom-modeline-mode 1))
 
-;;(use-package doom-themes
-;;  :ensure t
-;;  :config
-;;  (setq doom-themes-enable-bold nil
-;;	doom-themes-enable-italic nil)
-;;  (load-theme 'doom-gruvbox-light t)
-;;  (doom-themes-org-config))
-
-(use-package gruvbox-theme
-  :ensure t
-  :config
-  (load-theme 'gruvbox-light-hard t))
+(use-package doom-themes
+ :ensure t
+ :config
+ (setq doom-themes-enable-bold nil
+       doom-themes-enable-italic nil
+       doom-gruvbox-light-variant "hard")
+ (load-theme 'doom-gruvbox-light t)
+ (doom-themes-org-config))
 
 (set-face-attribute 'line-number nil
                     :background nil) 
