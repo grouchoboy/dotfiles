@@ -1,8 +1,9 @@
 # command = /usr/bin/zsh 
-theme = GruvboxLightHard
+#theme = GruvboxLightHard
+theme = GruvboxDark
 font-family = Fira Code
 font-size = 15
-font-style = Medium
+font-style = Regular
 font-style-bold = false
 font-feature = -calt
 font-feature = -liga
