@@ -1,3 +1,5 @@
+Start the tutorial C-h t 
+
 ## Movement
 
 C-v Move forward one screenful
@@ -27,6 +29,7 @@ M-> end of the text
 C-spc select text
 M-w copy text
 C-w kill text
+C-k kill the rest of the current line
 C-y yank text
 C-/ undo
 
@@ -43,3 +46,15 @@ C-x o move to other window
 
 C-x C-s save buffer
 C-x C-f find buffer
+
+## Search
+
+C-s incremental search
+C-r reverse search
+
+## Comments
+
+M-; toggle comment region
+C-x C-; toggle comment current line
+
+https://emacsdocs.org/docs/emacs/Comment-Commands
