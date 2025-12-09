@@ -37,6 +37,11 @@
 ;:config
 ;(evil-mode 1))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
+
 (use-package all-the-icons
   :ensure t)
 
@@ -62,9 +67,25 @@
     :config
     (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
 
+(use-package eglot
+  :ensure nil
+  :bind
+  (("C-c e f" . eglot-format-buffer))) ;; built-in
+
+(use-package go-mode
+  :ensure t
+  :hook
+  (go-mode . eglot-ensure))
+
 ;; custom functions
 
 (defun open-init()
   "Open the init file"
   (interactive)
   (find-file "~/.config/emacs/init.el"))
+
+(defun f ()
+  "Format the current buffer using Eglot."
+  (interactive)
+  (when (bound-and-true-p eglot--managed-mode)
+    (eglot-format-buffer)))

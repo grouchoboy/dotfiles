@@ -5,7 +5,7 @@ source $HOME/dotfiles/zshzellij
 export EDITOR='nvim'
 alias vim='nvim'
 alias em="emacs -nw"
-alias c="docker-compose"
+# alias c="docker-compose"
 
 # alias k="kubectl"
 #source <(kubectl completion zsh)
@@ -65,7 +65,9 @@ if [ -e /run/.containerenv ] ; then
     # alias c="podman compose"
     # sudo ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
     export PODMAN_COMPOSE_WARNING_LOGS="false"
-    export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
+    alias docker="distrobox-host-exec docker"
+    alias c="distrobox-host-exec docker compose"
+    # export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
     # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 fi
 
