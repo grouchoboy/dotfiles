@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-distrobox create --name dev --image archlinux:latest
+systemctl --user enable --now podman.socket
+distrobox assemble create --file arch.ini
 
