@@ -495,13 +495,6 @@ require('lazy').setup({
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
-  {
-    'sourcegraph/amp.nvim',
-    branch = 'main',
-    lazy = false,
-    opts = { auto_start = true, log_level = 'info' },
-  },
-
   require 'kickstart.plugins.mini',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.harpoon',
@@ -538,7 +531,7 @@ end
 -- Map it to a key
 vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
 
-vim.lsp.config('emmet_language_server', {
+vi#ffffffm.lsp.config('emmet_language_server', {
   filetypes = {
     'css',
     'heex',
