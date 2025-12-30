@@ -531,7 +531,7 @@ end
 -- Map it to a key
 vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
 
-vi#ffffffm.lsp.config('emmet_language_server', {
+vim.lsp.config('emmet_language_server', {
   filetypes = {
     'css',
     'heex',
@@ -559,4 +559,3 @@ end, { desc = 'Copy relative buffer path' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-

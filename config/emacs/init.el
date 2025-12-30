@@ -67,15 +67,30 @@
     :config
     (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
 
-(use-package eglot
-  :ensure nil
-  :bind
-  (("C-c e f" . eglot-format-buffer))) ;; built-in
+;; (use-package counsel
+;;   :ensure t
+;;   :bind (("C-c f" . counsel-find-file)))
 
-(use-package go-mode
+(use-package projectile
   :ensure t
-  :hook
-  (go-mode . eglot-ensure))
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+	      ("C-c f" . projectile-find-file)
+              ("C-c p" . projectile-command-map))
+  :config
+  (setq projectile-completion-system 'ivy))
+
+;; (use-package eglot
+;;   :ensure nil
+;;   :bind
+;;   (("C-c e f" . eglot-format-buffer))) ;; built-in
+
+;; (use-package go-mode
+;;   :ensure t
+;;   :hook
+;;   (go-mode . eglot-ensure))
 
 ;; custom functions
 
@@ -83,9 +98,3 @@
   "Open the init file"
   (interactive)
   (find-file "~/.config/emacs/init.el"))
-
-(defun f ()
-  "Format the current buffer using Eglot."
-  (interactive)
-  (when (bound-and-true-p eglot--managed-mode)
-    (eglot-format-buffer)))
