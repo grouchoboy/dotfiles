@@ -1,14 +1,7 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
-source $HOME/dotfiles/zshzellij
-
 export EDITOR='nvim'
 alias vim='nvim'
-alias em="emacs -nw"
-# alias c="docker-compose"
-
-# alias k="kubectl"
-#source <(kubectl completion zsh)
 
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then
@@ -22,12 +15,6 @@ gits() {
 
 addToPathFront $HOME/.local/bin
 
-# asdf setup
-addToPathFront ${ASDF_DATA_DIR:-$HOME/.asdf}/shims
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-autoload -Uz compinit && compinit
-# end asdf setup
-
 datadisk() {
 	cd /run/media/manu/DataDisk
 }
@@ -38,42 +25,7 @@ datassd() {
 
 HOST=$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')
 
-if [ "$HOST" = "Fedora Linux" ]; then
-    source /usr/share/fzf/shell/key-bindings.zsh
-    # eval "$(~/.local/bin/mise activate zsh)"
-    eval "$(direnv hook zsh)"
-
-    # The next line updates PATH for the Google Cloud SDK.
-    # if [ -f "${HOME}/.local/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/.local/google-cloud-sdk/path.zsh.inc"; fi
-
-    # The next line enables shell command completion for gcloud.
-    # if [ -f "{$HOME}/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/.local/google-cloud-sdk/completion.zsh.inc"; fi
-fi
-
-if [ "$HOST" = "Arch Linux" ]; then
+if [ "$HOST" = "openSUSE Tumbleweed" ]; then
     eval "$(mise activate zsh)"
-    export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/manu/.local/share/flatpak/exports/share:${XDG_DATA_DIRS}"
-fi
-
-## Inside a distrobox container
-if [ -e /run/.containerenv ] ; then
-    ZSH_THEME="bira"
-    source $ZSH/oh-my-zsh.sh
-    source <(fzf --zsh)
-
-    # alias podman="distrobox-host-exec podman"
-    # alias c="podman compose"
-    # sudo ln -s /usr/bin/distrobox-host-exec /usr/local/bin/podman
-    export PODMAN_COMPOSE_WARNING_LOGS="false"
-    alias docker="distrobox-host-exec docker"
-    alias c="distrobox-host-exec docker compose"
-    # export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
-    # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
-fi
-
-HOSTNAME=$(hostname)
-
-if [ "$HOSTNAME" = "dooland" ] ; then
-    source $HOME/dotfiles/zshwork
 fi
 
