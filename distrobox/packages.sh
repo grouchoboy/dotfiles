@@ -3,3 +3,4 @@ neovim
 alacritty
 tmux
 stow
+fzf

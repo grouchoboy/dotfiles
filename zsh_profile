@@ -29,5 +29,6 @@ source /etc/os-release
 # fi
 
 if [ -e /run/.containerenv ] ; then
+    source <(fzf --zsh)
     eval "$(mise activate zsh)"
 fi
