@@ -23,9 +23,11 @@ datassd() {
 	cd /run/media/manu/DataSSD
 }
 
-HOST=$(awk -F= '/^NAME=/{print $2}' /etc/os-release | tr -d '"')
+source /etc/os-release
 
-if [ "$HOST" = "openSUSE Tumbleweed" ]; then
+# if [ "$HOST" = "Debian GNU/Linux" ]; then
+# fi
+
+if [ -e /run/.containerenv ] ; then
     eval "$(mise activate zsh)"
 fi
-
