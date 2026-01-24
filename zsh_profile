@@ -25,9 +25,10 @@ datassd() {
 
 source /etc/os-release
 
-if [ "$HOST" = "Fedora Linux" ]; then
+if [ "$NAME" = "Fedora Linux" ]; then
     source <(fzf --zsh)
     eval "$(mise activate zsh)"
+    addToPathFront $HOME/.local/flutter/bin
 fi
 
 if [ -e /run/.containerenv ] ; then
