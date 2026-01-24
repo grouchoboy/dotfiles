@@ -25,10 +25,10 @@ datassd() {
 
 source /etc/os-release
 
-# if [ "$HOST" = "Debian GNU/Linux" ]; then
-# fi
-
-if [ -e /run/.containerenv ] ; then
+if [ "$HOST" = "Fedora Linux" ]; then
     source <(fzf --zsh)
     eval "$(mise activate zsh)"
+fi
+
+if [ -e /run/.containerenv ] ; then
 fi
