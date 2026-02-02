@@ -1,7 +1,11 @@
 # https://github.com/asdf-vm/asdf-erlang
 #
+# sudo dnf install -y git gcc g++ automake autoconf ncurses-devel wxGTK-devel wxBase openssl-devel \
+    # java-1.8.0-openjdk-devel libiodbc unixODBC-devel.x86_64 erlang-odbc.x86_64 libxslt fop
+
 sudo dnf install -y git gcc g++ automake autoconf ncurses-devel wxGTK-devel wxBase openssl-devel \
-    java-1.8.0-openjdk-devel libiodbc unixODBC-devel.x86_64 erlang-odbc.x86_64 libxslt fop
+    java-21-openjdk-devel libiodbc unixODBC-devel.x86_64 erlang-odbc.x86_64 libxslt fop
+
 
 mise plugin install elixir https://github.com/mise-plugins/mise-elixir.git
 
