@@ -70,10 +70,11 @@ return function()
     bg4 = p.light4,
     fg0 = p.dark0,
     fg1 = p.dark1,
-    -- text = p.dark1,
-    text = '#000000',
-    -- base = p.light0_hard,
-    base = '#ffffea', -- acme yellow
+    text = p.dark1,
+    -- text = '#000000',
+
+    base = p.light0_hard,
+    -- base = '#ffffea', -- acme yellow
     fg2 = p.dark2,
     fg3 = p.dark3,
     fg4 = p.dark4,
@@ -101,7 +102,7 @@ return function()
     gruvbox_string = '#686d43',
   }
   -- Set general UI highlights
-  set_hl('Normal', { fg = colors.text, bg = colors.base })
+  -- set_hl('Normal', { fg = colors.text, bg = colors.base })
   set_hl('Comment', { fg = colors.overlay0 })
   set_hl('Constant', { fg = colors.text })
   -- set_hl('String', { fg = colors.text })
@@ -109,7 +110,7 @@ return function()
   set_hl('Identifier', { fg = colors.text })
   -- set_hl('Statement', { fg = colors.text })
   set_hl('Statement', { fg = colors.gruvbox_red })
-  set_hl('PreProc', { fg = colors.text })
+  -- set_hl('PreProc', { fg = colors.text })
   set_hl('Type', { fg = colors.text })
   set_hl('Special', { fg = colors.text })
   set_hl('Function', { fg = colors.text })
@@ -117,32 +118,32 @@ return function()
   set_hl('@variable', { fg = colors.text })
   set_hl('Title', { fg = colors.text })
   set_hl('Operator', { fg = colors.text })
-  set_hl('CursorLine', { bg = colors.surface0, fg = colors.text })
+  -- set_hl('CursorLine', { bg = colors.surface0, fg = colors.text })
   -- set_hl('LineNr', { fg = colors.surface1 })
-  set_hl('LineNr', { fg = colors.overlay0, bg = colors.base })
-  set_hl('SignColumn', { bg = colors.base })
-  set_hl('StatusLine', { fg = colors.text, bg = colors.base })
-  set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.base })
+  -- set_hl('LineNr', { fg = colors.overlay0, bg = colors.base })
+  -- set_hl('SignColumn', { bg = colors.base })
+  -- set_hl('StatusLine', { fg = colors.text, bg = colors.base })
+  -- set_hl('StatusLineNC', { fg = colors.surface1, bg = colors.base })
   -- set_hl('MatchParen', { bg = colors.text, fg = colors.base, bold = false })
 
   -- Apply highlights for diagnostics (errors, warnings, etc.)
-  set_hl('DiagnosticError', { fg = colors.red })
-  set_hl('DiagnosticWarn', { fg = colors.yellow })
-  set_hl('DiagnosticInfo', { fg = colors.blue })
-  set_hl('DiagnosticHint', { fg = colors.cyan })
+  -- set_hl('DiagnosticError', { fg = colors.red })
+  -- set_hl('DiagnosticWarn', { fg = colors.yellow })
+  -- set_hl('DiagnosticInfo', { fg = colors.blue })
+  -- set_hl('DiagnosticHint', { fg = colors.cyan })
 
   -- Neotree
-  set_hl('NeoTreeDirectoryIcon', { fg = colors.text })
-  set_hl('NeoTreeDirectoryName', { fg = colors.text })
+  -- set_hl('NeoTreeDirectoryIcon', { fg = colors.text })
+  -- set_hl('NeoTreeDirectoryName', { fg = colors.text })
 
   -- Mini Statusline
-  set_hl('MiniStatuslineModeInsert', { bg = colors.gray })
-  set_hl('MiniStatuslineModeCommand', { bg = colors.base })
-  set_hl('MiniStatuslineDevinfo', { bg = colors.overlay0 })
-  set_hl('MiniStatuslineFilename', { bg = colors.overlay0 })
-  set_hl('MiniStatuslineFileinfo', { bg = colors.overlay0 })
+  -- set_hl('MiniStatuslineModeInsert', { bg = colors.gray })
+  -- set_hl('MiniStatuslineModeCommand', { bg = colors.base })
+  -- set_hl('MiniStatuslineDevinfo', { bg = colors.overlay0 })
+  -- set_hl('MiniStatuslineFilename', { bg = colors.overlay0 })
+  -- set_hl('MiniStatuslineFileinfo', { bg = colors.overlay0 })
 
-  set_hl('Visual', { bg = colors.surface0 })
-  set_hl('NormalFloat', { bg = colors.surface0 })
-  vim.api.nvim_set_hl(0, 'Pmenu', { bg = colors.surface0, fg = colors.text })
+  -- set_hl('Visual', { bg = colors.surface0 })
+  -- set_hl('NormalFloat', { bg = colors.surface0 })
+  -- vim.api.nvim_set_hl(0, 'Pmenu', { bg = colors.surface0, fg = colors.text })
 end

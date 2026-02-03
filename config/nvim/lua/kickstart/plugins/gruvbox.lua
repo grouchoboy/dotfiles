@@ -25,5 +25,7 @@ return {
     }
     vim.o.background = 'light'
     vim.cmd 'colorscheme gruvbox'
+    colors = require 'custom.plugins.colors'
+    colors()
   end,
 }
