@@ -276,6 +276,25 @@ require('lazy').setup({
 
       local servers = {
         gopls = {},
+        expert = {},
+        emmet_language_server = {
+          filetypes = {
+            'css',
+            'heex',
+            'eelixir',
+            'phoenix-heex',
+            'html-heex',
+            'html',
+            'elixir',
+            'javascript',
+            'javascriptreact',
+            'less',
+            'sass',
+            'scss',
+            'pug',
+            'typescriptreact',
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -291,8 +310,13 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'gopls',
       })
+      -- Mason package name is 'emmet-language-server', but lspconfig name is 'emmet_language_server'
+      for i, v in ipairs(ensure_installed) do
+        if v == 'emmet_language_server' then
+          ensure_installed[i] = 'emmet-language-server'
+        end
+      end
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       for name, server in pairs(servers) do
@@ -300,6 +324,13 @@ require('lazy').setup({
         vim.lsp.config(name, server)
         vim.lsp.enable(name)
       end
+
+      -- if vim.fn.executable 'emmet_language_server' == 1 then
+      --   vim.lsp.config('emmet_language_server', {
+      --     capabilities = capabilities,
+      --   })
+      --   vim.lsp.enable 'emmet_language_server'
+      -- end
 
       vim.lsp.config('lua_ls', {
         on_init = function(client)
@@ -481,25 +512,6 @@ end
 
 -- Map it to a key
 vim.keymap.set('n', '<leader>lv', html_to_liveview, { desc = 'Convert HTML to LiveView component' })
-
-vim.lsp.config('emmet_language_server', {
-  filetypes = {
-    'css',
-    'heex',
-    'eelixir',
-    'phoenix-heex',
-    'html-heex',
-    'html',
-    'elixir',
-    'javascript',
-    'javascriptreact',
-    'less',
-    'sass',
-    'scss',
-    'pug',
-    'typescriptreact',
-  },
-})
 
 -- Copy relative path of the current buffer to the system clipboard
 vim.keymap.set('n', '<leader>cp', function()

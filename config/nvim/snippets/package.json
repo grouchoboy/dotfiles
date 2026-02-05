@@ -12,6 +12,10 @@
             {
                 "language": ["eelixir", "heex", "elixir"],
                 "path": "./eelixir.json"
+            },
+            {
+                "language": "html",
+                "path": "./html.json"
             }
         ]
     }
