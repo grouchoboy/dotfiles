@@ -401,50 +401,53 @@ require('lazy').setup({
 
   { -- Autocompletion
     'Saghen/blink.cmp',
-    lazy = false,
-    version = 'v0.*',
+    event = 'VimEnter',
+    version = '1.*',
     dependencies = {
-      'L3MON4D3/LuaSnip',
+      {
+        'L3MON4D3/LuaSnip',
+        version = '2.*',
+        config = function()
+          require('luasnip.loaders.from_vscode').lazy_load { paths = './snippets' }
+        end,
+      },
       -- 'rafamadriz/friendly-snippets',
     },
-    config = function()
-      -- require('luasnip.loaders.from_vscode').lazy_load()
-      -- require 'custom.plugins.snippets'
-
-      require('blink.cmp').setup {
-        keymap = {
-          preset = 'default',
-          ['<C-y>'] = { 'select_and_accept' },
-          ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-          ['<C-l>'] = { 'snippet_forward', 'fallback' },
-          ['<C-h>'] = { 'snippet_backward', 'fallback' },
+    opts = {
+      keymap = {
+        preset = 'default',
+        ['<C-y>'] = { 'select_and_accept' },
+        ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<C-l>'] = { 'snippet_forward', 'fallback' },
+        ['<C-h>'] = { 'snippet_backward', 'fallback' },
+      },
+      appearance = {
+        nerd_font_variant = 'mono',
+      },
+      completion = {
+        documentation = {
+          auto_show = false,
+          -- auto_show_delay_ms = 100,
         },
-        appearance = {
-          nerd_font_variant = 'mono',
-        },
-
-        completion = {
-          documentation = {
-            auto_show = false,
-            -- auto_show_delay_ms = 100,
-          },
-          ghost_text = { enabled = false },
-          -- menu = {
-          --   draw = {
-          --     treesitter = { 'lsp' },
-          --   },
-          -- },
-        },
-        sources = {
-          default = { 'lsp', 'snippets', 'path', 'buffer' },
-          providers = {
-            lsp = {
-              async = true,
-            },
+        ghost_text = { enabled = false },
+        -- menu = {
+        --   draw = {
+        --     treesitter = { 'lsp' },
+        --   },
+        -- },
+      },
+      sources = {
+        default = { 'lsp', 'snippets', 'path', 'buffer' },
+        providers = {
+          lsp = {
+            async = true,
           },
         },
-      }
-    end,
+      },
+      snippets = { preset = 'luasnip' },
+      fuzzy = { implementation = 'lua' },
+      signature = { enabled = true },
+    },
   },
   {
     'nvim-treesitter/nvim-treesitter',
