@@ -12,6 +12,7 @@ return {
     picker = {
       sources = {
         explorer = {
+          git_status = false,
           auto_open = false,
           follow_file = false,
           use_icons = false,

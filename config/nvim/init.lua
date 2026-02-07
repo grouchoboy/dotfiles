@@ -427,14 +427,8 @@ require('lazy').setup({
       completion = {
         documentation = {
           auto_show = false,
-          -- auto_show_delay_ms = 100,
         },
         ghost_text = { enabled = false },
-        -- menu = {
-        --   draw = {
-        --     treesitter = { 'lsp' },
-        --   },
-        -- },
       },
       sources = {
         default = { 'lsp', 'snippets', 'path', 'buffer' },
@@ -463,6 +457,15 @@ require('lazy').setup({
     end,
   },
   {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    -- Optional dependency
+    dependencies = { 'hrsh7th/nvim-cmp' },
+    config = function()
+      require('nvim-autopairs').setup {}
+    end,
+  },
+  {
     'christoomey/vim-tmux-navigator',
     cmd = {
       'TmuxNavigateLeft',
@@ -481,7 +484,6 @@ require('lazy').setup({
     },
   },
   require 'kickstart.plugins.mini',
-  require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.harpoon',
   require 'kickstart.plugins.gruvbox',
   require 'kickstart.plugins.snaks',
