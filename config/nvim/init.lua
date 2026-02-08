@@ -16,7 +16,7 @@ vim.g.have_nerd_font = false
 -- For more options, you can see `:help option-list`
 
 -- Make line numbers default
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.relativenumber = false
 
 vim.opt.showmatch = true
