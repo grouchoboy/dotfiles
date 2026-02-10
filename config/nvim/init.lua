@@ -325,13 +325,6 @@ require('lazy').setup({
         vim.lsp.enable(name)
       end
 
-      -- if vim.fn.executable 'emmet_language_server' == 1 then
-      --   vim.lsp.config('emmet_language_server', {
-      --     capabilities = capabilities,
-      --   })
-      --   vim.lsp.enable 'emmet_language_server'
-      -- end
-
       vim.lsp.config('lua_ls', {
         on_init = function(client)
           if client.workspace_folders then
@@ -440,7 +433,7 @@ require('lazy').setup({
       },
       snippets = { preset = 'luasnip' },
       fuzzy = { implementation = 'lua' },
-      signature = { enabled = true },
+      signature = { enabled = false },
     },
   },
   {
