@@ -26,6 +26,7 @@ datassd() {
 source /etc/os-release
 
 if [ "$NAME" = "Fedora Linux" ]; then
+    alias c="docker compose"
     source <(fzf --zsh)
     eval "$(mise activate zsh)"
     addToPathFront $HOME/.local/flutter/bin
