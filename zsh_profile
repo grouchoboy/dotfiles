@@ -23,6 +23,23 @@ datassd() {
 	cd /run/media/manu/DataSSD
 }
 
+tmj() {
+  # 1. Get the session list (only names)
+  # 2. Use fzf for selection
+  local session
+  session=$(tmux ls -F "#{session_name}" 2>/dev/null | fzf --exit-0 --height 40% --reverse --header="Jump to Session")
+
+  # If no session was selected (e.g., hit ESC), just exit
+  [[ -z "$session" ]] && return
+
+  # 3. Logic: If inside tmux, use switch-client. If outside, use attach.
+  if [[ -n "$TMUX" ]]; then
+    tmux switch-client -t "$session"
+  else
+    tmux attach-session -t "$session"
+  fi
+}
+
 source /etc/os-release
 
 if [ "$NAME" = "Fedora Linux" ]; then
