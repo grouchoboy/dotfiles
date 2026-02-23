@@ -424,7 +424,7 @@ require('lazy').setup({
         ghost_text = { enabled = false },
       },
       sources = {
-        default = { 'lsp', 'snippets', 'path', 'buffer' },
+        default = { 'snippets', 'lsp', 'path', 'buffer' },
         providers = {
           lsp = {
             async = true,
