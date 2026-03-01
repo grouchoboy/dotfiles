@@ -22,6 +22,10 @@ unzip IBMPlexMono.zip -d IMBPlexMono
 cp -r IMBPlexMono ~/.local/share/fonts
 rm -rf IBMPlexMono.zip IMBPlexMono
 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraMono.zip
+unzip FiraMono.zip -d FiraMono
+cp -r FiraMono ~/.local/share/fonts
+rm -rf FiraMono.zip FiraMono
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Go-Mono.zip
 unzip Go-Mono.zip -d Go-Mono
