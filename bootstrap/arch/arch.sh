@@ -1,6 +1,4 @@
-sudo pacman -S zellij alacritty zsh nvim fzf inotify-tools podman docker docker-compose docker-buildx unzip inetutils distrobox \ 
-    vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop power-profiles-daemon flatpak gwenview \
-    fd stow transmission-qt
+sudo pacman -S alacritty zsh nvim fzf inotify-tools podman docker docker-compose docker-buildx unzip inetutils distrobox vlc okular foliate mise wl-clipboard swappy obsidian rsync tmux btop flatpak gwenview fd stow transmission-qt nvim direnv
 
 sudo systemctl enable --now power-profiles-daemon.service
 

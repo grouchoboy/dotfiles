@@ -42,7 +42,7 @@ tmj() {
 
 source /etc/os-release
 
-if [ "$NAME" = "Fedora Linux" ]; then
+if [ "$NAME" = "Arch Linux" ]; then
     alias c="docker compose"
     source <(fzf --zsh)
     eval "$(mise activate zsh)"
