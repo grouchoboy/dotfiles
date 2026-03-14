@@ -439,7 +439,7 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      local filetypes = { 'lua', 'elixir', 'go', 'bash' }
+      local filetypes = { 'lua', 'go', 'bash' }
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,

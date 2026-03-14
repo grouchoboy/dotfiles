@@ -2,6 +2,12 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 export EDITOR='nvim'
 alias vim='nvim'
+export PAGER="less"
+# -R: handle colors/bolding in man pages
+# -i: case-insensitive search
+# -F: quit if the file fits on one screen
+# -X: don't clear the screen on exit (optional, remove if you prefer clearing)
+export LESS="-RiFX"
 
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then
