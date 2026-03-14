@@ -12,6 +12,7 @@ return {
     picker = {
       sources = {
         explorer = {
+          position = 'float',
           git_status = false,
           auto_open = false,
           follow_file = false,
@@ -19,6 +20,11 @@ return {
           icons = {
             files = {
               enabled = false,
+            },
+          },
+          layout = {
+            layout = {
+              position = 'top',
             },
           },
         },
