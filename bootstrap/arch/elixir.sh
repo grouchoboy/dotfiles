@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # https://github.com/asdf-vm/asdf-erlang
 
 sudo pacman -S --needed base-devel ncurses glu mesa wxwidgets-gtk3 libpng libssh unixodbc libxslt fop
