@@ -56,5 +56,14 @@ if [ "$NAME" = "Debian GNU/Linux" ]; then
     eval "$(direnv hook zsh)"
 fi
 
+if [ "$NAME" = "Arch Linux" ]; then
+    alias c="docker compose"
+    source <(fzf --zsh)
+    eval "$(mise activate zsh)"
+    addToPathFront $HOME/.local/flutter/bin
+    eval "$(direnv hook zsh)"
+fi
+
+
 if [ -e /run/.containerenv ] ; then
 fi
