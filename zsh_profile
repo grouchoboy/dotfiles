@@ -22,11 +22,11 @@ gits() {
 addToPathFront $HOME/.local/bin
 
 datadisk() {
-	cd /run/media/manu/DataDisk
+	cd $DATADISK
 }
 
 datassd() {
-	cd /run/media/manu/DataSSD
+	cd $DATASSD
 }
 
 tmj() {
@@ -49,6 +49,8 @@ tmj() {
 source /etc/os-release
 
 if [ "$NAME" = "Debian GNU/Linux" ]; then
+    export DATASSD=/media/manu/DataSSD
+    export DATADISK=/media/manu/DataDisk
     alias c="docker compose"
     source <(fzf --zsh)
     eval "$(mise activate zsh)"
@@ -57,6 +59,8 @@ if [ "$NAME" = "Debian GNU/Linux" ]; then
 fi
 
 if [ "$NAME" = "Arch Linux" ]; then
+    export DATASSD=/run/media/manu/DataSSD
+    export DATADISK=/run/media/manu/DataDisk
     alias c="docker compose"
     source <(fzf --zsh)
     eval "$(mise activate zsh)"
