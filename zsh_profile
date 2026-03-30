@@ -58,7 +58,7 @@ if [ "$NAME" = "Debian GNU/Linux" ]; then
     eval "$(direnv hook zsh)"
 fi
 
-if [ "$NAME" = "Arch Linux" ]; then
+if [ "$NAME" = "Fedora Linux" ]; then
     export DATASSD=/run/media/manu/DataSSD
     export DATADISK=/run/media/manu/DataDisk
     alias c="docker compose"
