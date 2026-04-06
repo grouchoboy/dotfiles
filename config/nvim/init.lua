@@ -46,14 +46,26 @@ vim.pack.add({
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/folke/which-key.nvim" },
+	{ src = "https://github.com/tpope/vim-sleuth" },
+
+	{ src = "https://github.com/mason-org/mason.nvim" },
+	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
+	{ src = "https://github.com/j-hui/fidget.nvim" },
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/Saghen/blink.cmp" },
+	{ src = "https://github.com/L3MON4D3/LuaSnip" },
 })
 
-require("colors")()
-require("plugin-snacks")()
+require("custom.colors")()
+require("custom.snacks")()
 require("mason").setup({})
-require("plugin-conform")()
+require("custom.conform")()
+require("fidget").setup({})
+require("custom.lspconfig")()
+require("custom.blink")()
+require("custom.treesitter")()
 
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
@@ -67,16 +79,20 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 	once = true, -- Crucial: only run this the FIRST time you enter insert mode
 })
 
--- treesitter
-treesitter = function()
-	local filetypes = { "lua", "go", "bash" }
-	require("nvim-treesitter").install(filetypes)
-	vim.api.nvim_create_autocmd("FileType", {
-		pattern = filetypes,
-		callback = function()
-			vim.treesitter.start()
-		end,
-	})
-end
-treesitter()
--- end treesitter
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		require("which-key").setup({
+			delay = 0,
+			spec = {
+				{ "<leader>c", group = "[C]ode" },
+				{ "<leader>d", group = "[D]ocument" },
+				{ "<leader>r", group = "[R]ename" },
+				{ "<leader>s", group = "[S]earch" },
+				{ "<leader>w", group = "[W]orkspace" },
+				{ "<leader>t", group = "[T]oggle" },
+				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+			},
+		})
+	end,
+	once = true,
+})
