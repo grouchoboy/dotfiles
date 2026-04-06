@@ -56,6 +56,7 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/Saghen/blink.cmp" },
 	{ src = "https://github.com/L3MON4D3/LuaSnip" },
+	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
 require("custom.colors")()
@@ -66,17 +67,13 @@ require("fidget").setup({})
 require("custom.lspconfig")()
 require("custom.blink")()
 require("custom.treesitter")()
+require("lualine").setup()
 
 vim.api.nvim_create_autocmd("InsertEnter", {
 	callback = function()
-		-- 1. Ensure both are loaded (packadd is idempotent, so it won't hurt to call twice)
-		-- vim.cmd('packadd nvim-cmp')
-		vim.cmd("packadd nvim-autopairs")
-
-		-- 2. Run your config logic
 		require("nvim-autopairs").setup({})
 	end,
-	once = true, -- Crucial: only run this the FIRST time you enter insert mode
+	once = true,
 })
 
 vim.api.nvim_create_autocmd("VimEnter", {
