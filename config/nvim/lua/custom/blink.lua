@@ -18,9 +18,12 @@ return function()
 			ghost_text = { enabled = false },
 		},
 		sources = {
-			default = { "snippets", "lsp", "path", "buffer" },
-			-- default = { "lsp", "path", "buffer" },
+			-- default = { "snippets", "lsp", "path", "buffer" },
+			default = { "lsp", "path", "snippets" },
 			providers = {
+				snippets = {
+					score_offset = 100,
+				},
 				lsp = {
 					async = true,
 				},
