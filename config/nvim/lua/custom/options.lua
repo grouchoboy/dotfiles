@@ -10,7 +10,8 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 vim.opt.relativenumber = false
 
-vim.opt.showmatch = true
+-- when inserting bracket, briefly jump to the matching one (https://neovim.io/doc/user/options/#'showmatch')
+-- vim.opt.showmatch = true
 
 -- sync clipboard between OS and neovim
 vim.opt.clipboard = "unnamedplus"
