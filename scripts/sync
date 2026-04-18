@@ -1,0 +1,3 @@
+#!/bin/bash
+
+stow --dir=$HOME/dotfiles --target=$HOME/.config config
