@@ -3,7 +3,7 @@
 # Build the Lua Tree-sitter parser and install it with queries for Neovim.
 # Requires tree-sitter-cli (installed via bootstrap/fedora/tools.sh).
 
-set -eu
+set -euo pipefail
 
 TREE_SITTER_LUA_REPO="https://github.com/tree-sitter-grammars/tree-sitter-lua.git"
 DOTFILES="$HOME/dotfiles"

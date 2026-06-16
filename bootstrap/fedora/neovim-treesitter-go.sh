@@ -3,7 +3,7 @@
 # Build the Go Tree-sitter parser and install it with queries for Neovim.
 # Requires tree-sitter-cli (installed via bootstrap/fedora/tools.sh).
 
-set -eu
+set -euo pipefail
 
 TREE_SITTER_GO_REPO="https://github.com/tree-sitter/tree-sitter-go.git"
 DOTFILES="$HOME/dotfiles"
