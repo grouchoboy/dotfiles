@@ -82,3 +82,7 @@ tmj() {
 
 export PATH
 eval "$(starship init bash)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/manu/.local/bin:$PATH"

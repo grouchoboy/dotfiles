@@ -17,3 +17,7 @@ fi
 
 # opencode
 export PATH=/home/manu/.opencode/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/manu/.local/bin:$PATH"
