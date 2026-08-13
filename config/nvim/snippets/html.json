@@ -6,5 +6,9 @@
     "void": {
         "prefix": "void",
         "body": "<${1} />"
+    },
+    "echo": {
+        "prefix": "echo",
+        "body": "{{${1}}}"
     }
 }
