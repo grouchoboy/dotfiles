@@ -64,6 +64,8 @@ if [ "$NAME" = "Fedora Linux" ]; then
     alias c="docker compose"
     source <(fzf --zsh)
     eval "$(mise activate zsh)"
+    export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+    export ANDROID_HOME=$HOME/Android/Sdk
     addToPathFront $HOME/.local/flutter/bin
     eval "$(direnv hook zsh)"
 fi
