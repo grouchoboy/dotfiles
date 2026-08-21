@@ -5,3 +5,5 @@ nnoremap <leader>sf :action GotoFile<CR>
 nnoremap <leader><space> :action RecentFiles<CR>
 nnoremap <leader>f :action ReformatCode<CR>
 vnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>ws :action GotoSymbol<CR>
+nnoremap <leader>ss :action SearchEverywhere<CR>
