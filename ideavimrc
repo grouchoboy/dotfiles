@@ -7,3 +7,4 @@ nnoremap <leader>f :action ReformatCode<CR>
 vnoremap <leader>f :action ReformatCode<CR>
 nnoremap <leader>ws :action GotoSymbol<CR>
 nnoremap <leader>ss :action SearchEverywhere<CR>
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
