@@ -1,5 +1,7 @@
-set clipboard+=unnamed
+"set clipboard+=unnamed
 let mapleader = " "
 nnoremap <leader>ds :action FileStructurePopup<CR>
 nnoremap <leader>sf :action GotoFile<CR>
 nnoremap <leader><space> :action RecentFiles<CR>
+nnoremap <leader>f :action ReformatCode<CR>
+vnoremap <leader>f :action ReformatCode<CR>

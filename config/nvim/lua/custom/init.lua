@@ -14,6 +14,9 @@ require("fidget").setup({
 		override_vim_notify = true,
 	},
 })
+require("diffview").setup({
+	enhanced_diff_hl = true,
+})
 
 vim.keymap.set("n", "<leader>qe", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>qq", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
