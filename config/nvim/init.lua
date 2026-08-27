@@ -3,10 +3,11 @@ vim.pack.add({
 	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	-- { src = "https://github.com/windwp/nvim-autopairs" },
-	-- { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/folke/which-key.nvim" },
 	{ src = "https://github.com/tpope/vim-sleuth" },
+	-- { src = "https://github.com/sergei-durkin/sql-formatter.nvim" },
 
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },

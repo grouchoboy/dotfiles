@@ -13,6 +13,8 @@ return function()
 		end,
 		formatters_by_ft = {
 			lua = { "stylua" },
+			go = { "goimports", "gofmt", "injected" },
+			sql = { "sql_formatter" },
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
 			--

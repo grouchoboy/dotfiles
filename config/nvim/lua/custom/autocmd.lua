@@ -1,9 +1,9 @@
-vim.api.nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		require("nvim-autopairs").setup({})
-	end,
-	once = true,
-})
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+-- 	callback = function()
+-- 		require("nvim-autopairs").setup({})
+-- 	end,
+-- 	once = true,
+-- })
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
