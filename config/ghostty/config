@@ -12,8 +12,11 @@ cursor-style-blink = false
 cursor-style = block
 shell-integration-features = no-cursor
 
+tab-inherit-working-directory = true
+
 window-padding-x = 5
 window-padding-y = 5
+window-decoration = false
 
 # Render unfocused splits identical to focused (no dim/blur effect)
 unfocused-split-opacity = 1
@@ -24,8 +27,9 @@ keybind = ctrl+shift+l=next_tab
 keybind = ctrl+shift+h=previous_tab
 
 # keybind = ctrl+shift+o=new_split:right
-keybind = alt+ctrl+l=goto_split:right
-keybind = alt+ctrl+h=goto_split:left
-keybind = alt+ctrl+j=goto_split:down
-keybind = alt+ctrl+k=goto_split:up
+# keybind = alt+ctrl+l=goto_split:right
+# keybind = alt+ctrl+h=goto_split:left
+# keybind = alt+ctrl+j=goto_split:down
+# keybind = alt+ctrl+k=goto_split:up
+keybind = ctrl+alt+up=goto_split:up
 
