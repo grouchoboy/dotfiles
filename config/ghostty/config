@@ -1,9 +1,9 @@
 # command = /usr/bin/zsh 
 theme = Gruvbox Light Hard
 #theme = GruvboxDark
-font-family = GoMono Nerd Font Mono
+font-family = BlexMono Nerd Font Mono
 font-size = 15
-font-style = Regular
+font-style = Medium
 font-style-bold = false
 font-feature = -calt
 font-feature = -liga
