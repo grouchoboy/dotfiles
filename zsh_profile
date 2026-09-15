@@ -1,6 +1,7 @@
 export XDG_CONFIG_HOME=$HOME/.config
 
 export EDITOR='nvim'
+export VISUAL='nvim'
 alias vim='nvim'
 export PAGER="less"
 # -R: handle colors/bolding in man pages
