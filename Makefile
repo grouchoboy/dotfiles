@@ -1,7 +1,10 @@
-.PHONY: bash syncconfig clonetpm
+.PHONY: agents syncconfig clonetpm
 
-bash:
-	bash scripts/setupbash.sh
+DOTFILES := $(HOME)/dotfiles
+
+agents:
+	@echo "symlink agents directory (skills)"
+	ln -s $(DOTFILES)/agents $(HOME)/.agents	
 
 syncconfig:
 	bash scripts/sync
