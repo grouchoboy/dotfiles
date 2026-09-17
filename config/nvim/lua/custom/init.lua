@@ -7,7 +7,16 @@ require("custom.conform")()
 require("custom.lspconfig")()
 require("custom.blink")()
 require("custom.treesitter")()
-require("lualine").setup({})
+require("lualine").setup({
+	sections = {
+		lualine_c = {
+			{
+				"filename",
+				path = 1,
+			},
+		},
+	},
+})
 require("custom.autocmd")
 require("fidget").setup({
 	notification = {
