@@ -23,3 +23,5 @@ sudo dnf -y install ninja-build cmake gcc make gettext curl glibc-gconv-extra gi
 # tree-sitter build
 # cp lua.so ~/.config/nvim/parser/lua.so
 
+# git pull upstream
+# git fetch upstream
