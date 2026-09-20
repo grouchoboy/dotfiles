@@ -26,6 +26,7 @@ return function()
 				},
 				lsp = {
 					async = true,
+					score_offset = 99,
 				},
 			},
 		},
