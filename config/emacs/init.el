@@ -32,10 +32,10 @@
 (blink-cursor-mode 0)
 ;(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-;(use-package evil
-;:ensure t
-;:config
-;(evil-mode 1))
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
 
 (use-package exec-path-from-shell
   :ensure t
@@ -67,9 +67,36 @@
     :config
     (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
 
-;; (use-package counsel
-;;   :ensure t
-;;   :bind (("C-c f" . counsel-find-file)))
+(defun my/consult-find-file-in-current-dir ()
+  "Recursively find files"
+  (interactive)
+  (consult-fd default-directory))
+
+(use-package general
+  :ensure t
+  :config
+  ;; Set up 'SPC' as the global leader key
+  (general-create-definer my/leader-def
+    :states '(normal visual)
+    :prefix "SPC"
+    :non-normal-prefix "M-SPC")
+
+  ;; Define your leader keybindings here
+  (my/leader-def
+    "s b" #'consult-buffer)
+  (my/leader-def
+    "s f" #'my/consult-find-file-in-current-dir))
+
+(global-set-key (kbd "C-c f") #'my/consult-find-file-in-current-dir)
+(global-set-key (kbd "C-c b") #'consult-buffer)
+
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode 1))
+
+(use-package consult
+  :ensure t)
 
 (use-package projectile
   :ensure t
@@ -77,20 +104,63 @@
   (projectile-mode +1)
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
-	      ("C-c f" . projectile-find-file)
+	      ; ("C-c f" . projectile-find-file)
               ("C-c p" . projectile-command-map))
   :config
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'default))
 
-;; (use-package eglot
-;;   :ensure nil
-;;   :bind
-;;   (("C-c e f" . eglot-format-buffer))) ;; built-in
+(use-package consult-projectile
+  :ensure t
+  :after (consult projectile)
+  :bind (;; Jump to any file or buffer in the current project with live preview:
+         ("C-c p p" . consult-projectile)
+         ;; Or find file specifically:
+         ("C-c p f" . consult-projectile-find-file)
+         ;; Or project buffer specifically:
+         ("C-c p b" . consult-projectile-switch-to-buffer)))
 
-;; (use-package go-mode
-;;   :ensure t
-;;   :hook
-;;   (go-mode . eglot-ensure))
+(use-package eglot
+  :ensure nil
+  :hook
+  (go-mode . eglot-ensure)
+  :bind
+  (("C-c e f" . eglot-format-buffer))) ;; built-in
+
+; (use-package go-mode
+;    :ensure t
+;    :hook
+;    (go-mode . eglot-ensure))
+
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode)
+  :custom
+  (corfu-auto t)                 ; Enable auto popup completion
+  (corfu-auto-delay 0.1)         ; Delay before popup shows
+  (corfu-auto-prefix 2)          ; Characters to type before completion triggers
+  (corfu-cycle t)                ; Wrap around selections
+  :bind
+  (:map corfu-map
+        ("TAB" . corfu-next)
+        ([tab] . corfu-next)
+        ("S-TAB" . corfu-previous)
+        ([backtab] . corfu-previous)))
+
+;; Optional: Documentation popups next to completion candidate
+(use-package corfu-popupinfo
+  :after corfu
+  :hook (corfu-mode . corfu-popupinfo-mode)
+  :custom
+  (corfu-popupinfo-delay '(0.2 . 0.1)))
+
+;; Enable terminal popups when not running in a GUI frame
+(use-package corfu-terminal
+  :ensure t
+  :after corfu
+  :config
+  (unless (display-graphic-p)
+    (corfu-terminal-mode +1)))
 
 ;; custom functions
 
