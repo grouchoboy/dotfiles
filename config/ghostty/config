@@ -1,8 +1,7 @@
 # command = /usr/bin/zsh 
 theme = Gruvbox Light Hard
-#theme = GruvboxDark
-font-family = BlexMono Nerd Font Mono
-font-size = 15
+font-family = CaskaydiaMono Nerd Font Mono
+font-size = 13
 font-style = Medium
 font-style-bold = false
 font-feature = -calt
@@ -16,7 +15,7 @@ tab-inherit-working-directory = true
 
 window-padding-x = 5
 window-padding-y = 5
-window-decoration = false
+window-decoration = none
 
 # Render unfocused splits identical to focused (no dim/blur effect)
 unfocused-split-opacity = 1
