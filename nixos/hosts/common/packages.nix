@@ -11,7 +11,11 @@
     curl
 
     # Build tools & Dotfiles & Shell utils
+    zsh
+    gcc
     gnumake
+    tree-sitter
+    nodejs
     stow
     htop
     tmux
