@@ -22,13 +22,8 @@ unfocused-split-opacity = 1
 
 # keybindings
 
-keybind = ctrl+shift+l=next_tab
-keybind = ctrl+shift+h=previous_tab
-
-# keybind = ctrl+shift+o=new_split:right
-# keybind = alt+ctrl+l=goto_split:right
-# keybind = alt+ctrl+h=goto_split:left
-# keybind = alt+ctrl+j=goto_split:down
-# keybind = alt+ctrl+k=goto_split:up
-keybind = ctrl+alt+up=goto_split:up
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+l=goto_split:left
+keybind = ctrl+shift+h=goto_split:right
 
