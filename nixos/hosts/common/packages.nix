@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # System-wide packages installed on all machines
@@ -26,5 +26,7 @@
 
     # Password management CLI
     bitwarden-cli
+
+    inputs.antigravity-nix.packages.${pkgs.system}.google-antigravity-cli
   ];
 }
