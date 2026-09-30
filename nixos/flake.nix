@@ -26,12 +26,10 @@
     in
     {
       nixosConfigurations = {
-        # Current active host
         vm = mkHost {
           hostname = "vm";
         };
 
-        # Example secondary machine (e.g. laptop)
         example = mkHost {
           hostname = "example";
         };

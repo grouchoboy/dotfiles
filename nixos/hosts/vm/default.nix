@@ -15,6 +15,7 @@
 
   # Enable machine-specific feature modules
   modules = {
+    development.enable = true;
     desktop = {
       gnome.enable = true;
     };

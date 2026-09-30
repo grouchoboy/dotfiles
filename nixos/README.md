@@ -31,6 +31,8 @@ nixos/
     ├── desktop/
     │   ├── gnome.nix               # GNOME desktop environment & GDM
     │   └── apps.nix                # GUI applications (firefox, ghostty, bitwarden)
+    ├── development/
+    │   └── go.nix                  # Go language & gopls LSP server
     ├── services/
     │   ├── audio.nix               # PipeWire audio & rtkit
     │   └── printing.nix            # CUPS printing

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./development
     ./desktop/gnome.nix
     ./desktop/apps.nix
     ./services/audio.nix
