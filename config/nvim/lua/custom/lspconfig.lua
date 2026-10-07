@@ -69,8 +69,9 @@ return function()
 	capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
 	local servers = {
-		-- gopls = {},
+		gopls = {},
 		-- expert = {},
+		tsc = {},
 		emmet_language_server = {
 			filetypes = {
 				"css",
