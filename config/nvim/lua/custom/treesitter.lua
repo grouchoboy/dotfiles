@@ -13,8 +13,29 @@ return function()
 	-- 		additional_vim_regex_highlighting = false,
 	-- 	},
 	-- })
-	local filetypes = { "lua", "go", "bash", "sql" }
-	require("nvim-treesitter").install(filetypes)
+	local parsers = {
+		"lua",
+		"go",
+		"bash",
+		"sql",
+		"javascript",
+		"typescript",
+		"tsx",
+		"jsdoc",
+	}
+
+	local filetypes = {
+		"lua",
+		"go",
+		"bash",
+		"sql",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+	}
+
+	require("nvim-treesitter").install(parsers)
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = filetypes,
 		callback = function()
