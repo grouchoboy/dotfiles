@@ -22,7 +22,7 @@ return function()
 			default = { "lsp", "path", "snippets" },
 			providers = {
 				snippets = {
-					score_offset = 100,
+					score_offset = 1000,
 				},
 				lsp = {
 					async = true,
