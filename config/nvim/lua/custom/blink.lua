@@ -20,15 +20,15 @@ return function()
 		sources = {
 			-- default = { "snippets", "lsp", "path", "buffer" },
 			default = { "lsp", "path", "snippets" },
-			providers = {
-				snippets = {
-					score_offset = 1000,
-				},
-				lsp = {
-					async = true,
-					score_offset = 99,
-				},
-			},
+			-- providers = {
+			-- 	snippets = {
+			-- 		score_offset = 1000,
+			-- 	},
+			-- 	lsp = {
+			-- 		async = true,
+			-- 		score_offset = 2000,
+			-- 	},
+			-- },
 		},
 		-- snippets = { preset = "luasnip" },
 		fuzzy = { implementation = "lua" },
