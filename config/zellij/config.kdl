@@ -331,7 +331,7 @@ theme "gruvbox-light"
 // Choose the base input mode of zellij.
 // Default: normal
 // 
-// default_mode "locked"
+default_mode "locked"
  
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
