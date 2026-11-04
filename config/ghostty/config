@@ -1,6 +1,6 @@
 # command = /usr/bin/zsh 
 theme = Gruvbox Light Hard
-font-family = GoMono Nerd Font Mono
+font-family = CaskaydiaCove Nerd Font
 font-size = 16
 font-style-bold = false
 font-feature = -calt
@@ -21,8 +21,11 @@ unfocused-split-opacity = 1
 
 # keybindings
 
-keybind = ctrl+shift+k=goto_split:up
-keybind = ctrl+shift+j=goto_split:down
-keybind = ctrl+shift+l=goto_split:left
-keybind = ctrl+shift+h=goto_split:right
+keybind = f6=new_split:right
+keybind = f7=new_split:down
+
+keybind = ctrl+up=goto_split:up
+keybind = ctrl+down=goto_split:down
+keybind = ctrl+left=goto_split:left
+keybind = ctrl+right=goto_split:right
 
