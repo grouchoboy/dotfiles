@@ -2,7 +2,7 @@
 theme = Gruvbox Light Hard
 # font-family = CaskaydiaCove Nerd Font
 font-family = JetBrainsMono Nerd Font
-font-size = 16
+font-size = 15
 font-style-bold = false
 font-feature = -calt
 font-feature = -liga
