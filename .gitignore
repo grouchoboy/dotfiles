@@ -57,6 +57,9 @@ lazy-lock.json
 work/
 config/tmux/plugins/
 
+config/fish/fish_variables
+config/fish/fishd.*
+
 config/emacs/custom.el
 config/emacs/auto-save-list/
 config/emacs/backups/
