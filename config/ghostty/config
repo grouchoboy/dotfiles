@@ -9,7 +9,7 @@ font-feature = -liga
 font-feature = -dlig
 cursor-style-blink = false
 cursor-style = block
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,no-title
 
 tab-inherit-working-directory = true
 
