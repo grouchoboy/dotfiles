@@ -4,3 +4,4 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Contro
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Control><Alt><Super>Right']"
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
 gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"
+gsettings set org.gnome.mutter overlay-key "['<Super>Space']
