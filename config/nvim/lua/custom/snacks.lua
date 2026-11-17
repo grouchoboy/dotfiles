@@ -27,7 +27,9 @@ return function()
 		Snacks.explorer()
 	end, { desc = "File Explorer" })
 	map("n", "<leader><leader>", function()
-		Snacks.picker.buffers()
+		Snacks.picker.buffers({
+			current = false,
+		})
 	end, { desc = "Buffers" })
 	map("n", "<leader>ss", function()
 		Snacks.picker.smart()
